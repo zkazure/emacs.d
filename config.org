@@ -3554,7 +3554,7 @@ be able to edit in grep-mode buffer.
   (elfeed-org)
   (setq rmh-elfeed-org-files (list "~/.emacs.d/elfeed.org"))
 
-  (global-set-key (kbd "C-c o e") 'elfeed)
+  ;; (global-set-key (kbd "C-c o e") 'elfeed)
 
   (add-hook 'elfeed-show-mode-hook 'olivetti-mode)
   (add-hook 'elfeed-search-mode-hook 'olivetti-mode)
@@ -3587,7 +3587,7 @@ be able to edit in grep-mode buffer.
 ** ebib
 #+begin_src elisp
   (require 'ebib)
-  (global-set-key (kbd "C-c e") 'ebib)
+  (global-set-key (kbd "C-c o e") 'ebib)
   ;; citekey formula: auth.lower + year + shorttitle(2,2).lower
   (setq ebib-bibtex-dialect 'biblatex
         ebib-preload-bib-files '("~/Documents/roam/references.bib")
