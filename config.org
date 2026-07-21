@@ -3305,8 +3305,9 @@ be able to edit in grep-mode buffer.
   (define-key org-mode-map (kbd "C-c b e") #'my/org-roam-export-hugo-if-blog)
   (define-key org-mode-map (kbd "C-c b p") #'my/blog-publish)
 #+end_src
-** sr-speedbar
+** speedbar
 #+begin_src elisp
+  ;; speedbar in the same frame
   (require 'sr-speedbar)
 
   (setq sr-speedbar-width 30
@@ -3316,7 +3317,13 @@ be able to edit in grep-mode buffer.
         speedbar-show-unknown-files t)
 
   (global-set-key (kbd "C-c o d") #'sr-speedbar-toggle)
+
+  ;; add nerd icon support
+  (require 'nerd-icons-speedbar)
+
+  (add-hook 'speedbar-mode-hook 'nerd-icons-speedbar-mode)
 #+end_src
+
 ** imenu-list
 #+begin_src elisp
   (require 'imenu-list)

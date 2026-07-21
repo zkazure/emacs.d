@@ -256,6 +256,9 @@
 [submodule "nerd-icons-corfu"]
 	path = lib/nerd-icons-corfu
 	url = https://github.com/LuigiPiucco/nerd-icons-corfu
+[submodule "nerd-icons-speedbar"]
+	path = lib/nerd-icons-speedbar
+	url = https://github.com/Akane-6730/nerd-icons-speedbar.git
 [submodule "no-littering"]
 	path = lib/no-littering
 	url = https://github.com/emacscollective/no-littering
