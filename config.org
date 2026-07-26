@@ -579,6 +579,7 @@ Set up the *borg* configuration.
         ;; org-indent-mode-turns-on-hiding-stars nil
         org-hide-leading-stars nil
         org-log-into-drawer t
+        org-log-repeat nil            ; repeat 了多少次不重要，加了很丑
         ;; org-indent-mode-turns-on-hiding-stars nil
         org-fold-catch-invisible-edits 'smart
         org-link-descriptive t
@@ -611,6 +612,8 @@ Set up the *borg* configuration.
 *** agenda
 #+begin_src emacs-lisp
   (setq org-agenda-include-diary nil)
+  (setq org-agenda-hide-tags-regexp
+        "\\<\\(draft\\|todo\\)\\>")
 
   (global-set-key (kbd "C-c a") 'org-agenda)
   (setq org-agenda-span 'week
