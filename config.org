@@ -2622,6 +2622,7 @@ These commands I use most often except consult-line:
                   mode-line-misc-info
                   mode-line-end-spaces))
 
+  (set-face-attribute 'mode-line-inactive nil :box nil)
 #+end_src
 ** go-mode
 #+begin_src elisp
