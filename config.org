@@ -3387,6 +3387,8 @@ be able to edit in grep-mode buffer.
 #+begin_src elisp
   (require 'notmuch)
 
+  (setq notmuch-always-prompt-for-sender t)
+
   (setq notmuch-saved-searches
         '((:name "inbox" :query "tag:inbox" :key "i" :search-type tree)
           (:name "unread" :query "tag:unread" :key "u" :search-type tree)
