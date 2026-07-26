@@ -2507,7 +2507,7 @@ These commands I use most often except consult-line:
 
 #+begin_src emacs-lisp
   (setq scroll-preserve-screen-position t
-        scroll-margin 2
+        scroll-margin 1
         scroll-conservatively 101
         auto-window-vscroll nil
         fast-but-imprecise-scrolling t
@@ -3226,8 +3226,9 @@ be able to edit in grep-mode buffer.
             "\\*Messages\\*"
             ("Output\\*$" . hide)
             "\\*Async Shell Command\\*"
-  ;;          help-mode
-            compilation-mode))
+            ;; help-mode
+            ;; compilation-mode
+            ))
 
   (setq popper-group-function #'popper-group-by-projectile)
 
@@ -3258,21 +3259,6 @@ be able to edit in grep-mode buffer.
 ** ox-hugo
 #+begin_src elisp
   (require 'ox-hugo)
-
-  (defun my/org-roam-export-hugo-if-blog ()
-    "如果当前 Org 文件包含 'blog' 标签且不包含 'draft' 标签，则在保存时自动导出为 Hugo Markdown。"
-    (interactive)
-    (when (derived-mode-p 'org-mode)
-      (let ((tags (org-get-tags (point-min) t)))
-        (if (and (member "blog" tags)
-                 (not (member "draft" tags)))
-            (progn
-              (let ((org-hugo-base-dir (expand-file-name "~/Public/blog/"))
-                    (org-hugo-section "post")
-                    (org-hugo-auto-set-last-modified t))
-                (message "正在将节点导出至 Hugo...")
-                (org-hugo-export-wim-to-md)))
-          (message "导出跳过：需要有 'blog' 标签，且不能有 'draft' 标签。")))))
 
   (defun my/org-roam-export-hugo-if-blog ()
     "如果当前 Org 文件包含 'blog' 标签且不包含 'draft' 标签，则在保存时自动导出为 Hugo Markdown。"
@@ -3812,6 +3798,12 @@ be able to edit in grep-mode buffer.
   ;;        (face-attribute 'diff-hl-reference-delete :background)))
 
   (add-hook 'prog-mode-hook #'highlight-parentheses-mode)
+#+end_src
+
+** keymap
+
+#+begin_src elisp
+  (global-set-key (kbd "C-x f") nil)      ; avoid changing column with accidently
 #+end_src
 
 ** END
