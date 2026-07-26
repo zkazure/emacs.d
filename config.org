@@ -3794,8 +3794,8 @@ be able to edit in grep-mode buffer.
   ;; 2. 指定背景色列表，仅提供两个颜色，插件因此只会高亮最近的两层
   (setq highlight-parentheses-background-colors
         (list
-         (face-attribute 'diff-refine-added :background)
-         (face-attribute 'diff-refine-removed :background)))
+         (face-attribute 'diff-refine-removed :background)
+         (face-attribute 'diff-refine-added :background)))
 
   ;; deeper color
   ;; (setq highlight-parentheses-background-colors
