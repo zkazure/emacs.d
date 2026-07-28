@@ -3826,6 +3826,14 @@ be able to edit in grep-mode buffer.
   (global-set-key (kbd "C-x f") nil)      ; avoid changing column with accidently
 #+end_src
 
+** gdb
+
+#+begin_src elisp
+  (setq gdb-many-windows t)
+  (setq gdb-show-main t)
+  (setq gdb-non-stop-setting nil)
+#+end_src
+
 ** END
 
 #+begin_src emacs-lisp
