@@ -3834,6 +3834,11 @@ be able to edit in grep-mode buffer.
   (setq gdb-non-stop-setting nil)
 #+end_src
 
+** window
+#+begin_src elisp
+  (setq window-combination-resize t)
+#+end_src
+
 ** END
 
 #+begin_src emacs-lisp
