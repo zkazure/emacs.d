@@ -575,7 +575,7 @@ Set up the *borg* configuration.
         org-ellipsis nil
         ;; org-ellipsis " ┑"
         org-startup-folded 'show2levels
-        org-startup-indented nil
+        ;; org-startup-indented nil
         ;; org-indent-mode-turns-on-hiding-stars nil
         org-hide-leading-stars nil
         org-log-into-drawer t
