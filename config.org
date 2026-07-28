@@ -606,8 +606,12 @@ Set up the *borg* configuration.
   (setq org-use-fast-todo-selection nil)
 #+end_src
 *** archive
+
+我目前完全只会对 roam 下面的文件进行归档，而且是归档到其他文件。
+后续如果有更多的需求，我会更倾向于保留默认，然后这里写多种不同方案的 archive 方式。
+
 #+begin_src elisp
-  (setq org-archive-location "~/Documents/roam/archive/%s_archive::")
+  (setq org-archive-location "~/Documents/roam/archive/%s_archive::datetree/")
 #+end_src
 *** agenda
 #+begin_src emacs-lisp
