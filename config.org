@@ -2218,7 +2218,6 @@ These commands I use most often except consult-line:
                (expand-file-name "lib/corfu/extensions/" user-emacs-directory))
   ;; (require 'corfu-echo)
   (require 'corfu-history)
-  (require 'corfu-indexed)
   (require 'corfu-info)
   (require 'corfu-popupinfo)
 
@@ -2245,14 +2244,8 @@ These commands I use most often except consult-line:
   (add-hook 'after-init-hook #'global-corfu-mode)
 
   (with-eval-after-load 'corfu
-    (corfu-indexed-mode)
     (corfu-popupinfo-mode)
     (corfu-history-mode))
-
-  (dotimes (i 10)
-    (define-key corfu-map
-                (kbd (format "M-%s" i))
-                (kbd (format "C-%s RET" i))))
 
   ;; nerd-icon for corfu
   (require 'nerd-icons-corfu)
@@ -2260,6 +2253,23 @@ These commands I use most often except consult-line:
     (add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter))
 
   ;; (keymap-unset corfu-map "RET")
+#+end_src
+
+**** indexed
+使用 indexed 之后，其实完全不需要 =C-n/p= 移动了。
+
+#+begin_src elisp
+  (require 'corfu-indexed)
+
+  (dotimes (i 10)
+    (define-key corfu-map
+                (kbd (format "M-%s" i))
+                (kbd (format "C-%s RET" i))))
+
+  (with-eval-after-load 'corfu
+    (corfu-indexed-mode)
+    (define-key corfu-map [remap next-line] nil)
+    (define-key corfu-map [remap previous-line] nil))
 #+end_src
 
 *** eglot
