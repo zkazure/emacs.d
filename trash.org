@@ -2545,3 +2545,14 @@ must recompile when updated
   (define-key agent-shell-mode-map (kbd "C-c s") #'agent-shell-send-file)
   (define-key agent-shell-mode-map (kbd "RET") #'newline)
 #+end_src
+** telega
+#+begin_src elisp
+  (require 'telega)
+  (setq telega-use-images t
+        telea-emoji-use-images t
+        telega-server-libs-prefix "/usr"
+        telega-server-command
+        (expand-file-name "~/.emacs.d/lib/telega/server/telega-server"))
+
+  (global-set-key (kbd "C-c o a") #'telega)
+#+end_src

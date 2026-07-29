@@ -385,9 +385,6 @@
 [submodule "symbol-overlay"]
 	path = lib/symbol-overlay
 	url = https://github.com/wolray/symbol-overlay
-[submodule "telega"]
-	path = lib/telega
-	url = https://github.com/zevlg/telega.el
 [submodule "tomelr"]
 	path = lib/tomelr
 	url = https://github.com/kaushalmodi/tomelr

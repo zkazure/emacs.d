@@ -3374,17 +3374,6 @@ be able to edit in grep-mode buffer.
 
   (global-set-key (kbd "C-c o h") #'halo-mode)
 #+end_src
-** telega
-#+begin_src elisp
-  (require 'telega)
-  (setq telega-use-images t
-        telea-emoji-use-images t
-        telega-server-libs-prefix "/usr"
-        telega-server-command
-        (expand-file-name "~/.emacs.d/lib/telega/server/telega-server"))
-
-  (global-set-key (kbd "C-c o a") #'telega)
-#+end_src
 ** visual-fill-column
 #+begin_src elisp
   (require 'visual-fill-column)
