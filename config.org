@@ -3814,6 +3814,10 @@ be able to edit in grep-mode buffer.
   (global-set-key (kbd "C-c o p") #'pangu-spacing-mode)
 #+end_src
 
+** whitespace
+#+begin_src elisp
+  (setq-default show-trailing-whitespace t)
+#+end_src
 ** END
 
 #+begin_src emacs-lisp

@@ -1054,22 +1054,15 @@ https://abode.karthinks.com/org-latex-preview/
   (provide 'init-plantuml-mode)
 #+end_src
 
-** whitespace
-#+begin_src emacs-lisp :tangle no
+** whitespace-cleanup-mode
+
+#+begin_src emacs-lisp
   (require 'whitespace-cleanup-mode)
 
-  (dolist (hook (list
-                 'prog-mode-hook
-                 'org-mode-hook))
-    (add-hook hook 'whitespace-cleanup-mode))
-
-  (dolist (hook (list
-                 'prog-mode-hook
-                 ))
-    (add-hook hook 'whitespace-mode))
-
-  (setq whitespace-style '(face trailing blanks))
+  (setq-default show-trailing-whitespace t)
+  (add-hook 'after-init-hook 'global-whitespace-cleanup-mode)
 #+end_src
+
 ** pdf-tools
 :PROPERTIES:
 :HEADER-ARGS: :tangle lisp/init-pdf-tools.el
