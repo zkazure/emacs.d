@@ -2270,7 +2270,10 @@ These commands I use most often except consult-line:
   (with-eval-after-load 'corfu
     (corfu-indexed-mode)
     (define-key corfu-map [remap next-line] nil)
-    (define-key corfu-map [remap previous-line] nil))
+    (define-key corfu-map [remap previous-line] nil)
+    (define-key corfu-map [remap beginning-of-line] nil)
+    (define-key corfu-map [remap end-of-line] nil)
+    )
 #+end_src
 
 *** eglot
