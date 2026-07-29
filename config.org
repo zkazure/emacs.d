@@ -1694,6 +1694,7 @@ Emacs 的 snippet 设置。
           (python-mode . python-ts-mode)
           (rust-mode . rust-ts-mode)
           (sh-mode . bash-ts-mode)
+          (bash-mode . bash-ts-mode)
           (typescript-mode . typescript-ts-mode)
           (tsx-mode . tsx-ts-mode)
           (toml-mode . toml-ts-mode)
@@ -1750,7 +1751,7 @@ Emacs 的 snippet 设置。
                               (when (and (fboundp 'treesit-parser-list)
                                          (treesit-parser-list))
                                 (treesit-fold-mode 1)
-                                (treesit-fold-indicators-mode 1)
+                                ;; (treesit-fold-indicators-mode 1)
                                 (treesit-fold-line-comment-mode 1))))
 
   (setq treesit-fold-line-count-show t)  ; Show line count in folded regions
@@ -2982,7 +2983,7 @@ These commands I use most often except consult-line:
           (message "前面未找到标点符号")))))
   (define-key org-mode-map (kbd "M-Q") #'my/newline-after-punctuation)
 
-  (setq diff-hl-side 'right)
+  ;; (setq diff-hl-side 'right)
 
 
   ;; ansi color
