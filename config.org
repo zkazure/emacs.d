@@ -457,9 +457,19 @@ Set up the *borg* configuration.
   ;;         t))
   ;; (add-hook 'after-init-hook #'global-display-fill-column-indicator-mode)
 
-  (add-hook 'prog-mode-hook #'(lambda () (progn (display-line-numbers-mode 1)
-                                           (display-fill-column-indicator-mode 1))))
-  (setq display-line-numbers-type 'relative)
+  (when (fboundp 'display-line-numbers-mode)
+    (setq-default display-line-numbers-width 3)
+    (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+    (add-hook 'yaml-mode-hook 'display-line-numbers-mode)
+    (add-hook 'yaml-ts-mode-hook 'display-line-numbers-mode)
+    ;; (setq display-line-numbers-type 'relative)
+    )
+
+  (when (boundp 'display-fill-column-indicator)
+    (setq-default indicate-buffer-boundaries 'left)
+    (setq-default display-fill-column-indicator-character ?┊)
+    (add-hook 'prog-mode-hook 'display-fill-column-indicator-mode))
+
   (global-so-long-mode 1)
 
   (setq next-screen-context-lines 2)
@@ -2465,14 +2475,12 @@ These commands I use most often except consult-line:
 :HEADER-ARGS: :tangle lisp/init-electric-pair-mode.el
 :END:
 #+begin_src emacs-lisp
+
+  (when (fboundp 'electric-pair-mode)
+    (add-hook 'after-init-hook 'electric-pair-mode))
+  (add-hook 'after-init-hook 'electric-indent-mode)
+
   (setq electric-pair-inhibit-predicate 'electric-pair-default-inhibit)
-  (dolist (hook (list
-                 'org-mode-hook
-                 'text-mode-hook
-                 'prog-mode-hook
-                 ))
-    (add-hook hook #'(lambda ()
-                       (electric-pair-mode 1))))
 
   (provide 'init-electric-pair-mode)
 #+end_src
@@ -2543,10 +2551,10 @@ These commands I use most often except consult-line:
     )
 #+end_src
 
-** IDE
+** compile
 #+begin_src emacs-lisp
   (global-set-key (kbd "C-c c C") 'compile)
-  (global-set-key (kbd "C-c c c") 'recompile)
+  (global-set-key (kbd "<f6>") 'recompile)
   (global-set-key (kbd "C-c c g") 'gdb)
 
   (add-hook 'c-ts-mode-hook
@@ -2558,6 +2566,9 @@ These commands I use most often except consult-line:
   (add-hook 'python-ts-mode-hook
             (lambda () (setq-local compile-command
                               (format "python3 %s" (buffer-name)))))
+
+  (setq-default compilation-scroll-output t)
+  (add-hook 'compilation-filter-hook #'ansi-color-compilation-filter)
 #+end_src
 
 ** subword-mode
@@ -2671,8 +2682,12 @@ These commands I use most often except consult-line:
   (global-set-key (kbd "M-i") 'symbol-overlay-put)
   (global-set-key (kbd "C-c o s") 'symbol-overlay-mode)
   (global-set-key (kbd "C-c o S") 'symbol-overlay-remove-all)
-  (define-key symbol-overlay-map (kbd "M-n") 'symbol-overlay-switch-forward)
-  (define-key symbol-overlay-map (kbd "M-p") 'symbol-overlay-switch-backward)
+  (define-key symbol-overlay-mode-map (kbd "M-i") 'symbol-overlay-put)
+  (define-key symbol-overlay-mode-map (kbd "M-I") 'symbol-overlay-remove-all)
+  (define-key symbol-overlay-mode-map (kbd "M-n") 'symbol-overlay-jump-next)
+  (define-key symbol-overlay-mode-map (kbd "M-p") 'symbol-overlay-jump-next)
+  ;; (define-key symbol-overlay-map (kbd "M-n") 'symbol-overlay-switch-forward)
+  ;; (define-key symbol-overlay-map (kbd "M-p") 'symbol-overlay-switch-backward)
 
 
   (defun my/wgrep-safe-replace-all ()
@@ -2948,8 +2963,7 @@ These commands I use most often except consult-line:
 ** other-config
 #+begin_src elisp
   (fset 'yes-or-no-p 'y-or-n-p)
-  ;; 将 M-z 绑定为“删除直到字符前”，而不是连字符一起删
-  (global-set-key (kbd "M-z") #'zap-up-to-char)
+  (global-set-key (kbd "M-Z") #'zap-up-to-char)
   (global-set-key (kbd "C-z") #'repeat)   ; suspend is annoying
   (global-set-key (kbd "M-p") #'backward-paragraph)
   (global-set-key (kbd "M-n") #'forward-paragraph)
@@ -3818,6 +3832,26 @@ be able to edit in grep-mode buffer.
 #+begin_src elisp
   (setq-default show-trailing-whitespace t)
 #+end_src
+
+** editing
+#+begin_src elisp
+  (defun sanityinc/newline-at-end-of-line ()
+    "Move to end of line, enter a newline, and reindent."
+    (interactive)
+    (move-end-of-line 1)
+    (newline-and-indent))
+  (global-set-key (kbd "S-<return>") #'sanityinc/newline-at-end-of-line)
+
+
+  ;; Don't disable narrowing commands
+  (put 'narrow-to-region 'disabled nil)
+  (put 'narrow-to-page 'disabled nil)
+  (put 'narrow-to-defun 'disabled nil)
+  ;; Don't disable case-change functions
+  (put 'upcase-region 'disabled nil)
+  (put 'downcase-region 'disabled nil)
+#+end_src
+
 ** END
 
 #+begin_src emacs-lisp
@@ -3908,6 +3942,7 @@ be able to edit in grep-mode buffer.
 
   (setq electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit)
   (electric-pair-mode 1)
+  (electric-indent-mode 1)
 
   (global-set-key (kbd "M-p") #'backward-paragraph)
   (global-set-key (kbd "M-n") #'forward-paragraph)
