@@ -304,6 +304,9 @@
 [submodule "ox-pandoc"]
 	path = lib/ox-pandoc
 	url = https://github.com/emacsorphanage/ox-pandoc
+[submodule "pangu-spacing"]
+	path = lib/pangu-spacing
+	url = https://github.com/coldnew/pangu-spacing
 [submodule "parsebib"]
 	path = lib/parsebib
 	url = https://github.com/joostkremers/parsebib

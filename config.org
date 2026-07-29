@@ -2953,12 +2953,6 @@ These commands I use most often except consult-line:
   (winner-mode 1)
   (global-set-key (kbd "C-c w") 'winner-undo)
 
-  (defun kazure/open-projects ()
-    "open my projects file"
-    (interactive)
-    (find-file (expand-file-name "~/Documents/org/projects.org")))
-  (global-set-key (kbd "C-c o p") #'kazure/open-projects)
-
   (setq word-wrap-by-category t)
 
   (defun my/org-export-subtrees-to-gfm ()
@@ -3826,6 +3820,12 @@ be able to edit in grep-mode buffer.
 ** window
 #+begin_src elisp
   (setq window-combination-resize t)
+#+end_src
+
+** pangu-spacing
+#+begin_src elisp
+  (require 'pangu-spacing)
+  (global-set-key (kbd "C-c o p") #'pangu-spacing-mode)
 #+end_src
 
 ** END
