@@ -172,9 +172,6 @@
 [submodule "gt"]
 	path = lib/gt
 	url = https://github.com/lorniu/gt.el.git
-[submodule "halo"]
-	path = lib/halo
-	url = https://github.com/kn66/halo.el.git
 [submodule "helpful"]
 	path = lib/helpful
 	url = https://github.com/Wilfred/helpful

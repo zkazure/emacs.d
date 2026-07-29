@@ -3354,24 +3354,6 @@ be able to edit in grep-mode buffer.
         ediff-window-setup-function #'ediff-setup-windows-plain
         )
 #+end_src
-** halo
-#+begin_src elisp
-  (require 'halo)
-
-  (setq halo-radius 15
-        halo-min-alpha 0.360
-        halo-steps 6
-        halo-falloff 'smoothstep
-        halo-idle-delay 0.06
-        halo-live-update t
-        halo-center-cursor t
-        halo-center-fraction 0.5
-        halo-virtual-top-margin t
-        halo-global-excluded-modes '(minibuffer-mode)
-        halo-global-exclude-predicate nil)
-
-  (global-set-key (kbd "C-c o h") #'halo-mode)
-#+end_src
 ** visual-fill-column
 #+begin_src elisp
   (require 'visual-fill-column)
