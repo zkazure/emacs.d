@@ -307,7 +307,7 @@ Set up the *borg* configuration.
                 (when buffer-file-name (ignore-errors (recenter)))))
 
   (setq help-window-select t)
-  (setq jit-lock-defer-time 0.05)
+  ;; (setq jit-lock-defer-time 0.05)
 #+end_src
 ** Require
 
@@ -1491,7 +1491,7 @@ Emacs 的 snippet 设置。
   (defun vulpea-agenda-files-update (&rest _)
     "Update `org-agenda-files' by merging with current files.
     This function accepts any number of arguments, as required by advice."
-    (let ((custom-agenda-files '("~/Documents/org/")))
+    (let ((custom-agenda-files '("~/Documents/roam/")))
       (setq org-agenda-files
             (seq-uniq
              (append custom-agenda-files
@@ -3830,7 +3830,11 @@ be able to edit in grep-mode buffer.
 
 ** whitespace
 #+begin_src elisp
-  (setq-default show-trailing-whitespace t)
+  (setq-default show-trailing-whitespace nil)
+
+  (defun zkazure/show-trailing-whitespace ()
+    (setq-local show-trailing-whitespace t))
+  (add-hook 'prog-mode-hook #'zkazure/show-trailing-whitespace)
 #+end_src
 
 ** editing
@@ -3940,7 +3944,7 @@ be able to edit in grep-mode buffer.
   ;;   (require 'saveplace)
   ;; (setq-default save-place t))
 
-  (setq electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit)
+  (setq electric-pair-inhibit-predicate 'electric-pair-default-inhibit)
   (electric-pair-mode 1)
   (electric-indent-mode 1)
 
