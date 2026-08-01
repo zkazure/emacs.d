@@ -139,9 +139,6 @@
 [submodule "f"]
 	path = lib/f
 	url = https://github.com/rejeep/f.el
-[submodule "flycheck"]
-	path = lib/flycheck
-	url = https://github.com/flycheck/flycheck
 [submodule "forge"]
 	path = lib/forge
 	url = https://github.com/magit/forge
