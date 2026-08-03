@@ -610,6 +610,8 @@ Set up the *borg* configuration.
    '(org-level-7 ((t (:height 1.05 :weight bold))))
    '(org-level-8 ((t (:height 1.05 :weight bold))))
    '(org-level-9 ((t (:height 1.05 :weight bold)))))
+
+  (add-hook 'org-mode-hook (lambda () (setq-local diff-hl-side 'right)))
 #+END_SRC
 *** todos
 #+begin_src elisp
@@ -3000,9 +3002,6 @@ These commands I use most often except consult-line:
           (message "前面未找到标点符号")))))
   (define-key org-mode-map (kbd "M-Q") #'my/newline-after-punctuation)
 
-  ;; (setq diff-hl-side 'right)
-
-
   ;; ansi color
   (require 'ansi-color)
   (add-hook 'compilation-filter-hook 'ansi-color-compilation-filter)
@@ -3055,7 +3054,7 @@ These commands I use most often except consult-line:
   (setq pyim-candidates-search-buffer-p nil)
   (setq pyim-enable-shortcode nil)
 
-  (setq pyim-default-scheme 'xiaohe-shuangpin
+  (setq pyim-default-scheme 'ziranma-shuangpin
         pyim-page-tooltip 'minibuffer
         pyim-page-style 'one-line)
   (setq-default pyim-punctuation-translate-p '(auto))
@@ -3079,7 +3078,7 @@ These commands I use most often except consult-line:
   (setq rime-translate-keybindings
     '("C-n" "C-p" "C-g" "shift"))
   ;; (setq rime-user-data-dir "~/.emacs.d/rime/")
-  (setq rime-user-data-dir (expand-file-name "~/Developments/rime-data/"))
+  (setq rime-user-data-dir (expand-file-name "~/.config/rime/rime-moran/"))
 
   (setq default-input-method "rime"
         rime-show-candidate 'posframe
@@ -3102,6 +3101,14 @@ These commands I use most often except consult-line:
          ;; :background-color "#1e1e2e"
          ;; :foreground-color "#cdd6f4"
          ))
+
+
+  (with-eval-after-load 'rime
+    (face-spec-reset-face 'rime-default-face)
+    (face-spec-reset-face 'rime-candidate-num-face)
+    (face-spec-reset-face 'rime-code-face)
+    (face-spec-reset-face 'rime-comment-face)
+    (face-spec-reset-face 'rime-cursor-face))
 #+end_src
 
 ** olivetti
@@ -3763,7 +3770,7 @@ be able to edit in grep-mode buffer.
                  (file+head
                   "reference/${citar-citekey}.org"
 
-                  "#+TITLE: ${note-title}\n#+CREATED: %U\n#+LAST_MODIFIED: %U\n#+FILETAGS:\n\n* Motivation\n* Challenge\n* Contribution\n* Method\n* Limitation\n\n"
+                  "#+TITLE: ${note-title}\n#+CREATED: %U\n#+LAST_MODIFIED: %U\n#+FILETAGS:\n\n* Motivation\n* Contribution\n* Method\n* Limitation\n\n"
                   )
                  :unnarrowed t))
 
