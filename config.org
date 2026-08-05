@@ -903,42 +903,6 @@ only the language set here can be babeled.
       (funcall orig-fun paragraph fixed-contents info)))
 #+end_src
 
-*** last-modify
-#+begin_src elisp
-  ;; 1. 定义一个局部变量作为开关，默认开启
-  (defvar-local my-org-update-timestamp-enable t
-    "控制当前 Buffer 是否在保存时自动更新 LAST_MODIFIED。")
-
-  ;; 2. 提供一个快捷命令，方便你随时开启/关闭它
-  (defun my-org-toggle-timestamp-update ()
-    "在当前 Buffer 临时切换是否自动更新 LAST_MODIFIED。"
-    (interactive)
-    (setq my-org-update-timestamp-enable (not my-org-update-timestamp-enable))
-    (message "当前 Buffer 的 LAST_MODIFIED 自动更新已%s"
-             (if my-org-update-timestamp-enable "开启 (ON)" "关闭 (OFF)")))
-
-  ;; 3. 升级版的时间戳更新函数
-  (defun my-org-update-last-modified ()
-    (when (and my-org-update-timestamp-enable     ;; 开关必须是打开状态
-               (derived-mode-p 'org-mode)
-               (buffer-file-name)
-               ;; 自动检测：如果存在 Git 冲突标记，则不执行更新
-               (not (save-excursion
-                      (save-match-data
-                        (goto-char (point-min))
-                        (re-search-forward "^<<<<<<< " nil t)))))
-      (save-excursion
-        (save-match-data
-          (goto-char (point-min))
-          (when (re-search-forward "^#\\+LAST_MODIFIED:.*$" 1000 t)
-            (replace-match
-             (concat "#+LAST_MODIFIED: "
-                     (format-time-string "[%Y-%m-%d %a %H:%M]"))))))))
-
-  (add-hook 'before-save-hook #'my-org-update-last-modified)
-
-#+end_src
-
 *** END
 
 #+begin_src emacs-lisp
