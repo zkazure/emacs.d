@@ -3770,7 +3770,7 @@ be able to edit in grep-mode buffer.
                  (file+head
                   "reference/${citar-citekey}.org"
 
-                  "#+TITLE: ${note-title}\n#+CREATED: %U\n#+LAST_MODIFIED: %U\n#+FILETAGS:\n\n* Motivation\n* Contribution\n* Method\n* Limitation\n\n"
+                  "#+TITLE: ${note-title}\n#+CREATED: %U\n#+LAST_MODIFIED: %U\n#+FILETAGS:\n\n* Abstract\n* Introduction\n* Method\n* Limitation\n\n"
                   )
                  :unnarrowed t))
 
