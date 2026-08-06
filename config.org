@@ -1341,56 +1341,56 @@ Emacs 的 snippet 设置。
     (org-roam-tag-add '("draft")))
   (add-hook 'org-roam-capture-new-node-hook #'jethro/tag-new-node-as-draft)
 
-  (setq org-roam-capture-templates
-        '(
-          ;; ("g" "Game" plain "%?"
-          ;;  :if-new (file+head "game/%<%Y%m%d%H%M%S>-${title}.org"
-          ;;                     "#+title: ${title}\n#+filetags:\n")`
-  	    ;;  :immediate-finish t
-  	    ;;  :unnarrowed t)
-          ("m" "Main" plain  "%?"
-           :if-new
-           (file+head "main/${title}.org"
-                      "#+TITLE: ${title}\n#+CREATED: %U\n#+LAST_MODIFIED: %U\n#+FILETAGS: \n* Main\n")
-           :immediate-finish t
-           :unnarrowed t)
-          ("c" "Coding" plain "%?"
-           :if-new
-           (file+head "coding/${title}.org"
-                      "#+TITLE: ${title}\n#+CREATED: %U\n#+LAST_MODIFIED: %U\n#+FILETAGS: \n* Main\n")
-           :immediate-finish t
-           :unnarrowed t)
-          ("i" "Idea" plain "%?"
-           :if-new
-           (file+head "idea/${title}.org"
-                      "#+TITLE: ${title}\n#+CREATED: %U\n#+LAST_MODIFIED: %U\n#+FILETAGS: \n* Main\n")
-           :immediate-finish t
-           :unnarrowed t)
-          ("R" "Reading" plain "%?"
-           :if-new
-           (file+head "reading/${title}.org"
-                      "#+TITLE: ${title}\n#+CREATED: %U\n#+LAST_MODIFIED: %U\n#+FILETAGS: \n* Main\n")
-           :immediate-finish t
-           :unnarrowed t)
-          ("w" "Web" plain "%?"
-           :if-new
-           (file+head "web/${title}.org"
-                      "#+TITLE: ${title}\n#+CREATED: %U\n#+LAST_MODIFIED: %U\n#+FILETAGS: \n* Main\n")
-           :immediate-finish t
-           :unnarrowed t)
-          ("s" "Stem" plain "%?"
-           :if-new
-           (file+head "stem/${title}.org"
-                      "#+TITLE: ${title}\n#+CREATED: %U\n#+LAST_MODIFIED: %U\n#+FILETAGS: \n* Main\n")
-           :immediate-finish t
-           :unnarrowed t)
-          ("M" "Misc" plain "%?"
-           :if-new
-           (file+head "misc/${title}.org"
-                      "#+TITLE: ${title}\n#+CREATED: %U\n#+LAST_MODIFIED: %U\n* Main\n")
-           :immediate-finish t
-           :unnarrowed t)
-          ))
+(setq org-roam-capture-templates
+      '(
+        ;; ("g" "Game" plain "%?"
+        ;;  :if-new (file+head "game/%<%Y%m%d%H%M%S>-${title}.org"
+        ;;                     "#+title: ${title}\n#+filetags:\n")`
+	    ;;  :immediate-finish t
+	    ;;  :unnarrowed t)
+        ("m" "Main" plain  "%?"
+         :if-new
+         (file+head "main/${title}.org"
+                    "#+TITLE: ${title}\n#+CREATED: %U\n#+FILETAGS: \n* Main\n")
+         :immediate-finish t
+         :unnarrowed t)
+        ("c" "Coding" plain "%?"
+         :if-new
+         (file+head "coding/${title}.org"
+                    "#+TITLE: ${title}\n#+CREATED: %U\n#+FILETAGS: \n* Main\n")
+         :immediate-finish t
+         :unnarrowed t)
+        ("i" "Idea" plain "%?"
+         :if-new
+         (file+head "idea/${title}.org"
+                    "#+TITLE: ${title}\n#+CREATED: %U\n#+FILETAGS: \n* Main\n")
+         :immediate-finish t
+         :unnarrowed t)
+        ("R" "Reading" plain "%?"
+         :if-new
+         (file+head "reading/${title}.org"
+                    "#+TITLE: ${title}\n#+CREATED: %U\n#+FILETAGS: \n* Main\n")
+         :immediate-finish t
+         :unnarrowed t)
+        ("w" "Web" plain "%?"
+         :if-new
+         (file+head "web/${title}.org"
+                    "#+TITLE: ${title}\n#+CREATED: %U\n#+FILETAGS: \n* Main\n")
+         :immediate-finish t
+         :unnarrowed t)
+        ("s" "Stem" plain "%?"
+         :if-new
+         (file+head "stem/${title}.org"
+                    "#+TITLE: ${title}\n#+CREATED: %U\n#+FILETAGS: \n* Main\n")
+         :immediate-finish t
+         :unnarrowed t)
+        ("M" "Misc" plain "%?"
+         :if-new
+         (file+head "misc/${title}.org"
+                    "#+TITLE: ${title}\n#+CREATED: %U\n* Main\n")
+         :immediate-finish t
+         :unnarrowed t)
+        ))
 
   ;; (setq org-roam-dailies-capture-templates
   ;;       '(("d" "default" entry "* %<%I:%M %p>: %?"
