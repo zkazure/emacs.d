@@ -3,6 +3,5 @@
 /var/
 /etc/
 /.agent-shell/
-/lisp/
-*.el
+custom.el
 *.elc
