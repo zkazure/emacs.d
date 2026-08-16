@@ -103,12 +103,6 @@
 [submodule "eglot-booster"]
 	path = lib/eglot-booster
 	url = https://github.com/jdtsmith/eglot-booster.git
-[submodule "elfeed"]
-	path = lib/elfeed
-	url = https://github.com/skeeto/elfeed
-[submodule "elfeed-org"]
-	path = lib/elfeed-org
-	url = https://github.com/remyhonig/elfeed-org
 [submodule "elisp-refs"]
 	path = lib/elisp-refs
 	url = https://github.com/Wilfred/elisp-refs
