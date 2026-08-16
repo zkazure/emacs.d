@@ -325,9 +325,6 @@
 [submodule "rainbow-delimiters"]
 	path = lib/rainbow-delimiters
 	url = https://github.com/Fanael/rainbow-delimiters
-[submodule "rasi-mode"]
-	path = lib/rasi-mode
-	url = https://github.com/taquangtrung/emacs-rasi-mode
 [submodule "request"]
 	path = lib/request
 	url = https://github.com/tkf/emacs-request
