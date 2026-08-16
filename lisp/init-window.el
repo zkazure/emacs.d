@@ -32,7 +32,7 @@
 	      (?h aw-split-window-horz "Split Horz Window")
 	      (?? aw-show-dispatch-help))))
 
-(ace-window-display-mode 1)
+;; (ace-window-display-mode 1)
 
 
 (provide 'init-window)

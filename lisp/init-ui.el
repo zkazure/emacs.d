@@ -70,6 +70,7 @@
 
 (require 'jinx)
 (add-hook 'emacs-startup-hook #'global-jinx-mode)
+(diminish 'jinx-mode)
 (add-to-list 'jinx-exclude-regexps '(t "\\cc")) ; 拼写检查忽略中文
 
 (keymap-global-set "M-$" #'jinx-correct)
@@ -128,6 +129,6 @@
                     :height 120
                     :weight 'regular)
 
-
+(set-face-attribute 'mode-line-inactive nil :box nil)
 
 (provide 'init-ui)

@@ -35,7 +35,6 @@
 (require 'init-ui)
 
 (require 'init-window)
-(require 'init-modeline)
 (require 'init-buffer)
 (require 'init-dired)
 
@@ -63,6 +62,7 @@
 
 (require 'init-indent)
 (require 'init-treesit)
+(require 'init-lisp)
 (require 'init-go)
 (require 'init-rust)
 (require 'init-javascript)

@@ -524,6 +524,7 @@
 
 ;; embark
 (citar-embark-mode 1)
+(diminish 'citar-embark-mode)
 
 ;; org-cite
 (setq org-cite-global-bibliography citar-bibliography
@@ -576,8 +577,8 @@
             citar-indicator-links-icons))
 
 (require 'citar-org-roam)
-
 (citar-org-roam-mode 1)
+(diminish 'citar-org-roam-mode)
 
 ;; use filename renamed by Zotero as title.
 (setq citar-org-roam-note-title-template "${file}")

@@ -3,6 +3,13 @@
 (require 'no-littering)
 (require 'diminish)
 
+(with-eval-after-load 'outline
+  (diminish 'outline-minor-mode))
+(with-eval-after-load 'reveal
+  (diminish 'reveal-mode))
+(with-eval-after-load 'eldoc
+  (diminish 'eldoc-mode))
+
 (setq auth-source '("~/.authinfo.gpg"))
 
 (setq make-backup-files nil)
@@ -89,6 +96,7 @@
 
 (require 'which-key)
 (which-key-mode)
+(diminish 'which-key-mode)
 (require 'which-key-posframe)
 (which-key-posframe-mode)
 
@@ -105,6 +113,7 @@
 
 (require 'projectile)
 (projectile-mode +1)
+(diminish 'projectile-mode)
 ;; Recommended keymap prefix on Windows/Linux
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
