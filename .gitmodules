@@ -115,9 +115,6 @@
 [submodule "embark"]
 	path = lib/embark
 	url = https://github.com/oantolin/embark
-[submodule "emmet-mode"]
-	path = lib/emmet-mode
-	url = https://github.com/smihica/emmet-mode
 [submodule "envrc"]
 	path = lib/envrc
 	url = https://github.com/purcell/envrc
