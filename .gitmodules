@@ -394,9 +394,6 @@
 [submodule "vundo"]
 	path = lib/vundo
 	url = https://github.com/casouri/vundo
-[submodule "web-mode"]
-	path = lib/web-mode
-	url = https://github.com/fxbois/web-mode
 [submodule "websocket"]
 	path = lib/websocket
 	url = https://github.com/ahyatt/emacs-websocket
