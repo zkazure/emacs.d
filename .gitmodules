@@ -37,9 +37,6 @@
 [submodule "cdlatex"]
 	path = lib/cdlatex
 	url = https://github.com/cdominik/cdlatex
-[submodule "change-inner"]
-	path = lib/change-inner
-	url = https://github.com/magnars/change-inner.el
 [submodule "citar"]
 	path = lib/citar
 	url = https://github.com/emacs-citar/citar
