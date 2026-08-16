@@ -7,8 +7,6 @@
   (diminish 'outline-minor-mode))
 (with-eval-after-load 'reveal
   (diminish 'reveal-mode))
-(with-eval-after-load 'eldoc
-  (diminish 'eldoc-mode))
 
 (setq auth-source '("~/.authinfo.gpg"))
 

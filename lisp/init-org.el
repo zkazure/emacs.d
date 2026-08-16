@@ -8,9 +8,7 @@
 (require 'ox-gfm)
 
 (setq org-directory (expand-file-name "~/Documents/roam/"))
-(defvar org-main-directory
-  (list (expand-file-name "main/" org-directory))
-  "Directory for org files in main.")
+(setq org-main-directory (expand-file-name "main/" org-directory))
 
 (setq org-imenu-depth 4
       org-ellipsis nil
@@ -30,6 +28,7 @@
       org-use-fast-todo-selection nil
       org-edit-src-content-indentation 0
       )
+(diminish 'org-indent-mode)
 
 (custom-set-faces
  '(org-document-title ((t (:height 1.1 :weight bold))))
@@ -92,7 +91,7 @@
 
 ;;; Agenda
 (global-set-key (kbd "C-c a") 'org-agenda)
-(setq org-agenda-files org-main-directory)
+(setq org-agenda-files (list org-main-directory))
 
 (setq org-agenda-include-diary nil)
 (setq org-agenda-hide-tags-regexp
@@ -230,8 +229,7 @@
 
 ;;; Roam
 (setq org-roam-directory org-directory)
-(defvar org-roam-main-directory org-main-directory
-  "Directory for roam files in main.")
+(setq org-roam-main-directory org-main-directory)
 
 (require 'org-roam)
 (add-to-list 'load-path
@@ -619,6 +617,7 @@
       org-pretty-entities-include-sub-superscripts nil)
 
 (add-hook 'org-mode-hook 'org-cdlatex-mode)
+(diminish 'org-cdlatex-mode)
 
 ;; org-cdlatex-mode 中使用 cdlatex 的自动匹配括号, 并把 $...$ 换成 \( ... \)
 (defun my/insert-inline-parentheses ()
