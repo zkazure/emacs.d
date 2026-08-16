@@ -19,20 +19,20 @@
 ;; :stream t                           ;for streaming responses
 ;; :key "your-api-key")               ;can be a function that returns the key
 ;; OPTIONAL configuration
-(setq gptel-model   'deepseek-v4-flash
-      gptel-backend (gptel-make-deepseek "DeepSeek"
-                      :stream t
-                      :key (lambda ()
-                             (let* ((results (auth-source-search :host "api.deepseek.com" :user "apikey"))
-                                    (first-match (car results))
-                                    (secret-value (plist-get first-match :secret))
-                                    (actual-key (if (functionp secret-value)
-                                                    (funcall secret-value)
-                                                  secret-value)))
-                               actual-key))))
+;; (setq gptel-model   'deepseek-v4-flash
+;;       gptel-backend (gptel-make-deepseek "DeepSeek"
+;;                       :stream t
+;;                       :key (lambda ()
+;;                              (let* ((results (auth-source-search :host "api.deepseek.com" :user "apikey"))
+;;                                     (first-match (car results))
+;;                                     (secret-value (plist-get first-match :secret))
+;;                                     (actual-key (if (functionp secret-value)
+;;                                                     (funcall secret-value)
+;;                                                   secret-value)))
+;;                                actual-key))))
 ;; FOR OpenAI chatgpt
-;; (setq gptel-model 'gpt-5.4-mini
-;;       gptel-backend (gptel-make-openai-oauth "OpenAI-sub"))
+(setq gptel-model 'gpt-5.6-luna
+      gptel-backend (gptel-make-openai-oauth "OpenAI-sub"))
 
 
 ;; (gptel-make-gh-copilot "Copilot")
@@ -74,5 +74,20 @@
 
 ;; (add-hook 'gptel-post-stream-hook 'gptel-auto-scroll)
 (add-hook 'gptel-post-response-functions 'gptel-end-of-response)
+
+
+
+(require 'claude-code-ide)
+(claude-code-ide-emacs-tools-setup)
+(setq claude-code-ide-terminal-backend 'ghostel
+      claude-code-ide-use-side-window nil
+      claude-code-ide-no-flicker t
+      claude-code-ide-window-width 80
+      claude-code-ide-focus-claude-after-ediff t
+      claude-code-ide-switch-tab-on-ediff nil
+      claude-code-ide-show-claude-window-in-ediff t
+      claude-code-ide-window-side 'left)
+
+(global-set-key (kbd "C-c o c") 'claude-code-ide-menu)
 
 (provide 'init-ai)

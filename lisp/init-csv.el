@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (require 'csv-mode)
 (require 'color)
 
@@ -23,4 +25,4 @@
 ;; (add-hook 'csv-mode-hook '(lambda () (interactive) (toggle-truncate-lines nil)))
 
 
-(provide 'init-csv-mode)
+(provide 'init-csv)

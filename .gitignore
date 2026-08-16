@@ -5,3 +5,4 @@
 /.agent-shell/
 custom.el
 *.elc
+/.cache/

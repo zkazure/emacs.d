@@ -1,26 +1,47 @@
-(setq multibyte-syntax-as-symbol t)
-;; (setq-default line-spacing .1)
+;; -*- lexical-binding: t; -*-
+;; 放置一些简单的界面调节
 
-;; 减少闪烁
-(modify-frame-parameters nil '((inhibit-double-buffering . nil)))
+;; Suppress GUI features
+(setq use-file-dialog nil)
+(setq use-dialog-box nil)
 
-(customize-set-variable 'fill-column 80)
-(add-hook 'text-mode-hook (lambda () (progn
-                                       (visual-line-mode 1)
-                                       (visual-wrap-prefix-mode 1))))
+(setq inhibit-splash-screen t)
 
-;; (setq global-display-fill-column-indicator-mode
-;;       '((not help-mode
-;;              eat-mode)
-;;         t))
-;; (add-hook 'after-init-hook #'global-display-fill-column-indicator-mode)
+(setq frame-inhibit-implied-resize t)
+
+(setq-default
+ window-resize-pixelwise t
+ frame-resize-pixelwise t)
+
+(setq scroll-preserve-screen-position t
+      scroll-margin 1
+      scroll-conservatively 101
+      auto-window-vscroll nil
+      fast-but-imprecise-scrolling t
+      )
+
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil))
+      mouse-wheel-progressive-speed nil
+      mouse-wheel-follow-mouse 't)
+
+(when (fboundp 'pixel-scroll-precision-mode)
+  (pixel-scroll-precision-mode 1))
+
+;; avoid rendering cursor in other windows
+(setq-default cursor-in-non-selected-windows nil)
+(setq highlight-nonselected-windows nil)
+
+(add-hook 'after-init-hook 'show-paren-mode)
+
+(when (fboundp 'electric-pair-mode)
+  (add-hook 'after-init-hook 'electric-pair-mode))
+(add-hook 'after-init-hook 'electric-indent-mode)
 
 (when (fboundp 'display-line-numbers-mode)
   (setq-default display-line-numbers-width 3)
   (add-hook 'prog-mode-hook 'display-line-numbers-mode)
   (add-hook 'yaml-mode-hook 'display-line-numbers-mode)
   (add-hook 'yaml-ts-mode-hook 'display-line-numbers-mode)
-  ;; (setq display-line-numbers-type 'relative)
   )
 
 (when (boundp 'display-fill-column-indicator)
@@ -28,20 +49,67 @@
   (setq-default display-fill-column-indicator-character ?┊)
   (add-hook 'prog-mode-hook 'display-fill-column-indicator-mode))
 
-(global-so-long-mode 1)
+(global-hl-line-mode 1)
+(setq hl-line-sticky-flag nil
+      hl-line-overlay-priority -50)
+
+
+(add-hook 'text-mode-hook
+          (lambda () (progn (visual-line-mode 1)
+                       (visual-wrap-prefix-mode 1))))
+(setq word-wrap-by-category t)
+
+
+(require 'breadcrumb)
+(breadcrumb-mode 1)
+
+
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+
+(require 'jinx)
+(add-hook 'emacs-startup-hook #'global-jinx-mode)
+(add-to-list 'jinx-exclude-regexps '(t "\\cc")) ; 拼写检查忽略中文
+
+(keymap-global-set "M-$" #'jinx-correct)
+(keymap-global-set "C-M-$" #'jinx-languages)
+
+(setq jinx-languages "en_GB en_US")
+
+
+
+(require 'visual-fill-column)
+(defun vfc/view-mode (width)
+  "use visual-fill-column to enable a view mode"
+  (interactive)
+  (progn
+    (setq-local visual-fill-column-width width
+                visual-fill-column-center-text t)
+    (visual-fill-column-mode 1)))
+
+
+
+
+(require 'kirigami)
+(global-set-key (kbd "M-o o") #'kirigami-open-fold)     ; Open fold at point
+(global-set-key (kbd "M-o O") #'kirigami-open-fold-rec) ; Open fold recursively
+(global-set-key (kbd "M-o r") #'kirigami-open-folds)    ; Open all folds
+(global-set-key (kbd "M-o c") #'kirigami-close-fold)    ; Close fold at point
+(global-set-key (kbd "M-o m") #'kirigami-close-folds)   ; Close all folds
+(global-set-key (kbd "M-o a") #'kirigami-toggle-fold)   ; Toggle fold at point
+
+
+
+(setq multibyte-syntax-as-symbol t)
 
 (setq next-screen-context-lines 2)
 
 (setq enable-recursive-minibuffers +1)
 (setq cursor-in-non-selected-windows nil)
 
-(setq hl-line-sticky-flag nil
-      hl-line-overlay-priority -50
-      ;; hl-line-range-function (lambda () (cons (line-end-position)
-      ;;                                    (line-beginning-position 2)))
-      )
 
-(global-hl-line-mode 1)
+
 
 (load-theme 'modus-operandi)
 
@@ -60,57 +128,6 @@
                     :height 120
                     :weight 'regular)
 
-(global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
-(setq ibuffer-show-empty-filter-groups t)
-(setq ibuffer-saved-filter-groups
-      `(("default"
-         ;; ("mail" (or
-         ;;          (mode . message-mode)
-         ;;          (mode . notmuch-hello-mode)
-         ;;          (mode . notmuch-search-mode)
-         ;;          (mode . notmuch-message-mode)
-         ;;          (mode . notmuch-show-mode)
-         ;;          (mode . notmuch-tree-mode)
-         ;;          (mode . bbdb-mode)
-         ;;          (mode . mail-mode)
-         ;;          (mode . mu4e-main-mode)
-         ;;          (mode . gnus-group-mode)
-         ;;          (mode . gnus-summary-mode)
-         ;;          (mode . gnus-article-mode)
-         ;;          (name . "^\\..bdb$")))
-         ("org" (or
-                 (mode . org-agenda-mode)
-                 (mode . diary-mode)
-                 (name . "^\\*Calendar\\*$")
-                 (name . "^diary$")
-                 (filename . "Pending/org/")))
-         ("dired" (mode . dired-mode))
-         ("emacs" (or
-                   (name . "^\\*package.*results\\*$")
-                   (name . "^\\*Shell.*Output\\*$")
-                   (name . "^\\*Compile-Log\\*$")
-                   (name . "^\\*Completions\\*$")
-                   (name . "^\\*Backtrace\\*$")
-                   (name . "^\\*dashboard\\*$")
-                   (name . "^\\*Messages\\*$")
-                   (name . "^\\*scratch\\*$")
-                   (name . "^\\*Appointment Alert\\*$")
-                   (name . "^\\*info\\*$")
-                   (name . "^\\*Help\\*$")))
-         )))
-(defun ct/ibuffer-enable-saved-filter-groups ()
-  (ibuffer-switch-to-saved-filter-groups "default"))
 
-(add-hook 'ibuffer-mode-hook #'ct/ibuffer-enable-saved-filter-groups)
-(setq ibuffer-formats
-      '((mark modified read-only locked " "
-  	          (name 20 20 :left :elide)
-  	          " "
-  	          (mode 16 16 :left :elide)
-  	          " "
-  	          filename-and-process)
-  	    (mark " "
-  	          (name 16 -1)
-  	          " " filename)))
 
 (provide 'init-ui)

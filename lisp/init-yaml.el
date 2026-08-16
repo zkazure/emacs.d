@@ -5,4 +5,4 @@
           '(lambda ()
              (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
 
-(provide 'init-yaml-mode)
+(provide 'init-yaml)

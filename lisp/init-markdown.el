@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (autoload 'markdown-mode "markdown-mode"
   "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist
@@ -12,4 +14,4 @@
   (define-key markdown-mode-map (kbd "M-p") #'backward-paragraph)
   (define-key markdown-mode-map (kbd "M-n") #'forward-paragraph))
 
-(provide 'init-markdown-mode)
+(provide 'init-markdown)

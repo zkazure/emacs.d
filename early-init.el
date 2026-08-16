@@ -17,17 +17,16 @@
                (cons "melpa" "https://melpa.org/packages/")
                t))
 
-(setq gc-cons-threshold most-positive-fixnum)
+(when (and (fboundp 'startup-redirect-eln-cache)
+           (fboundp 'native-comp-available-p)
+           (native-comp-available-p))
+  (startup-redirect-eln-cache
+   (convert-standard-filename
+    (expand-file-name  "var/eln-cache/" user-emacs-directory))))
+
 (setq gc-cons-percentage 0.6)
 (setq package-enable-at-startup nil)
 (setq package-quickstart nil)
-
-(setq frame-inhibit-implied-resize t)
-
-(when (fboundp 'set-scroll-bar-mode)
-  (set-scroll-bar-mode -1))
-(setq inhibit-splash-screen t)
-(setq use-file-dialog nil)
 
 (setenv "LSP_USE_PLISTS" "true")
 (setq lsp-use-plists t)

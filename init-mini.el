@@ -85,10 +85,6 @@
 (global-set-key (kbd "C-M-s") 'isearch-forward)
 (global-set-key (kbd "C-M-r") 'isearch-backward)
 
-
-(add-hook 'prog-mode-hook #'subword-mode)
-(add-hook 'minibuffer-setup-hook #'subword-mode)
-
 ;; repeat command easily
 (if (fboundp 'repeat-mode)
     (progn
