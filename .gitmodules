@@ -166,9 +166,6 @@
 [submodule "helpful"]
 	path = lib/helpful
 	url = https://github.com/Wilfred/helpful
-[submodule "highlight-matching-tag"]
-	path = lib/highlight-matching-tag
-	url = https://github.com/manateelazycat/highlight-matching-tag.git
 [submodule "highlight-parentheses"]
 	path = lib/highlight-parentheses
 	url = https://git.sr.ht/~tsdh/highlight-parentheses.el
@@ -187,9 +184,6 @@
 [submodule "inheritenv"]
 	path = lib/inheritenv
 	url = https://github.com/purcell/inheritenv
-[submodule "instant-rename-tag"]
-	path = lib/instant-rename-tag
-	url = https://github.com/manateelazycat/instant-rename-tag.git
 [submodule "jinx"]
 	path = lib/jinx
 	url = https://github.com/minad/jinx
