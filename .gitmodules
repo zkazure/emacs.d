@@ -91,9 +91,6 @@
 [submodule "diminish"]
 	path = lib/diminish
 	url = https://github.com/myrjola/diminish.el
-[submodule "dirvish"]
-	path = lib/dirvish
-	url = https://github.com/alexluigit/dirvish
 [submodule "dumb-jump"]
 	path = lib/dumb-jump
 	url = https://github.com/jacktasia/dumb-jump
