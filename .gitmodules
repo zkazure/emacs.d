@@ -133,6 +133,9 @@
 [submodule "forge"]
 	path = lib/forge
 	url = https://github.com/magit/forge
+[submodule "gcmh"]
+	path = lib/gcmh
+	url = https://gitlab.com/koral/gcmh
 [submodule "gdscript-mode"]
 	path = lib/gdscript-mode
 	url = https://github.com/godotengine/emacs-gdscript-mode
