@@ -17,13 +17,12 @@
 (setq dired-kill-when-opening-new-dired-buffer t
       delete-by-moving-to-trash t)
 
-;; (require 'diredfl)
-;; (diredfl-global-mode)
-
-;; (require 'diff-hl-dired)
-;; (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
-
-;; (require 'nerd-icons-dired)
-;; (add-hook 'dired-mode-hook 'nerd-icons-dired-mode)
+(require 'diredfl)
+(diredfl-global-mode)
+(require 'diff-hl-dired)
+(add-hook 'dired-mode-hook 'diff-hl-dired-mode)
+(require 'nerd-icons-dired)
+(add-hook 'dired-mode-hook 'nerd-icons-dired-mode)
+(diminish 'nerd-icons-dired-mode)
 
 (provide 'init-dired)

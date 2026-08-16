@@ -91,6 +91,9 @@
 [submodule "diminish"]
 	path = lib/diminish
 	url = https://github.com/myrjola/diminish.el
+[submodule "diredfl"]
+	path = lib/diredfl
+	url = https://github.com/purcell/diredfl
 [submodule "dumb-jump"]
 	path = lib/dumb-jump
 	url = https://github.com/jacktasia/dumb-jump
@@ -235,6 +238,9 @@
 [submodule "nerd-icons-corfu"]
 	path = lib/nerd-icons-corfu
 	url = https://github.com/LuigiPiucco/nerd-icons-corfu
+[submodule "nerd-icons-dired"]
+	path = lib/nerd-icons-dired
+	url = https://github.com/rainstormstudio/nerd-icons-dired
 [submodule "nerd-icons-speedbar"]
 	path = lib/nerd-icons-speedbar
 	url = https://github.com/Akane-6730/nerd-icons-speedbar.git
