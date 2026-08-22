@@ -28,7 +28,8 @@
       org-use-fast-todo-selection nil
       org-edit-src-content-indentation 0
       )
-(diminish 'org-indent-mode)
+(with-eval-after-load 'org-indent-mode
+  (diminish 'org-indent-mode))
 
 (custom-set-faces
  '(org-document-title ((t (:height 1.1 :weight bold))))

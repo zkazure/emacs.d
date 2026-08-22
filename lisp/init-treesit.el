@@ -101,6 +101,8 @@
                               (treesit-fold-mode 1)
                               ;; (treesit-fold-indicators-mode 1)
                               (treesit-fold-line-comment-mode 1))))
+(with-eval-after-load 'treesit-fold
+  (diminish 'treesit-fold-mode))
 (setq treesit-fold-line-count-show t)  ; Show line count in folded regions
 ;; (setq treesit-fold-line-count-format " <%d lines> ")
 ;; (add-hook 'org-mode-hook (lambda () (setq treesit-fold-indicators-fringe 'right-fringe)))
