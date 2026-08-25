@@ -151,9 +151,6 @@
 [submodule "go-mode"]
 	path = lib/go-mode
 	url = https://github.com/dominikh/go-mode.el
-[submodule "god-mode"]
-	path = lib/god-mode
-	url = https://github.com/emacsorphanage/god-mode
 [submodule "gptel"]
 	path = lib/gptel
 	url = https://github.com/karthink/gptel
