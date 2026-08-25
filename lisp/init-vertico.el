@@ -31,6 +31,10 @@
 (vertico-indexed-mode)
 
 
+(require 'vertico-posframe)
+(vertico-posframe-mode 1)
+(setq vertico-posframe-poshandler #'posframe-poshandler-frame-top-center)
+
 ;; icons
 (require 'marginalia)
 (require 'nerd-icons-completion)
