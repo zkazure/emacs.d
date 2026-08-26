@@ -171,5 +171,9 @@
     "\e\\")))
  (setq interprogram-cut-function #'my-osc52-copy)
 
+
+(global-set-key (kbd "M-/") #'dabbrev-expand)
+(setq dabbrev-abbrev-char-regexp "[A-Za-z0-9_-]")
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Init-mini.el ends here

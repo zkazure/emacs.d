@@ -63,6 +63,8 @@
 (set-keyboard-coding-system 'utf-8)
 (set-language-environment   'utf-8)
 
+(setq dabbrev-abbrev-char-regexp "[A-Za-z0-9_-]")
+
 (require 'envrc)
 (envrc-global-mode)
 (diminish 'envrc-mode)
