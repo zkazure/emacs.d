@@ -1,11 +1,11 @@
 ;; -*- lexical-binding: t; -*-
 
-
-
 ;;; Org
 (require 'org)
 (require 'ox-pandoc)
 (require 'ox-gfm)
+
+(define-key org-mode-map (kbd "C-,") nil)
 
 (setq org-directory (expand-file-name "~/Documents/roam/"))
 (setq org-main-directory (expand-file-name "main/" org-directory))

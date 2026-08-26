@@ -56,7 +56,9 @@
 
 (require 'olivetti)
 (setq olivetti-style 'fancy
-      olivetti-margin-width 5)
+      olivetti-margin-width 5
+      olivetti-body-width 90
+      )
 (add-hook 'olivetti-mode-hook
           (lambda ()
             (if olivetti-mode
