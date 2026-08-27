@@ -169,5 +169,9 @@
         org-indent-mode-turns-on-hiding-stars nil
         ))
 
+(setq default-directory "/sdcard/Documents/roam/")
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (dired default-directory)))
 
 ;;; init.el ends here
