@@ -76,7 +76,6 @@
 (global-set-key (kbd "M-p") #'backward-paragraph)
 (global-set-key (kbd "M-n") #'forward-paragraph)
 
-(global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "M-z") 'zap-up-to-char)
 
@@ -168,7 +167,6 @@
 
 
 ;; dabbrev
-(global-set-key (kbd "M-/") #'dabbrev-expand)
 (setq dabbrev-abbrev-char-regexp "[A-Za-z0-9_-]"
       dabbrev-case-fold-search nil)
 
