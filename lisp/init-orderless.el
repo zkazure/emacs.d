@@ -1,7 +1,10 @@
 ;; -*- lexical-binding: t; -*-
 
-(require 'orderless)
+(require 'cape)
+(add-to-list 'completion-at-point-functions #'cape-file)
 
+
+(require 'orderless)
 (setq orderless-component-separator #'orderless-escapable-split-on-space
       completion-styles '(orderless basic)
       completion-category-defaults nil

@@ -63,7 +63,9 @@
 (set-keyboard-coding-system 'utf-8)
 (set-language-environment   'utf-8)
 
-(setq dabbrev-abbrev-char-regexp "[A-Za-z0-9_-]")
+;; dabbrev
+(setq dabbrev-abbrev-char-regexp "[A-Za-z0-9_-]"
+      dabbrev-case-fold-search nil)
 
 (require 'envrc)
 (envrc-global-mode)

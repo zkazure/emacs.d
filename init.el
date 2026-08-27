@@ -42,9 +42,8 @@
 (require 'init-eglot)
 (require 'init-vertico)
 (require 'init-corfu)
-(require 'init-flymake)
 (require 'init-orderless)
-(require 'init-cape)
+(require 'init-flymake)
 (require 'init-embark)
 
 (require 'init-org)

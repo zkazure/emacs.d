@@ -172,8 +172,11 @@
  (setq interprogram-cut-function #'my-osc52-copy)
 
 
+;; dabbrev
 (global-set-key (kbd "M-/") #'dabbrev-expand)
-(setq dabbrev-abbrev-char-regexp "[A-Za-z0-9_-]")
+(setq dabbrev-abbrev-char-regexp "[A-Za-z0-9_-]"
+      dabbrev-case-fold-search nil)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Init-mini.el ends here

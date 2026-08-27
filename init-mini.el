@@ -147,5 +147,8 @@
   (setq backup-directory-alist `(("." . ,(concat user-emacs-directory
                                                  "backups")))))
 
+(setq dabbrev-abbrev-char-regexp "[A-Za-z0-9_-]"
+      dabbrev-case-fold-search nil)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Init-mini.el ends here
