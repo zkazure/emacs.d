@@ -7,6 +7,10 @@
 
 (define-key org-mode-map (kbd "C-,") nil)
 
+(define-key org-mode-map (kbd "C-a") #'beginning-of-line)
+(setq org-special-ctrl-a t)
+(define-key org-mode-map (kbd "M-m") #'org-beginning-of-line)
+
 (setq org-directory (expand-file-name "~/Documents/roam/"))
 (setq org-main-directory (expand-file-name "main/" org-directory))
 
