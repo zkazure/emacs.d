@@ -16,9 +16,6 @@
 (put 'downcase-region 'disabled nil)
 
 
-(add-hook 'after-init-hook 'delete-selection-mode)
-
-
 (require 'avy)
 (defun my-call-with-input-method-off (command)
   "Temporarily disable current input method, then call COMMAND interactively."
