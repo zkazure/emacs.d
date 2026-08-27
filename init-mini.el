@@ -20,7 +20,6 @@
 (setq adaptive-fill-regexp "[ t]+|[ t]*([0-9]+.|*+)[ t]*")
 (setq adaptive-fill-first-line-regexp "^* *$")
 (setq delete-by-moving-to-trash t)         ; Deleting files go to OS's trash folder
-(setq make-backup-files nil)               ; Forbide to make backup files
 (setq auto-save-default nil)               ; Disable auto save
 (setq set-mark-command-repeat-pop t)       ; Repeating C-SPC after popping mark pops it again
 
@@ -133,7 +132,6 @@
       require-final-newline t
       visible-bell t
       load-prefer-newer t
-      backup-by-copying t
       frame-inhibit-implied-resize t
       read-file-name-completion-ignore-case t
       read-buffer-completion-ignore-case t
@@ -143,9 +141,6 @@
 (when (file-exists-p custom-file)
   (load-file custom-file))
 
-(unless backup-directory-alist
-  (setq backup-directory-alist `(("." . ,(concat user-emacs-directory
-                                                 "backups")))))
 
 (setq dabbrev-abbrev-char-regexp "[A-Za-z0-9_-]"
       dabbrev-case-fold-search nil)

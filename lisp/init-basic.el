@@ -10,7 +10,6 @@
 
 (setq auth-source '("~/.authinfo.gpg"))
 
-(setq make-backup-files nil)
 (setq create-lockfiles nil)
 
 ;; if auto yas-indent will call indent-according-to-mode which use

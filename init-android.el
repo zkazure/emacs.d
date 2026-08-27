@@ -97,29 +97,19 @@
 (setq global-auto-revert-non-file-buffers t)
 
 
-(let ((backup-dir
-       (expand-file-name "backup/" user-emacs-directory))
-      (autosave-dir
+(let ((autosave-dir
        (expand-file-name "auto-save/" user-emacs-directory)))
 
-  (make-directory backup-dir t)
   (make-directory autosave-dir t)
-
-  (setq backup-directory-alist
-        `(("." . ,backup-dir)))
 
   (setq auto-save-file-name-transforms
         `((".*" ,autosave-dir t))))
 
-(setq make-backup-files nil
-      auto-save-default nil
+(setq auto-save-default nil
       version-control t
       delete-old-versions t
       kept-new-versions 5
       kept-old-versions 2)
-
-
-
 
 ;;; ------------------------------------------------------------
 ;;; 16. Package.el
