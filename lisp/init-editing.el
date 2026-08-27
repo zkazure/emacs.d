@@ -70,6 +70,7 @@
 
 
 (require 'multiple-cursors)
+(global-set-key (kbd "C-c m m") #'mc/mark-all-dwim)
 (global-set-key (kbd "C-c m l") #'mc/edit-lines)
 (global-set-key (kbd "C-c m e") #'mc/edit-ends-of-lines)
 (global-set-key (kbd "C-c m a") #'mc/edit-beginnings-of-lines)
