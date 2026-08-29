@@ -10,7 +10,6 @@
         (:name "flagged" :query "tag:flagged" :key "f" :search-type tree)
         (:name "sent" :query "tag:sent" :key "s" :search-type tree)
         ;; (:name "drafts" :query "tag:draft" :key "d" :search-type tree)
-        (:name "org-mode-devel" :query "tag:org-mode-devel" :key "o" :search-type tree)
         (:name "list" :query "tag:list" :key "l" :search-type tree)
         (:name "all mail" :query "*" :key "a" :search-type tree)
         ))
