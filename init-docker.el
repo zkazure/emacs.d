@@ -95,5 +95,25 @@
   :custom
   (compilation-scroll-output t))
 
+(use-package cuda-mode
+  :ensure t
+  :mode (("\\.cu\\'"  . cuda-mode)
+         ("\\.cuh\\'" . cuda-mode)))
+
+(use-package dumb-jump
+  :ensure t
+  :config
+  (add-to-list 'dumb-jump-language-file-exts
+               '(:language "c++" :ext "cu"
+                 :agtype nil :rgtype "cuda"))
+  (add-to-list 'dumb-jump-language-file-exts
+               '(:language "c++" :ext "cuh"
+                 :agtype nil :rgtype "cuda"))
+
+  (setq dumb-jump-prefer-searcher 'rg)
+
+  (add-hook 'xref-backend-functions
+            #'dumb-jump-xref-activate))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Init-mini.el ends here
