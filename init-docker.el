@@ -88,5 +88,12 @@
       dabbrev-case-fold-search nil)
 
 
+(use-package ansi-color
+  :ensure nil
+  :hook
+  (compilation-filter-hook . ansi-color-compilation-filter)
+  :custom
+  (compilation-scroll-output t))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Init-mini.el ends here
