@@ -76,6 +76,9 @@
 [submodule "csv-mode"]
 	path = lib/csv-mode
 	url = git@github.com:emacsmirror/csv-mode.git
+[submodule "cuda-mode"]
+	path = lib/cuda-mode
+	url = https://github.com/chachi/cuda-mode
 [submodule "dash"]
 	path = lib/dash
 	url = https://github.com/magnars/dash.el.git
