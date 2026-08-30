@@ -115,5 +115,6 @@
   (add-hook 'xref-backend-functions
             #'dumb-jump-xref-activate))
 
+(global-subword-mode 1)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Init-mini.el ends here
