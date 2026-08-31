@@ -22,7 +22,7 @@
               indent-tabs-mode nil)
 
 ;; UI
-(load-theme 'wombat t)
+(load-theme 'leuven-dark t)
 (set-face-attribute 'default nil :height 120)
 
 (menu-bar-mode -1)
@@ -116,5 +116,6 @@
             #'dumb-jump-xref-activate))
 
 (global-subword-mode 1)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Init-mini.el ends here
