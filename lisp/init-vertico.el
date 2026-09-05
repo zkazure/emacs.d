@@ -26,14 +26,46 @@
 
 (setq vertico-sort-function 'vertico-sort-history-length-alpha)
 
-(vertico-multiform-mode)
-
 (vertico-indexed-mode)
 
 
 (require 'vertico-posframe)
-(vertico-posframe-mode 1)
-(setq vertico-posframe-poshandler #'posframe-poshandler-frame-top-center)
+(defun my-vertico-posframe-truncate-line (line)
+  "Truncate Vertico candidate LINE without affecting minibuffer input."
+  (let* ((width (- vertico-posframe-width 2))
+         ;; Vertico 的每个候选末尾自带 \n，
+         ;; 单独保存它，避免破坏候选的行结构和 face。
+         (newline (if (string-suffix-p "\n" line)
+                      (substring line -1)
+                    ""))
+         (body (if (string-suffix-p "\n" line)
+                   (substring line 0 -1)
+                 line)))
+    (concat
+     (truncate-string-to-width body width 0 nil "…")
+     newline)))
+
+(defun my-vertico-posframe-truncate-candidates (lines)
+  "Truncate candidate lines when using wrapping vertico-posframe."
+  (if (and vertico-posframe-mode
+           (not vertico-posframe-truncate-lines)
+           (numberp vertico-posframe-width))
+      (mapcar #'my-vertico-posframe-truncate-line lines)
+    lines))
+
+(advice-add 'vertico--arrange-candidates
+            :filter-return
+            #'my-vertico-posframe-truncate-candidates)
+
+(setq vertico-posframe-poshandler #'posframe-poshandler-frame-top-center
+      vertico-posframe-truncate-lines nil
+      )
+
+(setq vertico-multiform-categories
+      '((t posframe)))
+(vertico-multiform-mode)
+
+
 
 ;; icons
 (require 'marginalia)
