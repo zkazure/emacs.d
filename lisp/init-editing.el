@@ -117,6 +117,8 @@
 ;; if you use multiple-cursors, this is for you:
 (with-eval-after-load 'visual-regexp
   (define-key global-map (kbd "C-c M") 'vr/mc-mark))
+(require 'visual-regexp-rx)
+(setq vr/engine 'rx)
 
 
 (require 'colorful-mode)

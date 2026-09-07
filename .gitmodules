@@ -400,6 +400,9 @@
 [submodule "visual-regexp"]
 	path = lib/visual-regexp
 	url = https://github.com/benma/visual-regexp.el
+[submodule "visual-regexp-rx"]
+	path = lib/visual-regexp-rx
+	url = git@github.com:zkazure/visual-regexp-rx.el.git
 [submodule "vundo"]
 	path = lib/vundo
 	url = https://github.com/casouri/vundo
