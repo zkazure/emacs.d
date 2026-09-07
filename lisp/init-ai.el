@@ -19,20 +19,20 @@
 ;; :stream t                           ;for streaming responses
 ;; :key "your-api-key")               ;can be a function that returns the key
 ;; OPTIONAL configuration
-;; (setq gptel-model   'deepseek-v4-flash
-;;       gptel-backend (gptel-make-deepseek "DeepSeek"
-;;                       :stream t
-;;                       :key (lambda ()
-;;                              (let* ((results (auth-source-search :host "api.deepseek.com" :user "apikey"))
-;;                                     (first-match (car results))
-;;                                     (secret-value (plist-get first-match :secret))
-;;                                     (actual-key (if (functionp secret-value)
-;;                                                     (funcall secret-value)
-;;                                                   secret-value)))
-;;                                actual-key))))
-;; FOR OpenAI chatgpt
-(setq gptel-model 'gpt-5.6-luna
-      gptel-backend (gptel-make-openai-oauth "OpenAI-sub"))
+(setq gptel-model   'deepseek-v4-flash
+      gptel-backend (gptel-make-deepseek "DeepSeek"
+                      :stream t
+                      :key (lambda ()
+                             (let* ((results (auth-source-search :host "api.deepseek.com" :user "apikey"))
+                                    (first-match (car results))
+                                    (secret-value (plist-get first-match :secret))
+                                    (actual-key (if (functionp secret-value)
+                                                    (funcall secret-value)
+                                                  secret-value)))
+                               actual-key))))
+;; ;; FOR OpenAI chatgpt
+;; (setq gptel-model 'gpt-5.6-luna
+;;       gptel-backend (gptel-make-openai-oauth "OpenAI-sub"))
 
 
 ;; (gptel-make-gh-copilot "Copilot")
