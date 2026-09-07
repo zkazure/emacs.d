@@ -1,8 +1,10 @@
-/elpa/
-/eln-cache/
-/var/
-/etc/
-/.agent-shell/
+elpa/
+eln-cache/
+var/
+etc/
+auto-save-list/
+.agent-shell/
 custom.el
 *.elc
-/.cache/
+.cache/
+.cask/
