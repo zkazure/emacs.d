@@ -192,7 +192,7 @@
 	url = https://github.com/jamescherti/kirigami.el.git
 [submodule "leetcode"]
 	path = lib/leetcode
-	url = https://github.com/kaiwk/leetcode.el
+	url = https://github.com/zkazure/leetcode.el.git
 [submodule "link-hint"]
 	path = lib/link-hint
 	url = https://github.com/noctuid/link-hint.el
