@@ -388,6 +388,9 @@
 [submodule "unfill"]
 	path = lib/unfill
 	url = https://github.com/purcell/unfill
+[submodule "valign"]
+	path = lib/valign
+	url = https://github.com/casouri/valign
 [submodule "vertico"]
 	path = lib/vertico
 	url = https://github.com/minad/vertico

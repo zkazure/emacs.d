@@ -234,6 +234,13 @@
 
 
 
+;;; Table
+(require 'valign)
+(setq valign-fancy-bar t)
+(add-hook 'org-mode-hook #'valign-mode)
+
+
+
 ;;; Roam
 (setq org-roam-directory org-directory)
 (setq org-roam-main-directory org-main-directory)
