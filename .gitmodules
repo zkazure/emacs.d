@@ -394,9 +394,11 @@
 [submodule "vertico"]
 	path = lib/vertico
 	url = https://github.com/minad/vertico
-[submodule "vertico-posframe"]
-	path = lib/vertico-posframe
-	url = https://github.com/tumashu/vertico-posframe
+    load-path = .
+    load-path = extensions
+[submodule "vertico-buffer-frame"]
+	path = lib/vertico-buffer-frame
+	url = https://github.com/kn66/vertico-buffer-frame.git
 [submodule "visual-fill-column"]
 	path = lib/visual-fill-column
 	url = https://codeberg.org/joostkremers/visual-fill-column
