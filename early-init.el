@@ -2,21 +2,6 @@
 
 (setq load-prefer-newer t)
 
-(add-to-list 'load-path
-             (expand-file-name
-              "lib/auto-compile"
-              (file-name-directory (or load-file-name buffer-file-name))))
-(require 'auto-compile)
-(auto-compile-on-load-mode)
-(auto-compile-on-save-mode)
-
-(setq package-enable-at-startup nil)
-
-(with-eval-after-load 'package
-  (add-to-list 'package-archives
-               (cons "melpa" "https://melpa.org/packages/")
-               t))
-
 (when (and (fboundp 'startup-redirect-eln-cache)
            (fboundp 'native-comp-available-p)
            (native-comp-available-p))
@@ -25,8 +10,11 @@
     (expand-file-name  "var/eln-cache/" user-emacs-directory))))
 
 (setq gc-cons-percentage 0.6)
-(setq package-enable-at-startup nil)
+(setq package-enable-at-startup t)
 (setq package-quickstart nil)
+(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+                         ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+                         ("melpa" . "https://melpa.org/packages/")))
 
 (setenv "LSP_USE_PLISTS" "true")
 (setq lsp-use-plists t)

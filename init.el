@@ -29,7 +29,7 @@
 (eval-and-compile
   (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory)))
 
-(require 'init-borg)
+(require 'init-core)
 
 (require 'init-basic)
 (require 'init-ui)

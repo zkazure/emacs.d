@@ -1,10 +1,5 @@
 ;;; -*- lexical-binding: t -*-
 
-(eval-and-compile ; `borg'
-  (add-to-list 'load-path (expand-file-name "lib/borg" user-emacs-directory))
-  (require 'borg)
-  (borg-initialize))
-
 (eval-and-compile ; `use-package'
   (setopt use-package-enable-imenu-support t)
   (setopt use-package-verbose t)
@@ -23,7 +18,9 @@
   (setq auto-compile-mode-line-counter            t)
   (setq auto-compile-source-recreate-deletes-dest t)
   (setq auto-compile-toggle-deletes-nonlib-dest   t)
-  (setq auto-compile-update-autoloads             t))
+  (setq auto-compile-update-autoloads             t)
+  (auto-compile-on-load-mode)
+  (auto-compile-on-save-mode))
 
 (use-package epkg
   :defer t
@@ -171,4 +168,4 @@
     (when (file-exists-p file)
       (load file))))
 
-(provide 'init-borg)
+(provide 'init-core)

@@ -6,5 +6,6 @@ auto-save-list/
 .agent-shell/
 custom.el
 *.elc
+plan.md
 .cache/
 .cask/

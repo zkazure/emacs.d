@@ -136,7 +136,7 @@
 ;; highlight-parentheses 只会渲染设置的数量
 ;; 1. 显式使用 "unspecified"，告诉 Emacs 的 Overlay：
 ;; “我的前景色是透明的，请直接透出底层的 rainbow-delimiters 颜色”
-(setq highlight-parentheses-colors '(unspecified unspecifieD))
+(setq highlight-parentheses-colors '(unspecified unspecified))
 
 ;; 2. 指定背景色列表，仅提供两个颜色，插件因此只会高亮最近的两层
 (setq highlight-parentheses-background-colors

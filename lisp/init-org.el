@@ -246,8 +246,10 @@
 (setq org-roam-main-directory org-main-directory)
 
 (require 'org-roam)
-(add-to-list 'load-path
-             (expand-file-name "lib/org-roam/extensions/" user-emacs-directory))
+(let ((extensions (expand-file-name "extensions/"
+                                    (file-name-directory (locate-library "org-roam")))))
+  (when (file-directory-p extensions)
+    (add-to-list 'load-path extensions)))
 ;; (require 'org-roam-dailies)
 (require 'org-roam-export)
 (require 'org-roam-graph)

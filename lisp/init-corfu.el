@@ -1,8 +1,10 @@
 ;; -*- lexical-binding: t; -*-
 
 (require 'corfu)
-(add-to-list 'load-path
-             (expand-file-name "lib/corfu/extensions/" user-emacs-directory))
+(let ((extensions (expand-file-name "extensions/"
+                                    (file-name-directory (locate-library "corfu")))))
+  (when (file-directory-p extensions)
+    (add-to-list 'load-path extensions)))
 ;; (require 'corfu-echo)
 ;; (require 'corfu-history)
 (require 'corfu-info)
