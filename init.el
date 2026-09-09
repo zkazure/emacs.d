@@ -54,7 +54,6 @@
 (require 'init-editing)
 (require 'init-ime)
 (require 'init-terminal)
-(require 'init-email)
 (require 'init-compile)
 (require 'init-gdb)
 (require 'init-ai)
