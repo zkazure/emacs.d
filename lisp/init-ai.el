@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (require 'gptel)
 (require 'gptel-magit)
 ;; (gptel-make-ollama "Ollama"             ;Any name of your choosing

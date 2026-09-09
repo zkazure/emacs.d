@@ -1,4 +1,5 @@
-;; Load path
+;; Load path  -*- lexical-binding: t; -*-
+
 ;; (push (expand-file-name "site-lisp" user-emacs-directory) load-path)
 (push (expand-file-name "lisp" user-emacs-directory) load-path)
 

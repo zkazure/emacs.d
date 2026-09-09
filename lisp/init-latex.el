@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (require 'auctex)
 
 (setq TeX-auto-save t)
