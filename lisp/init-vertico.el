@@ -34,7 +34,8 @@
 
 (require-package 'vertico-buffer-frame "https://github.com/kn66/vertico-buffer-frame.git")
 (require 'vertico-buffer-frame)
-(setq vertico-buffer-frame-auto-width t)
+(setq vertico-buffer-frame-auto-width t
+      vertico-buffer-frame-consult-preview nil)
 (vertico-buffer-frame-mode 1)
 
 
