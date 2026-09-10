@@ -1,9 +1,13 @@
 ;; -*- lexical-binding: t; -*-
 
 ;;; Org
+(require-package 'org)
+(require-package 'ox-pandoc "https://github.com/a-fent/ox-pandoc")
+(require-package 'ox-gfm "https://github.com/larstvei/ox-gfm")
 (require 'org)
-(require 'ox-pandoc)
-(require 'ox-gfm)
+(with-eval-after-load 'ox
+  (require 'ox-pandoc)
+  (require 'ox-gfm))
 
 (define-key org-mode-map (kbd "C-,") nil)
 
@@ -72,6 +76,7 @@
         ("z" . "src zig")
         ))
 
+(require-package 'org-count-words "https://github.com/zkazure/org-count-words.git")
 (require 'org-count-words)
 ;; (add-hook 'org-mode-hook #'org-count-words-mode)
 ;; (setq org-count-words-mode-line-format
@@ -79,6 +84,7 @@
 ;;         " WC:%s(R:%s)"))
 
 
+(require-package 'org-appear "https://github.com/awth13/org-appear")
 (require 'org-appear)
 (setq org-hide-emphasis-markers nil
       org-appear-autolinks t
@@ -121,6 +127,7 @@
 (customize-set-variable 'org-agenda-current-time-string "ᐊ┈┈┈┈┈┈┈┈ now")
 
 
+(require-package 'org-super-agenda "https://github.com/alphapapa/org-super-agenda")
 (require 'org-super-agenda)
 (org-super-agenda-mode 1)
 (add-to-list
@@ -235,6 +242,7 @@
 
 
 ;;; Table
+(require-package 'valign "https://github.com/casouri/valign")
 (require 'valign)
 (setq valign-fancy-bar t)
 (add-hook 'org-mode-hook #'valign-mode)
@@ -245,6 +253,7 @@
 (setq org-roam-directory org-directory)
 (setq org-roam-main-directory org-main-directory)
 
+(require-package 'org-roam "https://github.com/org-roam/org-roam")
 (require 'org-roam)
 (let ((extensions (expand-file-name "extensions/"
                                     (file-name-directory (locate-library "org-roam")))))
@@ -499,7 +508,9 @@
 
 
 ;;; Org-roam-ui
+(require-package 'org-roam-ui "https://github.com/org-roam/org-roam-ui")
 (require 'org-roam-ui)
+(require-package 'websocket "https://github.com/ahyatt/emacs-websocket")
 (require 'websocket)
 
 (setq org-roam-ui-open-on-start nil
@@ -512,6 +523,7 @@
 
 
 ;;; Ebib
+(require-package 'ebib "https://github.com/joostkremers/ebib.git")
 (require 'ebib)
 (global-set-key (kbd "C-c o e") 'ebib)
 ;; citekey formula: auth.lower + year + shorttitle(2,2).lower
@@ -525,7 +537,10 @@
 
 
 ;;; Citar
+(require-package 'citar "https://github.com/emacs-citar/citar")
 (require 'citar)
+(require-package 'nerd-icons "https://github.com/rainstormstudio/nerd-icons.el")
+(require 'nerd-icons)
 ;; basic
 (setq citar-bibliography
       (list (expand-file-name "references.bib" org-directory)))
@@ -590,6 +605,7 @@
             citar-indicator-notes-icons
             citar-indicator-links-icons))
 
+(require-package 'citar-org-roam "https://github.com/emacs-citar/citar-org-roam")
 (require 'citar-org-roam)
 (citar-org-roam-mode 1)
 (diminish 'citar-org-roam-mode)
@@ -672,6 +688,7 @@
 (setq org-format-latex-options
       `(:foreground default :background default :scale ,my/latex-preview-scale :html-foreground "Black" :html-background "Transparent" :html-scale ,my/latex-preview-scale :matchers ("begin" "$1" "$" "$$" "\\(" "\\["))) ;; 增大公式预览的图片大小
 
+(require-package 'org-fragtog "https://github.com/io12/org-fragtog")
 (require 'org-fragtog)
 (add-hook 'org-mode-hook 'org-fragtog-mode)
 (setq org-fragtog-preview-delay 0.2)
@@ -679,6 +696,7 @@
 
 
 ;;; ox-hugo
+(require-package 'ox-hugo "https://github.com/kaushalmodi/ox-hugo")
 (require 'ox-hugo)
 (defun my/org-roam-export-hugo-if-blog ()
   "如果当前 Org 文件包含 'blog' 标签且不包含 'draft' 标签，则在保存时自动导出为 Hugo Markdown。"
@@ -714,6 +732,7 @@
 
 
 ;;; Transclusion
+(require-package 'org-transclusion "https://github.com/nobiot/org-transclusion")
 (require 'org-transclusion)
 
 ;; (define-key global-map (kbd "<f12>") #'org-transclusion-add)

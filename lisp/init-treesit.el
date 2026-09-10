@@ -96,6 +96,7 @@
 
 
 
+(require-package 'treesit-fold "https://github.com/emacs-tree-sitter/treesit-fold")
 (require 'treesit-fold)
 (add-hook 'prog-mode-hook (lambda ()
                             (when (and (fboundp 'treesit-parser-list)

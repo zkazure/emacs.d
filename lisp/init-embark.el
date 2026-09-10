@@ -1,6 +1,10 @@
 ;; -*- lexical-binding: t; -*-
 
+(require-package 'embark "https://github.com/oantolin/embark")
 (require 'embark)
+;; The VC checkout includes this library; archive installs split it out.
+(unless (locate-library "embark-consult")
+  (require-package 'embark-consult :archive))
 (require 'embark-consult)
 
 (global-set-key (kbd "C-.") #'embark-act)

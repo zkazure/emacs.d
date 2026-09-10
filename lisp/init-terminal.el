@@ -2,6 +2,7 @@
 
 (xterm-mouse-mode 1)
 
+(require-package 'ghostel '(:url "https://github.com/dakra/ghostel.git" :lisp-dir "lisp"))
 (require 'ghostel)
 (require 'ghostel-ime)
 

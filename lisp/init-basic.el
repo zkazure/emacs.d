@@ -1,6 +1,8 @@
 ;;; -*- lexical-binding: t -*-
 
+(require-package 'no-littering "https://github.com/emacscollective/no-littering")
 (require 'no-littering)
+(require-package 'diminish "https://github.com/myrjola/diminish.el")
 (require 'diminish)
 
 (with-eval-after-load 'outline
@@ -8,7 +10,7 @@
 (with-eval-after-load 'reveal
   (diminish 'reveal-mode))
 
-(setq auth-source '("~/.authinfo.gpg"))
+(setq auth-sources '("~/.authinfo.gpg"))
 
 (setq create-lockfiles nil)
 
@@ -28,6 +30,7 @@
 ;; Adjust garbage collection threshold for early startup (see use of gcmh below)
 (setq gc-cons-threshold (* 128 1024 1024))
 
+(require-package 'gcmh "https://gitlab.com/koral/gcmh")
 (require 'gcmh)
 (setq gcmh-high-cons-threshold (* 128 1024 1024))
 (gcmh-mode)
@@ -66,6 +69,7 @@
 (setq dabbrev-abbrev-char-regexp "[A-Za-z0-9_-]"
       dabbrev-case-fold-search nil)
 
+(require-package 'envrc "https://github.com/purcell/envrc")
 (require 'envrc)
 (envrc-global-mode)
 (diminish 'envrc-mode)
@@ -98,6 +102,7 @@
 (require 'which-key)
 (which-key-mode)
 (diminish 'which-key-mode)
+(require-package 'which-key-posframe "https://github.com/emacsorphanage/which-key-posframe")
 (require 'which-key-posframe)
 (which-key-posframe-mode)
 
@@ -106,12 +111,12 @@
     (progn
       (add-hook 'after-init-hook 'repeat-mode)
       (define-key undo-repeat-map (kbd "U") 'undo-redo)))
-(define-key undo-repeat-map (kbd "U") 'undo-redo)
 ;; be able to C-SPC to keep jump back to last position
 ;; instead of C-u C-SPC every time
 (setq set-mark-command-repeat-pop t)
 
 
+(require-package 'projectile "https://github.com/bbatsov/projectile")
 (require 'projectile)
 (projectile-mode +1)
 (diminish 'projectile-mode)
@@ -120,6 +125,7 @@
 
 
 
+(require-package 'dumb-jump "https://github.com/jacktasia/dumb-jump")
 (require 'dumb-jump)
 (setq dumb-jump-prefer-searcher 'rg
       xref-show-definitions-function #'consult-xref)
@@ -127,7 +133,13 @@
 
 
 
-(require 'helpful)
+(require-package 'helpful "https://github.com/Wilfred/helpful")
+(autoload 'helpful-callable "helpful" nil t)
+(autoload 'helpful-variable "helpful" nil t)
+(autoload 'helpful-key "helpful" nil t)
+(autoload 'helpful-command "helpful" nil t)
+(autoload 'helpful-at-point "helpful" nil t)
+(autoload 'helpful-function "helpful" nil t)
 ;; Note that the built-in `describe-function' includes both functions
 ;; and macros. `helpful-function' is functions only, so we provide
 ;; `helpful-callable' as a drop-in replacement.

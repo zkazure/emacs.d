@@ -1,5 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
+;; Use the archive build, including generated AUCTeX files.
+(require-package 'auctex :archive)
 (require 'auctex)
 
 (setq TeX-auto-save t)
@@ -22,6 +24,7 @@
 
 (add-hook 'latex-mode-hook 'TeX-fold-mode)
 
+(require-package 'cdlatex "https://github.com/cdominik/cdlatex")
 (require 'cdlatex)
 
 (add-hook 'latex-mode-hook 'turn-on-cdlatex)
@@ -64,7 +67,6 @@
                                   calc-angle-mode rad)))))))
 
 (require 'org-table)
-(require 'cdlatex)
 
 ;; 绑定 orgtbl-mode-map 中的 <tab> 和 TAB 键
 (eval-after-load 'org-table

@@ -1,5 +1,6 @@
 ;; -*- lexical-binding: t; -*-
 
+(require-package 'consult "https://github.com/minad/consult")
 (require 'consult)
 
 (with-eval-after-load 'consult

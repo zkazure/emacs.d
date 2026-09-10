@@ -1,5 +1,6 @@
 ;; -*- lexical-binding: t; -*-
 
+(require-package 'rust-mode "https://github.com/rust-lang/rust-mode")
 (require 'rust-mode)
 (autoload 'rust-mode "rust-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))

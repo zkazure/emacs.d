@@ -29,6 +29,7 @@
 (eval-and-compile
   (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory)))
 
+(require 'init-elpa)
 (require 'init-core)
 
 (require 'init-basic)

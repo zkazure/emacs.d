@@ -1,5 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
+;; Use the archive distribution; no VC recipe is configured here.
+(require-package 'csv-mode :archive)
 (require 'csv-mode)
 (require 'color)
 

@@ -60,14 +60,18 @@
 (setq word-wrap-by-category t)
 
 
+;; Use the archive distribution; no VC recipe is configured here.
+(require-package 'breadcrumb :archive)
 (require 'breadcrumb)
 (breadcrumb-mode 1)
 
 
+(require-package 'rainbow-delimiters "https://github.com/Fanael/rainbow-delimiters")
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 
+(require-package 'jinx "https://github.com/minad/jinx")
 (require 'jinx)
 (add-hook 'emacs-startup-hook #'global-jinx-mode)
 (diminish 'jinx-mode)
@@ -80,6 +84,7 @@
 
 
 
+(require-package 'visual-fill-column "https://codeberg.org/joostkremers/visual-fill-column")
 (require 'visual-fill-column)
 (defun vfc/view-mode (width)
   "use visual-fill-column to enable a view mode"
@@ -92,6 +97,7 @@
 
 
 
+(require-package 'kirigami "https://github.com/jamescherti/kirigami.el")
 (require 'kirigami)
 (global-set-key (kbd "M-o o") #'kirigami-open-fold)     ; Open fold at point
 (global-set-key (kbd "M-o O") #'kirigami-open-fold-rec) ; Open fold recursively
@@ -107,7 +113,6 @@
 (setq next-screen-context-lines 2)
 
 (setq enable-recursive-minibuffers +1)
-(setq cursor-in-non-selected-windows nil)
 
 
 

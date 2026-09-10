@@ -1,6 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 ;; 放置和编辑文字有关的命令
 
+(require-package 'unfill "https://github.com/purcell/unfill")
 (require 'unfill)
 
 (global-set-key (kbd "C-z") #'repeat)   ; stop C-z from suspending frame.
@@ -16,6 +17,7 @@
 (put 'downcase-region 'disabled nil)
 
 
+(require-package 'avy "https://github.com/abo-abo/avy")
 (require 'avy)
 (defun my-call-with-input-method-off (command)
   "Temporarily disable current input method, then call COMMAND interactively."
@@ -36,10 +38,13 @@
 
 
 
+(require-package 'sudo-edit "https://github.com/nflath/sudo-edit")
 (require 'sudo-edit)
+(require-package 'wgrep "https://github.com/mhayashi1120/Emacs-wgrep")
 (require 'wgrep)
 
 
+(require-package 'symbol-overlay "https://github.com/wolray/symbol-overlay")
 (require 'symbol-overlay)
 (global-set-key (kbd "M-i") 'symbol-overlay-put)
 (global-set-key (kbd "C-c o s") 'symbol-overlay-mode)
@@ -69,6 +74,7 @@
 
 
 
+(require-package 'multiple-cursors "https://github.com/magnars/multiple-cursors.el")
 (require 'multiple-cursors)
 (global-set-key (kbd "C-c m m") #'mc/mark-all-dwim)
 (global-set-key (kbd "C-c m l") #'mc/edit-lines)
@@ -79,6 +85,7 @@
 (global-set-key (kbd "C-c m h") #'mc/mark-all-like-this-dwim)
 
 
+(require-package 'move-text "https://github.com/emacsfodder/move-text")
 (require 'move-text)
 (move-text-default-bindings)
 
@@ -93,6 +100,7 @@
 (advice-add 'move-text-down :after 'indent-region-advice)
 
 
+(require-package 'whole-line-or-region "https://github.com/purcell/whole-line-or-region")
 (require 'whole-line-or-region)
 (whole-line-or-region-global-mode 1)
 (diminish 'whole-line-or-region-local-mode)
@@ -104,10 +112,12 @@
   (define-key whole-line-or-region-local-mode-map [remap comment-dwim] nil))
 
 
+(require-package 'expand-region "https://github.com/magnars/expand-region.el")
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
 
 
+(require-package 'visual-regexp "https://github.com/benma/visual-regexp.el")
 (require 'visual-regexp)
 (define-key global-map (kbd "C-c r") 'vr/replace)
 (define-key global-map (kbd "C-c q") 'vr/query-replace)
@@ -117,10 +127,12 @@
 ;; if you use multiple-cursors, this is for you:
 (with-eval-after-load 'visual-regexp
   (define-key global-map (kbd "C-c M") 'vr/mc-mark))
+(require-package 'visual-regexp-rx "https://github.com/zkazure/visual-regexp-rx.el.git")
 (require 'visual-regexp-rx)
 (setq vr/engine 'rx)
 
 
+(require-package 'colorful-mode "https://github.com/DevelopmentCool2449/colorful-mode")
 (require 'colorful-mode)
 (setq global-colorful-mode t
       colorful-use-prefix t
@@ -129,9 +141,11 @@
 ;; (add-to-list 'global-colorful-modes 'helpful-mode)
 
 
+(require-package 'vundo "https://github.com/casouri/vundo")
 (require 'vundo)
 
 
+(require-package 'highlight-parentheses "https://git.sr.ht/~tsdh/highlight-parentheses.el")
 (require 'highlight-parentheses)
 ;; highlight-parentheses 只会渲染设置的数量
 ;; 1. 显式使用 "unspecified"，告诉 Emacs 的 Overlay：
@@ -148,6 +162,7 @@
 
 
 
+(require-package 'super-save "https://github.com/bbatsov/super-save")
 (require 'super-save)
 (setq auto-save-default nil)
 (setq super-save-auto-save-when-idle t

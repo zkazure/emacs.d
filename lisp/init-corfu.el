@@ -1,5 +1,6 @@
 ;; -*- lexical-binding: t; -*-
 
+(require-package 'corfu "https://github.com/minad/corfu")
 (require 'corfu)
 (let ((extensions (expand-file-name "extensions/"
                                     (file-name-directory (locate-library "corfu")))))
@@ -43,6 +44,7 @@
 
 
 ;; nerd-icon for corfu
+(require-package 'nerd-icons-corfu "https://github.com/LuigiPiucco/nerd-icons-corfu")
 (require 'nerd-icons-corfu)
 (with-eval-after-load 'corfu
   (add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter))

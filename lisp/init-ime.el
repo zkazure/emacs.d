@@ -1,5 +1,6 @@
 ;; -*- lexical-binding: t; -*-
 
+(require-package 'pyim "https://github.com/tumashu/pyim")
 (require 'pyim)
 (setq pyim-cloudim nil)
 (setq pyim-candidates-search-buffer-p nil)
@@ -22,6 +23,7 @@
       (pyim-cregexp-build result)))
   (advice-add 'orderless-regexp :around #'my-orderless-regexp))
 
+(require-package 'rime "https://github.com/DogLooksGood/emacs-rime")
 (require 'rime)
 
 (setq rime-translate-keybindings

@@ -1,6 +1,8 @@
 ;; -*- lexical-binding: t; -*-
 
+(require-package 'gptel "https://github.com/karthink/gptel")
 (require 'gptel)
+(require-package 'gptel-magit "https://github.com/ragnard/gptel-magit")
 (require 'gptel-magit)
 ;; (gptel-make-ollama "Ollama"             ;Any name of your choosing
 ;;   :host "localhost:11434"               ;Where it's running
@@ -79,6 +81,7 @@
 
 
 
+(require-package 'claude-code-ide "https://github.com/parsnips/claude-code-ide.el.git")
 (require 'claude-code-ide)
 (claude-code-ide-emacs-tools-setup)
 (setq claude-code-ide-terminal-backend 'ghostel

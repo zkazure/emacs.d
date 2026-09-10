@@ -24,6 +24,7 @@
 
 
 
+(require-package 'leetcode "https://github.com/zkazure/leetcode.el.git")
 (require 'leetcode)
 (setq leetcode-prefer-language "cpp"
       leetcode-save-solutions t
@@ -41,12 +42,14 @@
 
 
 
+(require-package 'link-hint "https://github.com/noctuid/link-hint.el")
 (require 'link-hint)
 (global-set-key (kbd "C-c o l") 'link-hint-open-link)
 (global-set-key (kbd "C-c o L") 'link-hint-copy-link)
 
 
 
+(require-package 'gt "https://github.com/lorniu/gt.el")
 (require 'gt)
 (setq gt-langs '(en zh))
 (setq gt-default-translator
@@ -58,6 +61,7 @@
 
 
 
+(require-package 'olivetti "https://github.com/rnkn/olivetti")
 (require 'olivetti)
 (setq olivetti-style 'fancy
       olivetti-margin-width 5
@@ -83,9 +87,11 @@
 (global-set-key (kbd "C-c o w") #'olivetti-mode)
 
 
+(require-package 'atcoder-tools "https://github.com/zkazure/emacs-atcoder-tools.git")
 (require 'atcoder-tools)
 
 
+(require-package 'x86-lookup "https://github.com/skeeto/x86-lookup")
 (require 'x86-lookup)
 (setq x86-lookup-pdf "~/.emacs.d/x86-lookup/sdm.pdf")
 (global-set-key (kbd "C-h x") #'x86-lookup)
@@ -93,6 +99,8 @@
 
 
 ;; speedbar in the same frame
+;; Use the archive distribution; no VC recipe is configured here.
+(require-package 'sr-speedbar :archive)
 (require 'sr-speedbar)
 (setq sr-speedbar-width 30
       sr-speedbar-max-width 90
@@ -101,11 +109,13 @@
       speedbar-show-unknown-files t)
 (global-set-key (kbd "C-c o d") #'sr-speedbar-toggle)
 ;; add nerd icon support
+(require-package 'nerd-icons-speedbar "https://github.com/Akane-6730/nerd-icons-speedbar.git")
 (require 'nerd-icons-speedbar)
 (add-hook 'speedbar-mode-hook 'nerd-icons-speedbar-mode)
 
 
 
+(require-package 'imenu-list "https://github.com/bmag/imenu-list")
 (require 'imenu-list)
 (setq imenu-list-focus-after-activation nil
       imenu-list-auto-resize t
@@ -119,6 +129,7 @@
 
 
 
+(require-package 'apheleia "https://github.com/radian-software/apheleia")
 (require 'apheleia)
 (add-to-list 'apheleia-mode-alist '(markdown-mode . nil))
 (add-to-list 'apheleia-mode-alist '(org-mode . nil))
