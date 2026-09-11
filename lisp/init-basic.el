@@ -61,6 +61,13 @@
 (setq dabbrev-abbrev-char-regexp "[A-Za-z0-9_-]"
       dabbrev-case-fold-search nil)
 
+;; Completion defaults
+(setopt completion-eager-display t
+        completion-eager-update t
+        minibuffer-visible-completions t
+        completions-sort 'historical
+        completions-format 'one-column)
+
 (require-package 'envrc "https://github.com/purcell/envrc")
 (require 'envrc)
 (envrc-global-mode)
