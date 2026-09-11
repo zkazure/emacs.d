@@ -25,6 +25,5 @@
 (require-package 'nerd-icons-dired "https://github.com/rainstormstudio/nerd-icons-dired")
 (require 'nerd-icons-dired)
 (add-hook 'dired-mode-hook 'nerd-icons-dired-mode)
-(diminish 'nerd-icons-dired-mode)
 
 (provide 'init-dired)

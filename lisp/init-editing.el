@@ -103,7 +103,6 @@
 (require-package 'whole-line-or-region "https://github.com/purcell/whole-line-or-region")
 (require 'whole-line-or-region)
 (whole-line-or-region-global-mode 1)
-(diminish 'whole-line-or-region-local-mode)
 (with-eval-after-load 'embark
   (cl-pushnew 'embark--mark-target
               (alist-get 'whole-line-or-region-delete-region
@@ -158,7 +157,6 @@
        (face-attribute 'diff-refine-removed :background)
        (face-attribute 'diff-refine-added :background)))
 (add-hook 'prog-mode-hook #'highlight-parentheses-mode)
-(diminish 'highlight-parentheses-mode)
 
 
 
@@ -173,7 +171,6 @@
 (add-to-list 'super-save-triggers 'ace-window)
 (add-to-list 'super-save-hook-triggers 'find-file-hook)
 (super-save-mode +1)
-(diminish 'super-save-mode)
 
 
 

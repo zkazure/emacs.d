@@ -34,6 +34,7 @@
 
 (require 'init-basic)
 (require 'init-ui)
+(require 'init-modeline)
 
 (require 'init-window)
 (require 'init-buffer)

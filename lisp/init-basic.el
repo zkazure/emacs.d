@@ -2,13 +2,6 @@
 
 (require-package 'no-littering "https://github.com/emacscollective/no-littering")
 (require 'no-littering)
-(require-package 'diminish "https://github.com/myrjola/diminish.el")
-(require 'diminish)
-
-(with-eval-after-load 'outline
-  (diminish 'outline-minor-mode))
-(with-eval-after-load 'reveal
-  (diminish 'reveal-mode))
 
 (setq auth-sources '("~/.authinfo.gpg"))
 
@@ -34,7 +27,6 @@
 (require 'gcmh)
 (setq gcmh-high-cons-threshold (* 128 1024 1024))
 (gcmh-mode)
-(diminish 'gcmh-mode)
 
 ;; Process performance tuning
 (setq read-process-output-max (* 4 1024 1024))
@@ -72,7 +64,6 @@
 (require-package 'envrc "https://github.com/purcell/envrc")
 (require 'envrc)
 (envrc-global-mode)
-(diminish 'envrc-mode)
 
 
 
@@ -101,7 +92,6 @@
 
 (require 'which-key)
 (which-key-mode)
-(diminish 'which-key-mode)
 (require-package 'which-key-posframe "https://github.com/emacsorphanage/which-key-posframe")
 (require 'which-key-posframe)
 (which-key-posframe-mode)
@@ -119,7 +109,6 @@
 (require-package 'projectile "https://github.com/bbatsov/projectile")
 (require 'projectile)
 (projectile-mode +1)
-(diminish 'projectile-mode)
 ;; Recommended keymap prefix on Windows/Linux
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 

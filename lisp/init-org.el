@@ -38,8 +38,6 @@
       org-use-fast-todo-selection nil
       org-edit-src-content-indentation 0
       )
-(with-eval-after-load 'org-indent-mode
-  (diminish 'org-indent-mode))
 
 (custom-set-faces
  '(org-document-title ((t (:height 1.1 :weight bold))))
@@ -553,7 +551,6 @@
 
 ;; embark
 (citar-embark-mode 1)
-(diminish 'citar-embark-mode)
 
 ;; org-cite
 (setq org-cite-global-bibliography citar-bibliography
@@ -608,7 +605,6 @@
 (require-package 'citar-org-roam "https://github.com/emacs-citar/citar-org-roam")
 (require 'citar-org-roam)
 (citar-org-roam-mode 1)
-(diminish 'citar-org-roam-mode)
 
 ;; use filename renamed by Zotero as title.
 (setq citar-org-roam-note-title-template "${file}")
@@ -649,7 +645,6 @@
       org-pretty-entities-include-sub-superscripts nil)
 
 (add-hook 'org-mode-hook 'org-cdlatex-mode)
-(diminish 'org-cdlatex-mode)
 
 ;; org-cdlatex-mode 中使用 cdlatex 的自动匹配括号, 并把 $...$ 换成 \( ... \)
 (defun my/insert-inline-parentheses ()
