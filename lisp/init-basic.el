@@ -34,6 +34,7 @@
 
 ;; skip delay
 (setq redisplay-skip-fontification-on-input t)
+(setq elisp-fontify-semantically t)
 
 ;; 禁止双向显示文字
 (setq-default bidi-display-reordering 'left-to-right
