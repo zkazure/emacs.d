@@ -244,7 +244,7 @@
 ;;; Table
 (require-package 'valign "https://github.com/casouri/valign")
 (require 'valign)
-(setq valign-fancy-bar t)
+(setq valign-fancy-bar nil)
 (add-hook 'org-mode-hook #'valign-mode)
 
 

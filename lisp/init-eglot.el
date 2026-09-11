@@ -52,4 +52,7 @@
         :hoverProvider
         ))
 
+(setq eldoc-echo-area-use-multiline-p nil
+      eldoc-echo-area-display-truncation-message nil)
+
 (provide 'init-eglot)
