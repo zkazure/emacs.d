@@ -2,6 +2,11 @@
 
 (setq load-prefer-newer t)
 
+;; Cache directory contents to speed up library lookup.
+(when (and (boundp 'load-path-filter-function)
+           (fboundp 'load-path-filter-cache-directory-files))
+  (setq load-path-filter-function #'load-path-filter-cache-directory-files))
+
 (when (and (fboundp 'startup-redirect-eln-cache)
            (fboundp 'native-comp-available-p)
            (native-comp-available-p))
