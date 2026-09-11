@@ -97,14 +97,9 @@
 
 
 
-(require-package 'kirigami "https://github.com/jamescherti/kirigami.el")
-(require 'kirigami)
-(global-set-key (kbd "M-o o") #'kirigami-open-fold)     ; Open fold at point
-(global-set-key (kbd "M-o O") #'kirigami-open-fold-rec) ; Open fold recursively
-(global-set-key (kbd "M-o r") #'kirigami-open-folds)    ; Open all folds
-(global-set-key (kbd "M-o c") #'kirigami-close-fold)    ; Close fold at point
-(global-set-key (kbd "M-o m") #'kirigami-close-folds)   ; Close all folds
-(global-set-key (kbd "M-o a") #'kirigami-toggle-fold)   ; Toggle fold at point
+(require 'hideshow)
+(add-hook 'prog-mode-hook #'hs-minor-mode)
+(setq hs-allow-nesting t)
 
 
 
