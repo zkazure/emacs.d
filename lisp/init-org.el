@@ -679,9 +679,10 @@
 
 ;; preview with C-c C-x C-l
 
-(setq my/latex-preview-scale 1.8) ;; 一般来说这里的 scale 约等于 set-face-attribute 中的 :height /100
+(setq my/latex-preview-scale 1.2) ;; 正文为 12pt，初始 scale 为 1.2
 (setq org-format-latex-options
-      `(:foreground default :background default :scale ,my/latex-preview-scale :html-foreground "Black" :html-background "Transparent" :html-scale ,my/latex-preview-scale :matchers ("begin" "$1" "$" "$$" "\\(" "\\["))) ;; 增大公式预览的图片大小
+      `(:foreground default :background default :scale ,my/latex-preview-scale :html-foreground "Black" :html-background "Transparent" :html-scale ,my/latex-preview-scale :matchers ("begin" "$1" "$" "$$" "\\(" "\\["))) ;; 设置公式预览的图片大小
+
 
 (require-package 'org-fragtog "https://github.com/io12/org-fragtog")
 (require 'org-fragtog)
