@@ -213,6 +213,7 @@
       (scheme . t)
       (sqlite . t)
       (mermaid . t)
+      (lilypond . t)
       ))))
 
 (with-eval-after-load 'org

@@ -68,6 +68,28 @@ The helper's tests run with:
 emacs -Q --batch -L lisp -l tests/init-elpa-test.el -f ert-run-tests-batch-and-exit
 #+end_src
 
+* LilyPond
+
+LilyPond support uses a user installation at
+=~/.local/opt/lilypond-2.26.0=.  Install the official 2.26 archive there; its
+=bin/lilypond= is preferred only by Emacs and its child processes.  When the
+installation is absent, Emacs starts normally and reports that LilyPond is
+unavailable.  Files ending in =.ly= and =.ily= load the bundled
+=lilypond-mode= on demand.
+
+Org Babel uses the same compiler; its PDF viewer and MIDI player commands are
+configured as =xdg-open=.  Use =C-c '= to edit a source block in
+=lilypond-mode= and =C-c C-c= to run it.  For example:
+
+#+begin_example
+#+begin_src lilypond :file scale.png
+\version "2.26.0"
+\relative c' { c d e f g a b c }
+#+end_src
+#+end_example
+
+Change =:file scale.png= to =:file scale.pdf= for PDF output.
+
 * Road Map
 
 1. Write the document and reorganize my configuration.
