@@ -631,7 +631,7 @@
                (file+head
                 "reference/${citar-citekey}.org"
 
-                "#+TITLE: ${note-title}\n#+CREATED: %U\n#+FILETAGS:\n\n* Abstract\n* Motivation\n* Problem\n* Method\n* Evaluation\n* Limitation\n* Epilogue\n\n"
+                "#+TITLE: ${note-title}\n#+CREATED: %U\n#+FILETAGS:\n\n* Abstract\n* Motivation\n* Method\n* Problem\n* Evaluation\n* Limitation\n* Epilogue\n\n"
                 )
                :unnarrowed t))
 
