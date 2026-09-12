@@ -98,16 +98,12 @@
 
 
 
-;; speedbar in the same frame
-;; Use the archive distribution; no VC recipe is configured here.
-(require-package 'sr-speedbar :archive)
-(require 'sr-speedbar)
-(setq sr-speedbar-width 30
-      sr-speedbar-max-width 90
-      sr-speedbar-right-side nil
-      sr-speedbar-skip-other-window-p t
-      speedbar-show-unknown-files t)
-(global-set-key (kbd "C-c o d") #'sr-speedbar-toggle)
+;; Speedbar in the same frame.
+(require 'speedbar)
+(setq speedbar-show-unknown-files t
+      speedbar-prefer-window t
+      speedbar-window-side 'left)
+(global-set-key (kbd "C-c o d") #'speedbar)
 ;; add nerd icon support
 (require-package 'nerd-icons-speedbar "https://github.com/Akane-6730/nerd-icons-speedbar.git")
 (require 'nerd-icons-speedbar)

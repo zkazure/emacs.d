@@ -39,8 +39,8 @@ Embark split out =embark-consult=, so that package is installed from an archive
 only when its library is missing from the existing installation.
 
 The other explicit archive exceptions are AUCTeX (generated build files),
-=cmake-mode=, =csv-mode=, =breadcrumb= and =sr-speedbar= (the existing archive
-distribution is used instead of introducing additional source/build recipes).
+=cmake-mode=, =csv-mode= and =breadcrumb= (the existing archive distribution
+is used instead of introducing additional source/build recipes).
 Local VC packages retain their configured repository origins, including
 personal forks.
 

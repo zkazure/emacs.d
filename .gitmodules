@@ -352,9 +352,6 @@
 [submodule "spinner"]
 	path = lib/spinner
 	url = https://github.com/Malabarba/spinner.el
-[submodule "sr-speedbar"]
-	path = lib/sr-speedbar
-	url = https://github.com/emacsorphanage/sr-speedbar
 [submodule "string-inflection"]
 	path = lib/string-inflection
 	url = https://github.com/akicho8/string-inflection
