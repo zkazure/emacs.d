@@ -409,3 +409,54 @@
 [submodule "treesit-fold"]
 	path = borg/treesit-fold
 	url = https://github.com/emacs-tree-sitter/treesit-fold
+[submodule "whitespace-cleanup-mode"]
+	path = borg/whitespace-cleanup-mode
+	url = https://github.com/purcell/whitespace-cleanup-mode
+[submodule "js2-mode"]
+	path = borg/js2-mode
+	url = https://github.com/mooz/js2-mode
+[submodule "simple-httpd"]
+	path = borg/simple-httpd
+	url = https://github.com/skeeto/emacs-web-server
+[submodule "skewer-mode"]
+	path = borg/skewer-mode
+	url = https://github.com/skeeto/skewer-mode
+[submodule "web-server"]
+	path = borg/web-server
+	url = https://github.com/eschulte/emacs-web-server
+[submodule "request"]
+	path = borg/request
+	url = https://github.com/tkf/emacs-request
+[submodule "deferred"]
+	path = borg/deferred
+	url = https://github.com/kiwanami/emacs-deferred
+[submodule "deflate"]
+	path = borg/deflate
+	url = https://github.com/skuro/deflate
+[submodule "mcp"]
+	path = borg/mcp
+	url = https://github.com/lizqwerscott/mcp.el
+[submodule "typescript-mode"]
+	path = borg/typescript-mode
+	url = https://github.com/emacs-typescript/typescript.el
+[submodule "yaml"]
+	path = borg/yaml
+	url = https://github.com/zkry/yaml.el
+[submodule "popper"]
+	path = borg/popper
+	url = https://github.com/karthink/popper
+[submodule "sesman"]
+	path = borg/sesman
+	url = https://github.com/vspinu/sesman
+[submodule "pfuture"]
+	path = borg/pfuture
+	url = https://github.com/Alexander-Miller/pfuture
+[submodule "inheritenv"]
+	path = borg/inheritenv
+	url = https://github.com/purcell/inheritenv
+[submodule "alert"]
+	path = borg/alert
+	url = https://github.com/jwiegley/alert
+[submodule "async"]
+	path = borg/async
+	url = https://github.com/jwiegley/emacs-async
