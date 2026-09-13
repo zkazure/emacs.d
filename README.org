@@ -13,26 +13,37 @@ each pinned to an exact commit; =early-init.el= calls =borg-initialize= before
 =init.el= loads.  The existing ignored =elpa/= directory is dormant
 compatibility storage and is not part of startup or builds.
 
-For a fresh clone, use Borg's bootstrap sequence.  It first makes the pinned
-Borg source available, then initializes every drone at its recorded commit and
-generates the required autoload and byte-code files:
+This configuration uses Borg for *source pinning* only: the drones are loaded
+from their =.el= sources and byte-compilation is deliberately not used.  The
+only generated files are the =*-autoloads.el= files that Borg's activation
+needs for autoloaded entry points (=M-x magit-status= and friends).  Those
+files are declared untracked through =submodule.<name>.ignore= in
+=.gitmodules=, which keeps =git status= clean without touching any global Git
+configuration.
+
+For a fresh clone:
 
 #+begin_src sh
 git clone <configuration-url> ~/.emacs.d
 cd ~/.emacs.d
-make bootstrap-borg
-make bootstrap
+make bootstrap-borg            # make the pinned Borg source available
+git submodule update --init    # check out every drone at its recorded commit
+make autoloads                 # generate *-autoloads.el, no byte-compilation
 #+end_src
 
-If =borg/borg= is already initialized, =make bootstrap= is sufficient.  A
-plain =git submodule update --init --recursive= checks out the sources but
-does not run Borg's build step.
+=make bootstrap= does the same but ends with =make build=, which byte-compiles
+every drone; run it only when you deliberately want =.elc= files inside the
+submodules.  =make autoloads= is the command to re-run after
+=M-x borg-assimilate=, after changing a drone's commit, or when an autoloaded
+entry point seems to be missing.
 
-Use =M-x borg-assimilate= to add a package, =M-x borg-build= to regenerate a
-drone after an intentional source update, and =make build= for the explicit
-batch build.  Package updates are manual: choose and validate a commit in its
-submodule, then commit the resulting gitlink.  Startup neither downloads nor
-upgrades packages, and native JIT compilation remains disabled.
+Package updates are manual: choose and validate a commit in the drone's
+submodule, run =make autoloads=, then commit the resulting gitlink.  Startup
+neither downloads nor upgrades packages, and native JIT compilation stays
+disabled.  Loading uncompiled sources costs roughly two seconds of startup
+time compared with a byte-compiled tree (~6.3s vs ~4.3s on the reference
+machine); that is the accepted trade-off for keeping the submodules free of
+build artifacts.
 
 The bootstrap follows the [[https://github.com/emacscollective/borg/blob/main/docs/borg.org][Borg manual's seed pattern]]:
 =Makefile= includes the drone's =borg.mk= when available and otherwise offers

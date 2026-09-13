@@ -6,13 +6,20 @@ startup.  Package.el does not activate or install packages.
 
 Don't add or clone packages here by hand; use =M-x borg-assimilate=
 (for a new package) or =M-x borg-build= (after an intentional source update)
-so that the submodule, autoloads and byte-code stay consistent.  Updates are
-manual: change a drone's checked-out commit, validate it, and commit the new
-gitlink.  Neither startup nor Borg automatically upgrades packages.
+so that the submodule and its autoloads stay consistent, then refresh the
+remaining autoloads with =make autoloads=.  Updates are manual: change a
+drone's checked-out commit, validate it, and commit the new gitlink.
+Neither startup nor Borg automatically upgrades packages.  Drones are loaded
+from source: this configuration deliberately skips byte-compilation, so no
+=.elc= files are generated inside the submodules.
 
-For a fresh clone, run =make bootstrap-borg= followed by =make bootstrap=.
-The first command makes Borg available; the second initializes each recorded
-submodule and builds its autoloads and byte-code.  Borg honours
-=borg.drones-directory= (set in =.borgconfig=) because this directory exists.
+For a fresh clone, run =make bootstrap-borg=, then =git submodule update
+--init=, then =make autoloads=.  The first command makes Borg available, the
+second checks out every recorded submodule at its pinned commit, and the third
+generates the =*-autoloads.el= files without compiling anything.  =make
+bootstrap= does the same but ends with a full byte-compilation, which this
+configuration avoids so that no build artifacts land in the submodules.
+Borg honours =borg.drones-directory= (set in =.borgconfig=) because this
+directory exists.
 The primary-mode bootstrap follows the [[https://github.com/emacscollective/borg/blob/main/docs/borg.org][official Borg manual]], with =borg/=
 selected in place of its default =lib/=.
