@@ -1,0 +1,15 @@
+#+title: Borg drones
+
+Third-party packages managed by Borg live here, each one as a Git
+submodule pinned to an exact commit.  Borg is used in *secondary mode*:
+it activates the drones in this directory, then lets package.el activate
+the remaining packages in =elpa/=.
+
+Don't add or clone packages here by hand; use =M-x borg-assimilate=
+(or one of the =make= targets) so that the submodule, the autoloads and
+the byte-code stay consistent.
+
+This file exists so that the directory is present in a fresh clone.
+Borg only honours =borg.drones-directory= (set in =.borgconfig=) when
+that directory already exists; otherwise it silently falls back to the
+directory containing =borg.el= itself.

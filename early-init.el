@@ -21,6 +21,20 @@
                          ("nongnu" . "https://elpa.nongnu.org/nongnu/")
                          ("melpa" . "https://melpa.org/packages/")))
 
+;; Borg (secondary mode): Borg activates the drones in "borg/" and then
+;; lets package.el activate everything else in "elpa/".  Borg itself is
+;; installed by package.el, so its directory is looked up in "elpa/";
+;; when Borg is not installed yet, nothing changes and Emacs activates
+;; the packages itself as before.  See "Makefile" and "borg/README.org".
+(let ((borg-dir (car (last (sort (directory-files (expand-file-name "elpa" user-emacs-directory)
+                                                t "\\`borg-[0-9]" t)
+                                        #'string-lessp)))))
+  (when borg-dir
+    (add-to-list 'load-path borg-dir))
+  (when (require 'borg-elpa nil t)
+    (setq package-enable-at-startup nil)
+    (borg-elpa-initialize)))
+
 (setenv "LSP_USE_PLISTS" "true")
 (setq lsp-use-plists t)
 
