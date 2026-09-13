@@ -1,5 +1,5 @@
-# Borg and all package drones are pinned Git submodules under borg/.
-# This follows Borg's seed bootstrap pattern, adapted to borg/ instead of lib/.
+# Borg and all package drones are pinned Git submodules under lib/, the default
+# drone directory of Borg's seed bootstrap pattern.
 
 DRONES_DIR := $(shell git config --includes -f .gitmodules --get \
   borg.drones-directory || echo "lib")

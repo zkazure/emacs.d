@@ -8,7 +8,7 @@ However, there is still a long way to go.
 
 The configuration follows [[https://github.com/purcell/emacs.d][Purcell's]] modular style: =init.el= loads
 =lisp/init-*.el=.  Borg is the sole third-party package manager.  Borg itself
-and 152 package drones are Git submodules under =borg/= (153 drones in total),
+and 152 package drones are Git submodules under =lib/= (153 drones in total),
 each pinned to an exact commit; =early-init.el= calls =borg-initialize= before
 =init.el= loads.  The existing ignored =elpa/= directory is dormant
 compatibility storage and is not part of startup or builds.
@@ -48,9 +48,8 @@ build artifacts.
 The bootstrap follows the [[https://github.com/emacscollective/borg/blob/main/docs/borg.org][Borg manual's seed pattern]]:
 =Makefile= includes the drone's =borg.mk= when available and otherwise offers
 =make bootstrap-borg=.  The historical configuration at commit =3cca64c=
-informs the Borg command bindings; this configuration deliberately keeps
-=borg/= as the drone directory through =.borgconfig= rather than moving pins
-to the manual's default =lib/=.
+informs the Borg command bindings; like the manual, this configuration puts
+the drones in =lib/=, the manual's default drone directory.
 
 Emacs 32 supplies =org=, =eglot= and =use-package= as built-ins.  =cmake-mode=
 is a pinned drone.  System tools, Tree-sitter grammars, fonts, native-module

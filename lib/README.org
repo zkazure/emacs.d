@@ -21,5 +21,5 @@ bootstrap= does the same but ends with a full byte-compilation, which this
 configuration avoids so that no build artifacts land in the submodules.
 Borg honours =borg.drones-directory= (set in =.borgconfig=) because this
 directory exists.
-The primary-mode bootstrap follows the [[https://github.com/emacscollective/borg/blob/main/docs/borg.org][official Borg manual]], with =borg/=
-selected in place of its default =lib/=.
+The primary-mode bootstrap follows the [[https://github.com/emacscollective/borg/blob/main/docs/borg.org][official Borg manual]] and uses its
+default =lib/= drone directory.

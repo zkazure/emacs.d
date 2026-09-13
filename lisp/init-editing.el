@@ -1,7 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 ;; 放置和编辑文字有关的命令
 
-;; unfill is a Borg drone (borg/unfill); nothing to install here.
+;; unfill is a Borg drone (lib/unfill); nothing to install here.
 (require 'unfill)
 
 (global-set-key (kbd "C-z") #'repeat)   ; stop C-z from suspending frame.
