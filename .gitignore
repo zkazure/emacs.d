@@ -1,7 +1,8 @@
 elpa/
 eln-cache/
 var/
-etc/
+etc/*
+!etc/borg/
 auto-save-list/
 .agent-shell/
 custom.el
