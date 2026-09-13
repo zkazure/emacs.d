@@ -358,3 +358,30 @@
 [submodule "org-noter"]
 	path = borg/org-noter
 	url = https://github.com/org-noter/org-noter
+[submodule "cond-let"]
+	path = borg/cond-let
+	url = https://github.com/tarsius/cond-let.git
+[submodule "llama"]
+	path = borg/llama
+	url = https://github.com/tarsius/llama.git
+[submodule "with-editor"]
+	path = borg/with-editor
+	url = https://github.com/magit/with-editor.git
+[submodule "emacsql"]
+	path = borg/emacsql
+	url = https://github.com/magit/emacsql.git
+[submodule "closql"]
+	path = borg/closql
+	url = https://github.com/magit/closql.git
+[submodule "forge"]
+	path = borg/forge
+	url = https://github.com/magit/forge
+[submodule "ghub"]
+	path = borg/ghub
+	url = https://github.com/magit/ghub
+[submodule "treepy"]
+	path = borg/treepy
+	url = https://github.com/volrath/treepy.el.git
+[submodule "git-modes"]
+	path = borg/git-modes
+	url = https://github.com/magit/git-modes.git
