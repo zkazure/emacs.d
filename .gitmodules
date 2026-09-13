@@ -337,3 +337,24 @@
 [submodule "edit-indirect"]
 	path = borg/edit-indirect
 	url = https://github.com/Fanael/edit-indirect
+[submodule "citeproc"]
+	path = borg/citeproc
+	url = https://github.com/andras-simonyi/citeproc-el
+[submodule "parsebib"]
+	path = borg/parsebib
+	url = https://github.com/joostkremers/parsebib
+[submodule "parseclj"]
+	path = borg/parseclj
+	url = https://github.com/clojure-emacs/parseclj
+[submodule "parseedn"]
+	path = borg/parseedn
+	url = https://github.com/clojure-emacs/parseedn
+[submodule "tomelr"]
+	path = borg/tomelr
+	url = https://github.com/kaushalmodi/tomelr
+[submodule "htmlize"]
+	path = borg/htmlize
+	url = https://github.com/hniksic/emacs-htmlize
+[submodule "org-noter"]
+	path = borg/org-noter
+	url = https://github.com/org-noter/org-noter
