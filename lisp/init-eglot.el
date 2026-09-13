@@ -3,8 +3,20 @@
 ;; Eglot is provided by this Emacs release.
 (require 'eglot)
 (require 'eglot-booster)
+
+;; `prog-mode-hook' also fires in major modes no LSP server is configured for,
+;; e.g. emacs-lisp-mode.  There `eglot--lookup-mode' falls back to a nil
+;; contact, and `eglot--connect' then dies inside `jsonrpc-process-connection'
+;; with "Wrong type argument: processp, nil", which `eglot-ensure' turns into
+;; a warning once per buffer.  Only start Eglot where a server is configured.
+(defun my/eglot-ensure-when-supported ()
+  "Call `eglot-ensure' if MAJOR-MODE has a server program in `eglot-server-programs'."
+  (when (cdr (eglot--lookup-mode major-mode))
+    (eglot-ensure)))
+
 (with-eval-after-load 'eglot
-  (add-hook 'prog-mode-hook 'eglot-ensure)
+  (remove-hook 'prog-mode-hook 'eglot-ensure)
+  (add-hook 'prog-mode-hook #'my/eglot-ensure-when-supported)
   (setq eglot-booster-io-only t)
   (eglot-booster-mode 1)
   )
