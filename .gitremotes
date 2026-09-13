@@ -1,2 +1,4 @@
-[borg]
-	pushDefault = locutus
+# Included by .gitmodules.
+#
+# Borg's pushDefault (formerly pointing at the "locutus" remote) was removed:
+# Borg 4.6 has no consumer for it.
