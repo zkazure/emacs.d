@@ -14,6 +14,10 @@
    (convert-standard-filename
     (expand-file-name  "var/eln-cache/" user-emacs-directory))))
 
+;; Do not compile packages in the background while editing: Borg pins their
+;; versions, and native compilation is an explicit build step when wanted.
+(setq native-comp-jit-compilation nil)
+
 (setq gc-cons-percentage 0.6)
 (setq package-enable-at-startup t)
 (setq package-quickstart nil)
