@@ -8,10 +8,10 @@ However, there is still a long way to go.
 
 The configuration follows [[https://github.com/purcell/emacs.d][Purcell's]] modular style: =init.el= loads
 =lisp/init-*.el=.  Borg is the sole third-party package manager.  Borg itself
-and 92 package drones are Git submodules under =borg/=, each pinned to an
-exact commit; =early-init.el= calls =borg-initialize= before =init.el= loads.
-The existing ignored =elpa/= directory is dormant compatibility storage and is
-not part of startup or builds.
+and 152 package drones are Git submodules under =borg/= (153 drones in total),
+each pinned to an exact commit; =early-init.el= calls =borg-initialize= before
+=init.el= loads.  The existing ignored =elpa/= directory is dormant
+compatibility storage and is not part of startup or builds.
 
 For a fresh clone, use Borg's bootstrap sequence.  It first makes the pinned
 Borg source available, then initializes every drone at its recorded commit and
@@ -44,6 +44,20 @@ to the manual's default =lib/=.
 Emacs 32 supplies =org=, =eglot= and =use-package= as built-ins.  =cmake-mode=
 is a pinned drone.  System tools, Tree-sitter grammars, fonts, native-module
 build dependencies and personal data remain outside Borg's scope.
+
+Packages deliberately *not* assimilated:
+
+- =eglot=, =flymake= and =jsonrpc= are provided by Emacs 32 itself.  The
+  =elpa/= copies were shadow installs of older GNU ELPA releases, so their
+  version now follows the Emacs release instead of a pin.
+- =cask= is unused by this configuration and its package metadata records no
+  commit, so it cannot be pinned offline.  It stays in the dormant =elpa/=.
+- =elpa/gnupg/= is *not* a package: it is package.el's
+  =package-gnupghome-dir= and holds GPG key material.  Never delete it.
+- Drones that bundle optional integration files whose dependencies are absent
+  (for example =evil=, =pdf-tools= or =org-pdftools= for =ghostel= and
+  =org-noter=) are left as-is; those files are not loaded by this
+  configuration.
 
 * LilyPond
 
