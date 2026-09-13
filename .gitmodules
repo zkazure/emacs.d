@@ -283,3 +283,57 @@
 [submodule "aio"]
 	path = borg/aio
 	url = https://github.com/skeeto/emacs-aio
+[submodule "s"]
+	path = borg/s
+	url = https://github.com/magnars/s.el
+[submodule "xr"]
+	path = borg/xr
+	url = https://github.com/mattiase/xr
+[submodule "ht"]
+	path = borg/ht
+	url = https://github.com/Wilfred/ht.el
+[submodule "f"]
+	path = borg/f
+	url = https://github.com/rejeep/f.el
+[submodule "ts"]
+	path = borg/ts
+	url = https://github.com/alphapapa/ts.el
+[submodule "queue"]
+	path = borg/queue
+	url = https://github.com/emacsmirror/queue.git
+[submodule "spinner"]
+	path = borg/spinner
+	url = https://github.com/Malabarba/spinner.el
+[submodule "string-inflection"]
+	path = borg/string-inflection
+	url = https://github.com/akicho8/string-inflection
+[submodule "ansi"]
+	path = borg/ansi
+	url = http://github.com/rejeep/ansi
+[submodule "epl"]
+	path = borg/epl
+	url = http://github.com/cask/epl
+[submodule "popup"]
+	path = borg/popup
+	url = https://github.com/auto-complete/popup-el
+[submodule "shrink-path"]
+	path = borg/shrink-path
+	url = https://gitlab.com/bennya/shrink-path.el
+[submodule "shut-up"]
+	path = borg/shut-up
+	url = http://github.com/rejeep/shut-up.el
+[submodule "gntp"]
+	path = borg/gntp
+	url = https://github.com/tekai/gntp.el
+[submodule "log4e"]
+	path = borg/log4e
+	url = https://github.com/aki2o/log4e
+[submodule "pdd"]
+	path = borg/pdd
+	url = https://github.com/lorniu/pdd.el
+[submodule "elisp-refs"]
+	path = borg/elisp-refs
+	url = https://github.com/Wilfred/elisp-refs
+[submodule "edit-indirect"]
+	path = borg/edit-indirect
+	url = https://github.com/Fanael/edit-indirect
