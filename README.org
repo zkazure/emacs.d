@@ -14,12 +14,17 @@ each pinned to an exact commit; =early-init.el= calls =borg-initialize= before
 =elpa/= is =elpa/gnupg/=, package.el's GPG home.
 
 This configuration uses Borg for *source pinning* only: the drones are loaded
-from their =.el= sources and byte-compilation is deliberately not used.  The
-only generated files are the =*-autoloads.el= files that Borg's activation
-needs for autoloaded entry points (=M-x magit-status= and friends).  Those
-files are declared untracked through =submodule.<name>.ignore= in
-=.gitmodules=, which keeps =git status= clean without touching any global Git
-configuration.
+from their =.el= sources and byte-compilation is deliberately not used, so the
+submodule working trees stay exactly at their pinned commits.  Autoloaded
+entry points (=M-x magit-status= and friends) come from a single file,
+=var/autoloads/autoloads.el=, which =make autoloads= generates by scraping
+every drone's autoload cookies; =etc/borg/autoloads.el= also overrides
+=borg-update-autoloads= so that Borg's own build commands write there instead
+of dropping a =<drone>-autoloads.el= into each submodule.  The file lives
+alone in its own directory because that directory is prepended to
+=load-path= -- a state file sitting next to it would shadow a library of the
+same name.  It is a machine-local artifact (=var/= is ignored); regenerating
+it is part of the clone procedure below.
 
 For a fresh clone:
 
@@ -28,7 +33,7 @@ git clone <configuration-url> ~/.emacs.d
 cd ~/.emacs.d
 make bootstrap-borg            # make the pinned Borg source available
 git submodule update --init    # check out every drone at its recorded commit
-make autoloads                 # generate *-autoloads.el, no byte-compilation
+make autoloads                 # generate var/autoloads/autoloads.el, no byte-compilation
 #+end_src
 
 =make bootstrap= does the same but ends with =make build=, which byte-compiles
