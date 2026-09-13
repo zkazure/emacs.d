@@ -8,7 +8,7 @@ However, there is still a long way to go.
 
 The configuration follows [[https://github.com/purcell/emacs.d][Purcell's]] modular style: =init.el= loads
 =lisp/init-*.el=.  Borg is the sole third-party package manager.  Borg itself
-and 152 package drones are Git submodules under =lib/= (153 drones in total),
+and 149 package drones are Git submodules under =lib/= (150 drones in total),
 each pinned to an exact commit; =early-init.el= calls =borg-initialize= before
 =init.el= loads.  =package.el= is never initialized, and the only thing left in
 =elpa/= is =elpa/gnupg/=, package.el's GPG home.
