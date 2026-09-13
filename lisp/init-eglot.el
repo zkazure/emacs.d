@@ -1,7 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
 (require-package 'eglot)
-(require-package 'eglot-booster "https://github.com/jdtsmith/eglot-booster")
+
 (require 'eglot)
 (require 'eglot-booster)
 (with-eval-after-load 'eglot

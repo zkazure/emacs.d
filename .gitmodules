@@ -2,442 +2,278 @@
 	path = .gitremotes
 	path = .borgconfig
 [submodule "ace-window"]
-	path = lib/ace-window
+	path = borg/ace-window
 	url = https://github.com/abo-abo/ace-window
-[submodule "aio"]
-	path = lib/aio
-	url = https://github.com/skeeto/emacs-aio
 [submodule "apheleia"]
-	path = lib/apheleia
+	path = borg/apheleia
 	url = https://github.com/radian-software/apheleia
-[submodule "async"]
-	path = lib/async
-	url = https://github.com/jwiegley/emacs-async
+[submodule "atcoder-tools"]
+	path = borg/atcoder-tools
+	url = https://github.com/zkazure/emacs-atcoder-tools.git
 [submodule "auctex"]
-	path = lib/auctex
+	path = borg/auctex
 	url = https://git.savannah.gnu.org/git/auctex.git
 [submodule "auto-compile"]
-	path = lib/auto-compile
-	url = https://github.com/emacscollective/auto-compile.git
+	path = borg/auto-compile
+	url = https://github.com/emacscollective/auto-compile
 [submodule "avy"]
-	path = lib/avy
+	path = borg/avy
 	url = https://github.com/abo-abo/avy
-[submodule "borg"]
-	path = lib/borg
-	url = https://github.com/emacscollective/borg.git
 [submodule "breadcrumb"]
-	path = lib/breadcrumb
-	url = https://github.com/joaotavora/breadcrumb
-[submodule "bui"]
-	path = lib/bui
-	url = https://github.com/alezost/bui.el
+	path = borg/breadcrumb
+	url = https://git.savannah.gnu.org/git/emacs/elpa.git
 [submodule "cape"]
-	path = lib/cape
+	path = borg/cape
 	url = https://github.com/minad/cape
 [submodule "cdlatex"]
-	path = lib/cdlatex
+	path = borg/cdlatex
 	url = https://github.com/cdominik/cdlatex
 [submodule "citar"]
-	path = lib/citar
+	path = borg/citar
 	url = https://github.com/emacs-citar/citar
 [submodule "citar-org-roam"]
-	path = lib/citar-org-roam
+	path = borg/citar-org-roam
 	url = https://github.com/emacs-citar/citar-org-roam
-[submodule "citeproc"]
-	path = lib/citeproc
-	url = https://github.com/andras-simonyi/citeproc-el
 [submodule "claude-code-ide"]
-	path = lib/claude-code-ide
+	path = borg/claude-code-ide
 	url = https://github.com/parsnips/claude-code-ide.el.git
-[submodule "closql"]
-	path = lib/closql
-	url = https://github.com/magit/closql.git
 [submodule "cmake-mode"]
-	path = lib/cmake-mode
+	path = borg/cmake-mode
 	url = https://github.com/emacsmirror/cmake-mode
 [submodule "colorful-mode"]
-	path = lib/colorful-mode
+	path = borg/colorful-mode
 	url = https://github.com/DevelopmentCool2449/colorful-mode
-[submodule "compat"]
-	path = lib/compat
-	url = https://github.com/emacs-compat/compat.git
-[submodule "cond-let"]
-	path = lib/cond-let
-	url = https://github.com/tarsius/cond-let.git
 [submodule "consult"]
-	path = lib/consult
+	path = borg/consult
 	url = https://github.com/minad/consult
 [submodule "consult-yasnippet"]
-	path = lib/consult-yasnippet
+	path = borg/consult-yasnippet
 	url = https://github.com/mohkale/consult-yasnippet
 [submodule "corfu"]
-	path = lib/corfu
+	path = borg/corfu
 	url = https://github.com/minad/corfu
 [submodule "csv-mode"]
-	path = lib/csv-mode
-	url = git@github.com:emacsmirror/csv-mode.git
+	path = borg/csv-mode
+	url = https://git.savannah.gnu.org/git/emacs/elpa.git
 [submodule "cuda-mode"]
-	path = lib/cuda-mode
+	path = borg/cuda-mode
 	url = https://github.com/chachi/cuda-mode
 [submodule "dash"]
-	path = lib/dash
-	url = https://github.com/magnars/dash.el.git
-[submodule "deferred"]
-	path = lib/deferred
-	url = https://github.com/kiwanami/emacs-deferred
-[submodule "deflate"]
-	path = lib/deflate
-	url = https://github.com/skuro/deflate
+	path = borg/dash
+	url = https://github.com/magnars/dash.el
 [submodule "diff-hl"]
-	path = lib/diff-hl
-	url = https://github.com/dgutov/diff-hl.git
-[submodule "diminish"]
-	path = lib/diminish
-	url = https://github.com/myrjola/diminish.el
+	path = borg/diff-hl
+	url = https://github.com/dgutov/diff-hl
 [submodule "diredfl"]
-	path = lib/diredfl
+	path = borg/diredfl
 	url = https://github.com/purcell/diredfl
 [submodule "dumb-jump"]
-	path = lib/dumb-jump
+	path = borg/dumb-jump
 	url = https://github.com/jacktasia/dumb-jump
 [submodule "ebib"]
-	path = lib/ebib
+	path = borg/ebib
 	url = https://github.com/joostkremers/ebib
-[submodule "edit-indirect"]
-	path = lib/edit-indirect
-	url = https://github.com/Fanael/edit-indirect
 [submodule "eglot-booster"]
-	path = lib/eglot-booster
+	path = borg/eglot-booster
 	url = https://github.com/jdtsmith/eglot-booster.git
-[submodule "elisp-refs"]
-	path = lib/elisp-refs
-	url = https://github.com/Wilfred/elisp-refs
-[submodule "emacs-atcoder-tools"]
-	path = lib/emacs-atcoder-tools
-	url = git@github.com:zkazure/emacs-atcoder-tools.git
-[submodule "emacsql"]
-	path = lib/emacsql
-	url = https://github.com/magit/emacsql.git
 [submodule "embark"]
-	path = lib/embark
+	path = borg/embark
 	url = https://github.com/oantolin/embark
 [submodule "envrc"]
-	path = lib/envrc
+	path = borg/envrc
 	url = https://github.com/purcell/envrc
 [submodule "epkg"]
-	path = lib/epkg
-	url = https://github.com/emacscollective/epkg.git
+	path = borg/epkg
+	url = https://github.com/emacscollective/epkg
 [submodule "expand-region"]
-	path = lib/expand-region
+	path = borg/expand-region
 	url = https://github.com/magnars/expand-region.el
-[submodule "f"]
-	path = lib/f
-	url = https://github.com/rejeep/f.el
-[submodule "forge"]
-	path = lib/forge
-	url = https://github.com/magit/forge
 [submodule "gcmh"]
-	path = lib/gcmh
+	path = borg/gcmh
 	url = https://gitlab.com/koral/gcmh
 [submodule "gdscript-mode"]
-	path = lib/gdscript-mode
-	url = https://github.com/godotengine/emacs-gdscript-mode
+	path = borg/gdscript-mode
+	url = https://github.com/godotengine/emacs-gdscript-mode/
 [submodule "ghostel"]
-	path = lib/ghostel
+	path = borg/ghostel
 	url = https://github.com/dakra/ghostel.git
-[submodule "ghub"]
-	path = lib/ghub
-	url = https://github.com/magit/ghub
-[submodule "git-modes"]
-	path = lib/git-modes
-	url = https://github.com/magit/git-modes.git
 [submodule "go-mode"]
-	path = lib/go-mode
+	path = borg/go-mode
 	url = https://github.com/dominikh/go-mode.el
 [submodule "gptel"]
-	path = lib/gptel
+	path = borg/gptel
 	url = https://github.com/karthink/gptel
 [submodule "gptel-magit"]
-	path = lib/gptel-magit
+	path = borg/gptel-magit
 	url = https://github.com/ragnard/gptel-magit
 [submodule "gt"]
-	path = lib/gt
-	url = https://github.com/lorniu/gt.el.git
+	path = borg/gt
+	url = https://github.com/lorniu/gt.el
 [submodule "helpful"]
-	path = lib/helpful
+	path = borg/helpful
 	url = https://github.com/Wilfred/helpful
 [submodule "highlight-parentheses"]
-	path = lib/highlight-parentheses
-	url = https://git.sr.ht/~tsdh/highlight-parentheses.el
-[submodule "ht"]
-	path = lib/ht
-	url = https://github.com/Wilfred/ht.el
-[submodule "htmlize"]
-	path = lib/htmlize
-	url = https://github.com/hniksic/emacs-htmlize
+	path = borg/highlight-parentheses
+	url = https://sr.ht/~tsdh/highlight-parentheses.el/
 [submodule "hydra"]
-	path = lib/hydra
+	path = borg/hydra
 	url = https://github.com/abo-abo/hydra
 [submodule "imenu-list"]
-	path = lib/imenu-list
+	path = borg/imenu-list
 	url = https://github.com/bmag/imenu-list
-[submodule "inheritenv"]
-	path = lib/inheritenv
-	url = https://github.com/purcell/inheritenv
 [submodule "jinx"]
-	path = lib/jinx
+	path = borg/jinx
 	url = https://github.com/minad/jinx
-[submodule "kirigami"]
-	path = lib/kirigami
-	url = https://github.com/jamescherti/kirigami.el.git
 [submodule "leetcode"]
-	path = lib/leetcode
+	path = borg/leetcode
 	url = https://github.com/zkazure/leetcode.el.git
 [submodule "link-hint"]
-	path = lib/link-hint
+	path = borg/link-hint
 	url = https://github.com/noctuid/link-hint.el
-[submodule "llama"]
-	path = lib/llama
-	url = https://github.com/tarsius/llama.git
-[submodule "log4e"]
-	path = lib/log4e
-	url = https://github.com/aki2o/log4e
-[submodule "lua-mode"]
-	path = lib/lua-mode
-	url = https://github.com/immerrr/lua-mode
 [submodule "magit"]
-	path = lib/magit
-	url = https://github.com/magit/magit.git
+	path = borg/magit
+	url = https://github.com/magit/magit
 [submodule "marginalia"]
-	path = lib/marginalia
+	path = borg/marginalia
 	url = https://github.com/minad/marginalia
 [submodule "markdown-mode"]
-	path = lib/markdown-mode
-	url = https://github.com/jrblevin/markdown-mode
+	path = borg/markdown-mode
+	url = https://jblevins.org/projects/markdown-mode/
 [submodule "matlab-mode"]
-	path = lib/matlab-mode
+	path = borg/matlab-mode
 	url = https://github.com/mathworks/Emacs-MATLAB-Mode
-[submodule "mcp"]
-	path = lib/mcp
-	url = https://github.com/lizqwerscott/mcp.el
 [submodule "mermaid-mode"]
-	path = lib/mermaid-mode
+	path = borg/mermaid-mode
 	url = https://github.com/abrochard/mermaid-mode
 [submodule "move-text"]
-	path = lib/move-text
+	path = borg/move-text
 	url = https://github.com/emacsfodder/move-text
 [submodule "multiple-cursors"]
-	path = lib/multiple-cursors
+	path = borg/multiple-cursors
 	url = https://github.com/magnars/multiple-cursors.el
 [submodule "nerd-icons"]
-	path = lib/nerd-icons
+	path = borg/nerd-icons
 	url = https://github.com/rainstormstudio/nerd-icons.el
 [submodule "nerd-icons-completion"]
-	path = lib/nerd-icons-completion
+	path = borg/nerd-icons-completion
 	url = https://github.com/rainstormstudio/nerd-icons-completion
 [submodule "nerd-icons-corfu"]
-	path = lib/nerd-icons-corfu
+	path = borg/nerd-icons-corfu
 	url = https://github.com/LuigiPiucco/nerd-icons-corfu
 [submodule "nerd-icons-dired"]
-	path = lib/nerd-icons-dired
+	path = borg/nerd-icons-dired
 	url = https://github.com/rainstormstudio/nerd-icons-dired
 [submodule "nerd-icons-speedbar"]
-	path = lib/nerd-icons-speedbar
+	path = borg/nerd-icons-speedbar
 	url = https://github.com/Akane-6730/nerd-icons-speedbar.git
 [submodule "no-littering"]
-	path = lib/no-littering
+	path = borg/no-littering
 	url = https://github.com/emacscollective/no-littering
 [submodule "ob-mermaid"]
-	path = lib/ob-mermaid
+	path = borg/ob-mermaid
 	url = https://github.com/arnm/ob-mermaid
 [submodule "olivetti"]
-	path = lib/olivetti
+	path = borg/olivetti
 	url = https://github.com/rnkn/olivetti
 [submodule "orderless"]
-	path = lib/orderless
+	path = borg/orderless
 	url = https://github.com/oantolin/orderless
 [submodule "org-appear"]
-	path = lib/org-appear
+	path = borg/org-appear
 	url = https://github.com/awth13/org-appear
 [submodule "org-count-words"]
-	path = lib/org-count-words
-	url = git@github.com:zkazure/org-count-words.git
+	path = borg/org-count-words
+	url = https://github.com/zkazure/org-count-words.git
 [submodule "org-fragtog"]
-	path = lib/org-fragtog
+	path = borg/org-fragtog
 	url = https://github.com/io12/org-fragtog
-[submodule "org-noter"]
-	path = lib/org-noter
-	url = https://github.com/org-noter/org-noter
 [submodule "org-roam"]
-	path = lib/org-roam
+	path = borg/org-roam
 	url = https://github.com/org-roam/org-roam
 [submodule "org-roam-ui"]
-	path = lib/org-roam-ui
+	path = borg/org-roam-ui
 	url = https://github.com/org-roam/org-roam-ui
 [submodule "org-super-agenda"]
-	path = lib/org-super-agenda
+	path = borg/org-super-agenda
 	url = https://github.com/alphapapa/org-super-agenda
 [submodule "org-transclusion"]
-	path = lib/org-transclusion
+	path = borg/org-transclusion
 	url = https://github.com/nobiot/org-transclusion
 [submodule "ox-gfm"]
-	path = lib/ox-gfm
+	path = borg/ox-gfm
 	url = https://github.com/larstvei/ox-gfm
 [submodule "ox-hugo"]
-	path = lib/ox-hugo
-	url = https://github.com/kaushalmodi/ox-hugo
+	path = borg/ox-hugo
+	url = https://ox-hugo.scripter.co
 [submodule "ox-pandoc"]
-	path = lib/ox-pandoc
+	path = borg/ox-pandoc
 	url = https://github.com/emacsorphanage/ox-pandoc
-[submodule "parsebib"]
-	path = lib/parsebib
-	url = https://github.com/joostkremers/parsebib
-[submodule "parseclj"]
-	path = lib/parseclj
-	url = https://github.com/clojure-emacs/parseclj
-[submodule "parseedn"]
-	path = lib/parseedn
-	url = https://github.com/clojure-emacs/parseedn
-[submodule "pdd"]
-	path = lib/pdd
-	url = https://github.com/lorniu/pdd.el
-[submodule "pfuture"]
-	path = lib/pfuture
-	url = https://github.com/Alexander-Miller/pfuture
-[submodule "popper"]
-	path = lib/popper
-	url = https://github.com/karthink/popper
-[submodule "posframe"]
-	path = lib/posframe
-	url = https://github.com/tumashu/posframe
 [submodule "projectile"]
-	path = lib/projectile
+	path = borg/projectile
 	url = https://github.com/bbatsov/projectile
 [submodule "pyim"]
-	path = lib/pyim
+	path = borg/pyim
 	url = https://github.com/tumashu/pyim
-[submodule "queue"]
-	path = lib/queue
-	url = git@github.com:emacsmirror/queue.git
 [submodule "rainbow-delimiters"]
-	path = lib/rainbow-delimiters
+	path = borg/rainbow-delimiters
 	url = https://github.com/Fanael/rainbow-delimiters
-[submodule "request"]
-	path = lib/request
-	url = https://github.com/tkf/emacs-request
 [submodule "rime"]
-	path = lib/rime
-	url = https://github.com/DogLooksGood/emacs-rime
+	path = borg/rime
+	url = https://www.github.com/DogLooksGood/emacs-rime
 [submodule "rust-mode"]
-	path = lib/rust-mode
+	path = borg/rust-mode
 	url = https://github.com/rust-lang/rust-mode
-[submodule "s"]
-	path = lib/s
-	url = https://github.com/magnars/s.el
-[submodule "sesman"]
-	path = lib/sesman
-	url = https://github.com/vspinu/sesman
-[submodule "shrink-path"]
-	path = lib/shrink-path
-	url = https://gitlab.com/bennya/shrink-path.el
-[submodule "simple-httpd"]
-	path = lib/simple-httpd
-	url = https://github.com/skeeto/emacs-web-server
-[submodule "skewer-mode"]
-	path = lib/skewer-mode
-	url = https://github.com/skeeto/skewer-mode
-[submodule "snippets"]
-	path = snippets
-	url = git@github.com:zkazure/snippets.git
-[submodule "spinner"]
-	path = lib/spinner
-	url = https://github.com/Malabarba/spinner.el
-[submodule "string-inflection"]
-	path = lib/string-inflection
-	url = https://github.com/akicho8/string-inflection
 [submodule "sudo-edit"]
-	path = lib/sudo-edit
+	path = borg/sudo-edit
 	url = https://github.com/nflath/sudo-edit
 [submodule "super-save"]
-	path = lib/super-save
+	path = borg/super-save
 	url = https://github.com/bbatsov/super-save
 [submodule "symbol-overlay"]
-	path = lib/symbol-overlay
-	url = https://github.com/wolray/symbol-overlay
-[submodule "tomelr"]
-	path = lib/tomelr
-	url = https://github.com/kaushalmodi/tomelr
-[submodule "transient"]
-	path = lib/transient
-	url = https://github.com/magit/transient.git
-[submodule "treepy"]
-	path = lib/treepy
-	url = https://github.com/volrath/treepy.el.git
-[submodule "treesit-fold"]
-	path = lib/treesit-fold
-	url = https://github.com/emacs-tree-sitter/treesit-fold
-[submodule "ts"]
-	path = lib/ts
-	url = https://github.com/alphapapa/ts.el
-[submodule "typescript-mode"]
-	path = lib/typescript-mode
-	url = https://github.com/emacs-typescript/typescript.el
+	path = borg/symbol-overlay
+	url = https://github.com/wolray/symbol-overlay/
 [submodule "unfill"]
-	path = lib/unfill
+	path = borg/unfill
 	url = https://github.com/purcell/unfill
 [submodule "valign"]
-	path = lib/valign
+	path = borg/valign
 	url = https://github.com/casouri/valign
 [submodule "vertico"]
-	path = lib/vertico
+	path = borg/vertico
 	url = https://github.com/minad/vertico
-    load-path = .
-    load-path = extensions
 [submodule "vertico-buffer-frame"]
-	path = lib/vertico-buffer-frame
+	path = borg/vertico-buffer-frame
 	url = https://github.com/kn66/vertico-buffer-frame.git
 [submodule "visual-fill-column"]
-	path = lib/visual-fill-column
+	path = borg/visual-fill-column
 	url = https://codeberg.org/joostkremers/visual-fill-column
 [submodule "visual-regexp"]
-	path = lib/visual-regexp
-	url = https://github.com/benma/visual-regexp.el
+	path = borg/visual-regexp
+	url = https://github.com/benma/visual-regexp.el/
 [submodule "visual-regexp-rx"]
-	path = lib/visual-regexp-rx
-	url = git@github.com:zkazure/visual-regexp-rx.el.git
+	path = borg/visual-regexp-rx
+	url = https://github.com/zkazure/visual-regexp-rx.el.git
 [submodule "vundo"]
-	path = lib/vundo
+	path = borg/vundo
 	url = https://github.com/casouri/vundo
 [submodule "websocket"]
-	path = lib/websocket
+	path = borg/websocket
 	url = https://github.com/ahyatt/emacs-websocket
 [submodule "wgrep"]
-	path = lib/wgrep
-	url = https://github.com/mhayashi1120/Emacs-wgrep
+	path = borg/wgrep
+	url = https://github.com/mhayashi1120/Emacs-wgrep/raw/master/wgrep.el
 [submodule "which-key-posframe"]
-	path = lib/which-key-posframe
+	path = borg/which-key-posframe
 	url = https://github.com/emacsorphanage/which-key-posframe
-[submodule "whitespace-cleanup-mode"]
-	path = lib/whitespace-cleanup-mode
-	url = https://github.com/purcell/whitespace-cleanup-mode
 [submodule "whole-line-or-region"]
-	path = lib/whole-line-or-region
+	path = borg/whole-line-or-region
 	url = https://github.com/purcell/whole-line-or-region
-[submodule "with-editor"]
-	path = lib/with-editor
-	url = https://github.com/magit/with-editor.git
 [submodule "x86-lookup"]
-	path = lib/x86-lookup
+	path = borg/x86-lookup
 	url = https://github.com/skeeto/x86-lookup
-[submodule "xr"]
-	path = lib/xr
-	url = https://github.com/mattiase/xr
-[submodule "yaml"]
-	path = lib/yaml
-	url = https://github.com/zkry/yaml.el
 [submodule "yaml-mode"]
-	path = lib/yaml-mode
+	path = borg/yaml-mode
 	url = https://github.com/yoshiki/yaml-mode
 [submodule "yasnippet"]
-	path = lib/yasnippet
+	path = borg/yasnippet
 	url = https://github.com/joaotavora/yasnippet

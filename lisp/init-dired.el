@@ -17,12 +17,11 @@
 (setq dired-kill-when-opening-new-dired-buffer t
       delete-by-moving-to-trash t)
 
-(require-package 'diredfl "https://github.com/purcell/diredfl")
 (require 'diredfl)
 (diredfl-global-mode)
 (require 'diff-hl-dired)
 (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
-(require-package 'nerd-icons-dired "https://github.com/rainstormstudio/nerd-icons-dired")
+
 (require 'nerd-icons-dired)
 (add-hook 'dired-mode-hook 'nerd-icons-dired-mode)
 

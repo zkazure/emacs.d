@@ -6,7 +6,6 @@
 (setq uniquify-after-kill-buffer-p t)
 (setq uniquify-ignore-buffers-re "^\\*")
 
-
 (global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
 (setq ibuffer-show-empty-filter-groups t)
 (setq ibuffer-saved-filter-groups

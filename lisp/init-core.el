@@ -7,13 +7,11 @@
 
 (use-package compat)
 
-(require-package 'dash "https://github.com/magnars/dash.el")
 (use-package dash
   :config (global-dash-fontify-mode))
 
 (use-package eieio)
 
-(require-package 'auto-compile "https://github.com/emacscollective/auto-compile")
 (use-package auto-compile
   :config
   (setq auto-compile-display-buffer               nil)
@@ -24,7 +22,6 @@
   (auto-compile-on-load-mode)
   (auto-compile-on-save-mode))
 
-(require-package 'epkg "https://github.com/emacscollective/epkg")
 (use-package epkg
   :defer t
   :init
@@ -51,7 +48,6 @@
 
 ;;; Long tail
 
-(require-package 'diff-hl "https://github.com/dgutov/diff-hl")
 (use-package diff-hl
   :config
   (setq diff-hl-draw-borders nil)
@@ -89,8 +85,6 @@
     (setq indent-tabs-mode nil))
   (add-hook 'lisp-interaction-mode-hook 'indent-spaces-mode))
 
-
-(require-package 'magit '(:url "https://github.com/magit/magit" :lisp-dir "lisp"))
 (use-package magit
   :defer t
   :commands (magit-add-section-hook)

@@ -1,9 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
-
-(require-package 'gdscript-mode "https://github.com/godotengine/emacs-gdscript-mode")
 (require 'gdscript-mode)
-(require-package 'hydra "https://github.com/abo-abo/hydra")
+
 (require 'hydra)
 
 (add-hook 'gdscript-mode-hook 'eglot-ensure)

@@ -5,7 +5,6 @@
 (setq-default indent-tabs-mode nil
               tab-width 4)
 
-
 ;;; Helpers
 
 (defun my/set-indent (width)
@@ -17,7 +16,6 @@
   "Add FUNCTION to every hook in HOOKS."
   (dolist (hook hooks)
     (add-hook hook function)))
-
 
 ;;; C / C++ / Java
 
@@ -36,7 +34,6 @@
    java-mode-hook)
  #'my/c-indent)
 
-
 ;;; Go
 
 (defun my/go-indent ()
@@ -47,7 +44,6 @@
  '(go-mode-hook
    go-ts-mode-hook)
  #'my/go-indent)
-
 
 ;;; JavaScript / TypeScript
 
@@ -62,7 +58,6 @@
    typescript-mode-hook)
  #'my/js-indent)
 
-
 ;;; CSS
 
 (defun my/css-indent ()
@@ -73,7 +68,6 @@
  '(css-mode-hook
    css-ts-mode-hook)
  #'my/css-indent)
-
 
 ;;; YAML
 
@@ -86,7 +80,6 @@
    yaml-ts-mode-hook)
  #'my/yaml-indent)
 
-
 ;;; Shell
 
 (defun my/sh-indent ()
@@ -94,6 +87,5 @@
   (setq-local sh-basic-offset 4))
 
 (add-hook 'sh-mode-hook #'my/sh-indent)
-
 
 (provide 'init-indent)

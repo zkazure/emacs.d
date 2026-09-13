@@ -1,6 +1,5 @@
 ;;; -*- lexical-binding: t -*-
 
-(require-package 'no-littering "https://github.com/emacscollective/no-littering")
 (require 'no-littering)
 
 (setq auth-sources '("~/.authinfo.gpg"))
@@ -19,11 +18,9 @@
   (setq-local show-trailing-whitespace t))
 (add-hook 'prog-mode-hook #'zkazure/show-trailing-whitespace)
 
-
 ;; Adjust garbage collection threshold for early startup (see use of gcmh below)
 (setq gc-cons-threshold (* 128 1024 1024))
 
-(require-package 'gcmh "https://gitlab.com/koral/gcmh")
 (require 'gcmh)
 (setq gcmh-high-cons-threshold (* 128 1024 1024))
 (gcmh-mode)
@@ -49,7 +46,6 @@
 (when (fboundp 'global-so-long-mode)
   (global-so-long-mode 1))
 
-
 (setq system-time-locale "en_US.utf8")
 
 (prefer-coding-system       'utf-8)
@@ -69,11 +65,8 @@
         completions-sort 'historical
         completions-format 'one-column)
 
-(require-package 'envrc "https://github.com/purcell/envrc")
 (require 'envrc)
 (envrc-global-mode)
-
-
 
 ;; save pasteboard before killing
 (setq save-interprogram-paste-before-kill t)
@@ -97,13 +90,11 @@
 (setq global-auto-revert-non-file-buffers t
       auto-revert-verbose nil)
 
-
 (require 'which-key)
 (which-key-mode)
-(require-package 'which-key-posframe "https://github.com/emacsorphanage/which-key-posframe")
+
 (require 'which-key-posframe)
 (which-key-posframe-mode)
-
 
 (when (fboundp 'repeat-mode)
     (progn
@@ -113,24 +104,16 @@
 ;; instead of C-u C-SPC every time
 (setq set-mark-command-repeat-pop t)
 
-
-(require-package 'projectile "https://github.com/bbatsov/projectile")
 (require 'projectile)
 (projectile-mode +1)
 ;; Recommended keymap prefix on Windows/Linux
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
-
-
-(require-package 'dumb-jump "https://github.com/jacktasia/dumb-jump")
 (require 'dumb-jump)
 (setq dumb-jump-prefer-searcher 'rg
       xref-show-definitions-function #'consult-xref)
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 
-
-
-(require-package 'helpful "https://github.com/Wilfred/helpful")
 (autoload 'helpful-callable "helpful" nil t)
 (autoload 'helpful-variable "helpful" nil t)
 (autoload 'helpful-key "helpful" nil t)
@@ -153,6 +136,5 @@
 (global-set-key (kbd "C-h F") #'helpful-function)
 (setq counsel-describe-function-function #'helpful-callable)
 (setq counsel-describe-variable-function #'helpful-variable)
-
 
 (provide 'init-basic)

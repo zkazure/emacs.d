@@ -1,6 +1,5 @@
 ;; -*- lexical-binding: t; -*-
 
-(require-package 'vertico "https://github.com/minad/vertico")
 (require 'vertico)
 ;; VC checkouts keep the extensions in their source subdirectory.
 (let ((extensions (expand-file-name "extensions/"
@@ -32,21 +31,18 @@
 
 (vertico-indexed-mode)
 
-(require-package 'vertico-buffer-frame "https://github.com/kn66/vertico-buffer-frame.git")
 (require 'vertico-buffer-frame)
 (setq vertico-buffer-frame-auto-width t
       vertico-buffer-frame-consult-preview nil)
 (vertico-buffer-frame-mode 1)
 
-
 ;; icons
-(require-package 'marginalia "https://github.com/minad/marginalia")
+
 (require 'marginalia)
-(require-package 'nerd-icons-completion "https://github.com/rainstormstudio/nerd-icons-completion")
+
 (require 'nerd-icons-completion)
 (add-hook 'after-init-hook 'marginalia-mode)
 (add-hook 'marginalia-mode-hook #'nerd-icons-completion-marginalia-setup)
 (nerd-icons-completion-mode)
-
 
 (provide 'init-vertico)

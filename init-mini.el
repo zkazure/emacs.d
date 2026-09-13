@@ -71,7 +71,6 @@
 (when (file-exists-p custom-file)
   (load custom-file nil 'nomessage))
 
-
 (provide 'init-mini)
 
 ;;; init-mini.el ends here

@@ -27,7 +27,6 @@
 (setq scroll-conservatively 101
       scroll-margin 2)
 
-
 ;;; Android 触屏优化
 
 ;; 长按拖动时按“单词”选择，比精确选字符更适合手指。
@@ -45,7 +44,6 @@
 ;; 避免误触造成横向滚动。
 (when (boundp 'touch-screen-enable-hscroll)
   (setq touch-screen-enable-hscroll nil))
-
 
 ;;; UTF-8 / 中文
 
@@ -69,7 +67,6 @@
 (global-visual-line-mode)
 (global-hl-line-mode)
 
-
 (cond
  ((fboundp 'fido-vertical-mode)
   (fido-vertical-mode 1))
@@ -77,7 +74,6 @@
   (icomplete-vertical-mode 1)))
 (when (fboundp 'minibuffer-depth-indicate-mode)
   (minibuffer-depth-indicate-mode 1))
-
 
 ;;; 历史记录 / 最近文件 / 光标位置
 
@@ -95,7 +91,6 @@
 (global-auto-revert-mode 1)
 
 (setq global-auto-revert-non-file-buffers t)
-
 
 (let ((autosave-dir
        (expand-file-name "auto-save/" user-emacs-directory)))
@@ -128,7 +123,6 @@
 ;; M-x package-refresh-contents
 ;; M-x package-list-packages
 
-
 ;;; ------------------------------------------------------------
 ;;; 17. 可选字体设置
 ;;; ------------------------------------------------------------
@@ -148,8 +142,6 @@
       delete-by-moving-to-trash t
       dired-hide-details-preserved-columns '(6 7 8))
 (add-hook 'dired-mode-hook #'dired-hide-details-mode)
-
-
 
 ;;; Org Mode
 (with-eval-after-load 'org

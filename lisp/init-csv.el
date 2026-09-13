@@ -1,7 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
 ;; Use the archive distribution; no VC recipe is configured here.
-(require-package 'csv-mode :archive)
+
 (require 'csv-mode)
 (require 'color)
 
@@ -25,6 +25,5 @@
 ;; (add-hook 'csv-mode-hook 'csv-guess-set-separator)
 ;; (add-hook 'csv-mode-hook 'csv-align-mode)
 ;; (add-hook 'csv-mode-hook '(lambda () (interactive) (toggle-truncate-lines nil)))
-
 
 (provide 'init-csv)

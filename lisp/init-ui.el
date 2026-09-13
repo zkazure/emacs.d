@@ -53,25 +53,19 @@
 (setq hl-line-sticky-flag nil
       hl-line-overlay-priority -50)
 
-
 (add-hook 'text-mode-hook
           (lambda () (progn (visual-line-mode 1)
                        (visual-wrap-prefix-mode 1))))
 (setq word-wrap-by-category t)
 
-
 ;; Use the archive distribution; no VC recipe is configured here.
-(require-package 'breadcrumb :archive)
+
 (require 'breadcrumb)
 (breadcrumb-mode 1)
 
-
-(require-package 'rainbow-delimiters "https://github.com/Fanael/rainbow-delimiters")
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
-
-(require-package 'jinx "https://github.com/minad/jinx")
 (require 'jinx)
 (add-hook 'emacs-startup-hook #'global-jinx-mode)
 (add-to-list 'jinx-exclude-regexps '(t "\\cc")) ; 拼写检查忽略中文
@@ -81,9 +75,6 @@
 
 (setq jinx-languages "en_GB en_US")
 
-
-
-(require-package 'visual-fill-column "https://codeberg.org/joostkremers/visual-fill-column")
 (require 'visual-fill-column)
 (defun vfc/view-mode (width)
   "use visual-fill-column to enable a view mode"
@@ -93,23 +84,15 @@
                 visual-fill-column-center-text t)
     (visual-fill-column-mode 1)))
 
-
-
-
 (require 'hideshow)
 (add-hook 'prog-mode-hook #'hs-minor-mode)
 (setq hs-allow-nesting t)
-
-
 
 (setq multibyte-syntax-as-symbol t)
 
 (setq next-screen-context-lines 2)
 
 (setq enable-recursive-minibuffers +1)
-
-
-
 
 (load-theme 'modus-operandi)
 

@@ -1,8 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
-(require-package 'gptel "https://github.com/karthink/gptel")
 (require 'gptel)
-(require-package 'gptel-magit "https://github.com/ragnard/gptel-magit")
+
 (require 'gptel-magit)
 ;; (gptel-make-ollama "Ollama"             ;Any name of your choosing
 ;;   :host "localhost:11434"               ;Where it's running
@@ -17,7 +16,6 @@
 ;;                  :host "localhost:11434"
 ;;                  :stream t
 ;;                  :models '(mistral:latest)))
-
 
 ;; (gptel-make-deepseek "DeepSeek"       ;Any name you want
 ;; :stream t                           ;for streaming responses
@@ -38,12 +36,10 @@
 ;; (setq gptel-model 'gpt-5.6-luna
 ;;       gptel-backend (gptel-make-openai-oauth "OpenAI-sub"))
 
-
 ;; (gptel-make-gh-copilot "Copilot")
 ;; OPTIONAL configuration
 ;; (setq gptel-model 'gpt-5.2
 ;;       gptel-backend (gptel-make-gh-copilot "Copilot"))
-
 
 (setq-default gptel-default-mode 'markdown-mode)
 
@@ -79,9 +75,6 @@
 ;; (add-hook 'gptel-post-stream-hook 'gptel-auto-scroll)
 (add-hook 'gptel-post-response-functions 'gptel-end-of-response)
 
-
-
-(require-package 'claude-code-ide "https://github.com/parsnips/claude-code-ide.el.git")
 (require 'claude-code-ide)
 (claude-code-ide-emacs-tools-setup)
 (setq claude-code-ide-terminal-backend 'ghostel

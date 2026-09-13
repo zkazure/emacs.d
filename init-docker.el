@@ -60,7 +60,6 @@
 (when (file-exists-p custom-file)
   (load-file custom-file))
 
-
 ;;; terminal
 (use-package eat
   :ensure t
@@ -82,11 +81,9 @@
     "\e\\")))
  (setq interprogram-cut-function #'my-osc52-copy)
 
-
 ;; dabbrev
 (setq dabbrev-abbrev-char-regexp "[A-Za-z0-9_-]"
       dabbrev-case-fold-search nil)
-
 
 (use-package ansi-color
   :ensure nil

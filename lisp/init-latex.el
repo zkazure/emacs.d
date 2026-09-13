@@ -1,7 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
 ;; Use the archive build, including generated AUCTeX files.
-(require-package 'auctex :archive)
+
 (require 'auctex)
 
 (setq TeX-auto-save t)
@@ -24,7 +24,6 @@
 
 (add-hook 'latex-mode-hook 'TeX-fold-mode)
 
-(require-package 'cdlatex "https://github.com/cdominik/cdlatex")
 (require 'cdlatex)
 
 (add-hook 'latex-mode-hook 'turn-on-cdlatex)

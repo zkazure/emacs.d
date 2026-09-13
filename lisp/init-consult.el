@@ -1,6 +1,5 @@
 ;; -*- lexical-binding: t; -*-
 
-(require-package 'consult "https://github.com/minad/consult")
 (require 'consult)
 
 (with-eval-after-load 'consult
@@ -47,7 +46,6 @@
 (global-set-key (kbd "M-s k") 'consult-keep-lines)
 (global-set-key (kbd "M-s u") 'consult-focus-lines)
 (global-set-key (kbd "M-s e") 'consult-isearch-history)
-
 
 (define-key isearch-mode-map (kbd "M-e") 'consult-isearch-history)         ;; orig. isearch-edit-string
 (define-key isearch-mode-map (kbd "M-s e") 'consult-isearch-history)       ;; orig. isearch-edit-string

@@ -1,6 +1,5 @@
 ;; -*- lexical-binding: t; -*-
 
-(require-package 'pyim "https://github.com/tumashu/pyim")
 (require 'pyim)
 (setq pyim-cloudim nil)
 (setq pyim-candidates-search-buffer-p nil)
@@ -23,7 +22,6 @@
       (pyim-cregexp-build result)))
   (advice-add 'orderless-regexp :around #'my-orderless-regexp))
 
-(require-package 'rime "https://github.com/DogLooksGood/emacs-rime")
 (require 'rime)
 
 (setq rime-translate-keybindings
@@ -53,13 +51,11 @@
        ;; :foreground-color "#cdd6f4"
        ))
 
-
 (with-eval-after-load 'rime
   (face-spec-reset-face 'rime-default-face)
   (face-spec-reset-face 'rime-candidate-num-face)
   (face-spec-reset-face 'rime-code-face)
   (face-spec-reset-face 'rime-comment-face)
   (face-spec-reset-face 'rime-cursor-face))
-
 
 (provide 'init-ime)

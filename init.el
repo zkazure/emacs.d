@@ -25,7 +25,6 @@
     (tool-bar-mode 0))
   (menu-bar-mode -1))
 
-
 (eval-and-compile
   (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory)))
 

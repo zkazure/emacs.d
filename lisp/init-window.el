@@ -5,8 +5,6 @@
 (winner-mode 1)
 (global-set-key (kbd "C-c w") 'winner-undo)
 
-
-(require-package 'ace-window "https://github.com/abo-abo/ace-window")
 (require 'ace-window)
 
 (global-set-key (kbd "C-x o") 'ace-window)
@@ -34,6 +32,5 @@
 	      (?? aw-show-dispatch-help))))
 
 ;; (ace-window-display-mode 1)
-
 
 (provide 'init-window)

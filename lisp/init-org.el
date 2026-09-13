@@ -2,8 +2,7 @@
 
 ;;; Org
 (require-package 'org)
-(require-package 'ox-pandoc "https://github.com/a-fent/ox-pandoc")
-(require-package 'ox-gfm "https://github.com/larstvei/ox-gfm")
+
 (require 'org)
 (with-eval-after-load 'ox
   (require 'ox-pandoc)
@@ -77,15 +76,12 @@
         ("z" . "src zig")
         ))
 
-(require-package 'org-count-words "https://github.com/zkazure/org-count-words.git")
 (require 'org-count-words)
 ;; (add-hook 'org-mode-hook #'org-count-words-mode)
 ;; (setq org-count-words-mode-line-format
 ;;       '(" WC:%s"
 ;;         " WC:%s(R:%s)"))
 
-
-(require-package 'org-appear "https://github.com/awth13/org-appear")
 (require 'org-appear)
 (setq org-hide-emphasis-markers nil
       org-appear-autolinks t
@@ -95,13 +91,10 @@
       org-appear-delay 0.5)
 (add-hook 'org-mode-hook 'org-appear-mode)
 
-
 ;;; Archive
 (setq org-archive-location
       (expand-file-name
        (concat org-directory "archive/%s_archive::datetree/")))
-
-
 
 ;;; Agenda
 (global-set-key (kbd "C-c a") 'org-agenda)
@@ -127,8 +120,6 @@
                           ":  " "┈┈┈┈┈┈┈┈┈┈┈┈┈"))
 (customize-set-variable 'org-agenda-current-time-string "ᐊ┈┈┈┈┈┈┈┈ now")
 
-
-(require-package 'org-super-agenda "https://github.com/alphapapa/org-super-agenda")
 (require 'org-super-agenda)
 (org-super-agenda-mode 1)
 (add-to-list
@@ -171,8 +162,6 @@
               ))
     )))
 
-
-
 ;;; Capture
 (define-key global-map (kbd "C-c n c") 'org-capture)
 
@@ -196,8 +185,6 @@
          :empty-lines 1
          :jump-to-captured t)
         ))
-
-
 
 ;;; Babel
 (with-eval-after-load 'org
@@ -241,21 +228,16 @@
 
 (add-hook 'org-babel-after-execute-hook 'org-display-inline-images)
 
-
-
 ;;; Table
-(require-package 'valign "https://github.com/casouri/valign")
+
 (require 'valign)
 (setq valign-fancy-bar nil)
 (add-hook 'org-mode-hook #'valign-mode)
-
-
 
 ;;; Roam
 (setq org-roam-directory org-directory)
 (setq org-roam-main-directory org-main-directory)
 
-(require-package 'org-roam "https://github.com/org-roam/org-roam")
 (require 'org-roam)
 (let ((extensions (expand-file-name "extensions/"
                                     (file-name-directory (locate-library "org-roam")))))
@@ -408,7 +390,6 @@
               :on (= tags:node-id nodes:id)
               :where (like tag (quote "%\"todo\"%"))]))))
 
-
 (defun vulpea-agenda-files-update (&rest _)
   "Update `org-agenda-files' by merging with current files.
   This function accepts any number of arguments, as required by advice."
@@ -508,11 +489,10 @@
                              (point-max) t)
       (replace-match ""))))
 
-
 ;;; Org-roam-ui
-(require-package 'org-roam-ui "https://github.com/org-roam/org-roam-ui")
+
 (require 'org-roam-ui)
-(require-package 'websocket "https://github.com/ahyatt/emacs-websocket")
+
 (require 'websocket)
 
 (setq org-roam-ui-open-on-start nil
@@ -522,10 +502,8 @@
 
 (provide 'init-org-roam-ui)
 
-
-
 ;;; Ebib
-(require-package 'ebib "https://github.com/joostkremers/ebib.git")
+
 (require 'ebib)
 (global-set-key (kbd "C-c o e") 'ebib)
 ;; citekey formula: auth.lower + year + shorttitle(2,2).lower
@@ -536,12 +514,10 @@
                             (expand-file-name "reference/" org-directory))
       ebib-file-search-dirs '("~/Documents/zotero/"))
 
-
-
 ;;; Citar
-(require-package 'citar "https://github.com/emacs-citar/citar")
+
 (require 'citar)
-(require-package 'nerd-icons "https://github.com/rainstormstudio/nerd-icons.el")
+
 (require 'nerd-icons)
 ;; basic
 (setq citar-bibliography
@@ -606,7 +582,6 @@
             citar-indicator-notes-icons
             citar-indicator-links-icons))
 
-(require-package 'citar-org-roam "https://github.com/emacs-citar/citar-org-roam")
 (require 'citar-org-roam)
 (citar-org-roam-mode 1)
 
@@ -628,7 +603,6 @@
             :after
             #'kazure/citar-clean-title)
 
-
 (add-to-list 'org-roam-capture-templates
              '("r" "reference" plain "%?"
                :target
@@ -640,8 +614,6 @@
                :unnarrowed t))
 
 (setq citar-org-roam-capture-template-key "r")
-
-
 
 ;;; Latex
 (setq org-highlight-latex-and-related '(native latex entities)
@@ -687,16 +659,12 @@
 (setq org-format-latex-options
       `(:foreground default :background default :scale ,my/latex-preview-scale :html-foreground "Black" :html-background "Transparent" :html-scale ,my/latex-preview-scale :matchers ("begin" "$1" "$" "$$" "\\(" "\\["))) ;; 设置公式预览的图片大小
 
-
-(require-package 'org-fragtog "https://github.com/io12/org-fragtog")
 (require 'org-fragtog)
 (add-hook 'org-mode-hook 'org-fragtog-mode)
 (setq org-fragtog-preview-delay 0.2)
 
-
-
 ;;; ox-hugo
-(require-package 'ox-hugo "https://github.com/kaushalmodi/ox-hugo")
+
 (require 'ox-hugo)
 (defun my/org-roam-export-hugo-if-blog ()
   "如果当前 Org 文件包含 'blog' 标签且不包含 'draft' 标签，则在保存时自动导出为 Hugo Markdown。"
@@ -729,10 +697,8 @@
 (define-key org-mode-map (kbd "C-c b e") #'my/org-roam-export-hugo-if-blog)
 (define-key org-mode-map (kbd "C-c b p") #'my/blog-publish)
 
-
-
 ;;; Transclusion
-(require-package 'org-transclusion "https://github.com/nobiot/org-transclusion")
+
 (require 'org-transclusion)
 
 ;; (define-key global-map (kbd "<f12>") #'org-transclusion-add)
@@ -744,8 +710,6 @@
                                    vc-ignore-dir-regexp
                                    tramp-file-name-regexp)
       remote-file-name-inhibit-locks t)
-
-
 
 ;;; Export
 (define-advice org-html-paragraph
@@ -759,7 +723,6 @@ unwanted space when exporting org-mode to html."
             "\\(" fix-regexp "\\) *\n *\\(" fix-regexp "\\)") "\\1\\2" contents)))
     (funcall orig-fun paragraph fixed-contents info)))
 
-
 (define-advice org-gfm-paragraph
     (:around (orig-fun paragraph contents info) org-gfm-paragraph-advice)
   "Join consecutive Chinese lines into a single long line without
@@ -770,7 +733,6 @@ unwanted space when exporting org-mode to html."
            (concat
             "\\(" fix-regexp "\\) *\n *\\(" fix-regexp "\\)") "\\1\\2" contents)))
     (funcall orig-fun paragraph fixed-contents info)))
-
 
 (define-advice org-pandoc-paragraph
     (:around (orig-fun paragraph contents info) org-pandoc-paragraph-advice)
@@ -796,7 +758,5 @@ unwanted space when exporting org-mode to html."
            (org-pandoc-export-to-gfm nil t) ; 't' 参数表示只导出当前 Subtree
            (message "已导出: %s" filename))))
      "+EXPORT_FILE_NAME<>\"\"")))
-
-
 
 (provide 'init-org)
