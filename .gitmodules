@@ -155,11 +155,11 @@
 	ignore = untracked
 [submodule "hydra"]
 	path = lib/hydra
-	url = https://github.com/abo-abo/hydra
+	url = https://github.com/zkazure/hydra.git
 	ignore = untracked
 [submodule "imenu-list"]
 	path = lib/imenu-list
-	url = https://github.com/bmag/imenu-list
+	url = https://github.com/zkazure/imenu-list.git
 	ignore = untracked
 [submodule "jinx"]
 	path = lib/jinx
@@ -331,7 +331,7 @@
 	ignore = untracked
 [submodule "visual-regexp"]
 	path = lib/visual-regexp
-	url = https://github.com/benma/visual-regexp.el/
+	url = https://github.com/zkazure/visual-regexp.el.git
 	ignore = untracked
 [submodule "visual-regexp-rx"]
 	path = lib/visual-regexp-rx
@@ -435,7 +435,7 @@
 	ignore = untracked
 [submodule "log4e"]
 	path = lib/log4e
-	url = https://github.com/aki2o/log4e
+	url = https://github.com/zkazure/log4e.git
 	ignore = untracked
 [submodule "pdd"]
 	path = lib/pdd
