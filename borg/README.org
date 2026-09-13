@@ -1,15 +1,18 @@
-#+title: Borg drones
+#+title: Borg package sources
 
-Third-party packages managed by Borg live here, each one as a Git
-submodule pinned to an exact commit.  Borg is used in *secondary mode*:
-it activates the drones in this directory, then lets package.el activate
-the remaining packages in =elpa/=.
+All package sources, including Borg itself, live here as Git submodules pinned
+to exact commits.  Borg runs in *primary mode* and activates these drones at
+startup.  Package.el does not activate or install packages.
 
 Don't add or clone packages here by hand; use =M-x borg-assimilate=
-(or one of the =make= targets) so that the submodule, the autoloads and
-the byte-code stay consistent.
+(for a new package) or =M-x borg-build= (after an intentional source update)
+so that the submodule, autoloads and byte-code stay consistent.  Updates are
+manual: change a drone's checked-out commit, validate it, and commit the new
+gitlink.  Neither startup nor Borg automatically upgrades packages.
 
-This file exists so that the directory is present in a fresh clone.
-Borg only honours =borg.drones-directory= (set in =.borgconfig=) when
-that directory already exists; otherwise it silently falls back to the
-directory containing =borg.el= itself.
+For a fresh clone, run =make bootstrap-borg= followed by =make bootstrap=.
+The first command makes Borg available; the second initializes each recorded
+submodule and builds its autoloads and byte-code.  Borg honours
+=borg.drones-directory= (set in =.borgconfig=) because this directory exists.
+The primary-mode bootstrap follows the [[https://github.com/emacscollective/borg/blob/main/docs/borg.org][official Borg manual]], with =borg/=
+selected in place of its default =lib/=.

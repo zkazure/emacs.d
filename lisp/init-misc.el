@@ -15,11 +15,12 @@
   (message "Opened default terminal in: %s" default-directory))
 (global-set-key (kbd "C-c o T") 'my/open-current-dir-in-default-terminal)
 
-(global-set-key (kbd "C-c o b d") 'package-list-packages)
-(global-set-key (kbd "C-c o b a") 'package-install)
-(global-set-key (kbd "C-c o b b") 'package-install-selected-packages)
-(global-set-key (kbd "C-c o b r") 'package-delete)
-(global-set-key (kbd "C-c o b c") 'package-vc-install)
+;; Borg keeps package sources and their pins in this repository.
+(global-set-key (kbd "C-c o b d") #'epkg-describe-package)
+(global-set-key (kbd "C-c o b a") #'borg-assimilate)
+(global-set-key (kbd "C-c o b b") #'borg-build)
+(global-set-key (kbd "C-c o b c") #'borg-clone)
+(global-set-key (kbd "C-c o b r") #'borg-remove)
 
 (require 'leetcode)
 (setq leetcode-prefer-language "cpp"

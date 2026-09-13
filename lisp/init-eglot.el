@@ -1,7 +1,6 @@
 ;; -*- lexical-binding: t; -*-
 
-(require-package 'eglot)
-
+;; Eglot is provided by this Emacs release.
 (require 'eglot)
 (require 'eglot-booster)
 (with-eval-after-load 'eglot

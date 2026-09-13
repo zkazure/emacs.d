@@ -1,8 +1,6 @@
 ;; -*- lexical-binding: t; -*-
 
-;;; Org
-(require-package 'org)
-
+;;; Org is provided by this Emacs release.
 (require 'org)
 (with-eval-after-load 'ox
   (require 'ox-pandoc)

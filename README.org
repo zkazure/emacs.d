@@ -7,66 +7,43 @@ However, there is still a long way to go.
 * Package management
 
 The configuration follows [[https://github.com/purcell/emacs.d][Purcell's]] modular style: =init.el= loads
-=lisp/init-*.el=, and each module declares its dependencies nearby.
-=early-init.el= enables package.el's normal startup activation.
+=lisp/init-*.el=.  Borg is the sole third-party package manager.  Borg itself
+and 92 package drones are Git submodules under =borg/=, each pinned to an
+exact commit; =early-init.el= calls =borg-initialize= before =init.el= loads.
+The existing ignored =elpa/= directory is dormant compatibility storage and is
+not part of startup or builds.
 
-=require-package= in =lisp/init-elpa.el= ensures installation, without
-loading the library.  Installed packages, including built-in and archive
-packages, are left alone.  Missing packages are installed from the declared
-repository with Emacs's built-in =package-vc=:
-
-#+begin_src emacs-lisp
-(require-package 'helpful "https://github.com/Wilfred/helpful")
-(autoload 'helpful-callable "helpful" nil t)
-#+end_src
-
-A package-vc specification plist can be used instead of the URL when a
-repository needs options such as =:lisp-dir=.  For an explicit archive
-exception, use =(require-package 'some-package :archive)=.  Installation
-errors identify the package and source; they do not silently fall back to
-another source.  Use =require=, autoloads and =with-eval-after-load= to control
-when libraries load.
-
-Direct package dependencies in the active configuration modules are declared
-this way.  Package.el/package-vc resolves the packages' own dependencies;
-these may still come from the configured archives.  Org's optional Babel
-languages retain their existing =locate-library= checks.
-
-Corfu, Vertico, Org-roam and Ghostel extensions use their parent package's
-checkout.  Magit and Ghostel specify =:lisp-dir "lisp"=; the other extension
-directories are added to =load-path= where needed.  Archive installations of
-Embark split out =embark-consult=, so that package is installed from an archive
-only when its library is missing from the existing installation.
-
-The other explicit archive exceptions are AUCTeX (generated build files),
-=cmake-mode=, =csv-mode= and =breadcrumb= (the existing archive distribution
-is used instead of introducing additional source/build recipes).
-Local VC packages retain their configured repository origins, including
-personal forks.
-
-Startup may access the network to install missing packages, but does not
-upgrade existing ones.  When dependencies are installed, no network is needed
-by this helper.  Upgrades remain explicit: use =M-x package-vc-upgrade= for a
-VC package, or the package menu for archive packages.  Existing archive
-installations are not automatically converted to VC installations.
-
-This installs Emacs packages, not system tools, Tree-sitter grammars, fonts,
-native module build dependencies or personal data.  Those still need to be
-available for the associated features.  With existing packages, isolated
-batch loading of the full configuration and its after-init hooks has been
-tested, with server/auto-compile side effects disabled and personal data
-paths redirected to temporary directories.  Helpful, GFM export, completion
-mode activation, a real clangd hover request through Eglot/booster, and a
-Pandoc conversion have also been checked.  GUI rendering and a complete
-download/build of every package into an empty installation have not been
-tested.  The helper's missing-package path was checked separately using an
-isolated local Git package.
-
-The helper's tests run with:
+For a fresh clone, use Borg's bootstrap sequence.  It first makes the pinned
+Borg source available, then initializes every drone at its recorded commit and
+generates the required autoload and byte-code files:
 
 #+begin_src sh
-emacs -Q --batch -L lisp -l tests/init-elpa-test.el -f ert-run-tests-batch-and-exit
+git clone <configuration-url> ~/.emacs.d
+cd ~/.emacs.d
+make bootstrap-borg
+make bootstrap
 #+end_src
+
+If =borg/borg= is already initialized, =make bootstrap= is sufficient.  A
+plain =git submodule update --init --recursive= checks out the sources but
+does not run Borg's build step.
+
+Use =M-x borg-assimilate= to add a package, =M-x borg-build= to regenerate a
+drone after an intentional source update, and =make build= for the explicit
+batch build.  Package updates are manual: choose and validate a commit in its
+submodule, then commit the resulting gitlink.  Startup neither downloads nor
+upgrades packages, and native JIT compilation remains disabled.
+
+The bootstrap follows the [[https://github.com/emacscollective/borg/blob/main/docs/borg.org][Borg manual's seed pattern]]:
+=Makefile= includes the drone's =borg.mk= when available and otherwise offers
+=make bootstrap-borg=.  The historical configuration at commit =3cca64c=
+informs the Borg command bindings; this configuration deliberately keeps
+=borg/= as the drone directory through =.borgconfig= rather than moving pins
+to the manual's default =lib/=.
+
+Emacs 32 supplies =org=, =eglot= and =use-package= as built-ins.  =cmake-mode=
+is a pinned drone.  System tools, Tree-sitter grammars, fonts, native-module
+build dependencies and personal data remain outside Borg's scope.
 
 * LilyPond
 
