@@ -21,8 +21,8 @@
 (setq gc-cons-percentage 0.6)
 
 ;; Borg is the primary package manager.  Every third-party package, including
-;; Borg itself, is a pinned drone under "borg/"; package.el is not initialized.
-(add-to-list 'load-path (expand-file-name "borg/borg" user-emacs-directory))
+;; Borg itself, is a pinned drone under "lib/"; package.el is not initialized.
+(add-to-list 'load-path (expand-file-name "lib/borg" user-emacs-directory))
 (require 'borg)
 (borg-initialize)
 (setq package-enable-at-startup nil)

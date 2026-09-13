@@ -1,5 +1,5 @@
 [borg]
-	drones-directory = borg
+	drones-directory = lib
 [submodule "dash"]
 	no-byte-compile = dash-functional.el
 	no-makeinfo = dash-template.texi
