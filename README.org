@@ -42,13 +42,43 @@ submodules.  =make autoloads= is the command to re-run after
 =M-x borg-assimilate=, after changing a drone's commit, or when an autoloaded
 entry point seems to be missing.
 
-Package updates are manual: choose and validate a commit in the drone's
-submodule, run =make autoloads=, then commit the resulting gitlink.  Startup
-neither downloads nor upgrades packages, and native JIT compilation stays
-disabled.  Loading uncompiled sources costs roughly two seconds of startup
-time compared with a byte-compiled tree (~6.3s vs ~4.3s on the reference
-machine); that is the accepted trade-off for keeping the submodules free of
-build artifacts.
+Package updates are manual, and Borg deliberately provides no update
+command; the weekly routine follows the
+[[https://github.com/emacscollective/borg/blob/main/docs/borg.org][Borg manual's «Updating drones»]] workflow:
+
+1. In =~/.emacs.d=, run =M-x magit-status= and press =f m=
+   (=magit-fetch-modules=, which runs =git fetch --recurse-submodules=).
+   Every drone with new upstream commits shows up in a section named
+   "Modules unpulled from @{upstream}".
+2. Press =RET= on such a drone to visit its status buffer and inspect the
+   incoming commits, then pull them with =F= (opens the pull transient),
+   =-f= (turns on "Fast-forward only") and =u= (pull from upstream).  The
+   transient remembers =-f= for the rest of the session.  A plain pull also
+   fast-forwards, but =-f= is what makes a drone whose upstream history was
+   rewritten fail loudly instead of silently recording a merge commit.
+3. Run =make autoloads= to scrape the new autoload cookies into
+   =var/autoloads/autoloads.el=.  The Borg manual's =M-x borg-build= (and
+   =make build/<drone>=) byte-compiles as well, which this configuration
+   deliberately avoids because the =.elc= files would sit inside the
+   submodules; run those only when you want the artifacts.
+4. Commit the new gitlinks -- one commit per drone, or a single =Update N
+   drones= commit listing every drone, as the Borg manual prescribes.  In
+   the commit buffer, =C-c C-b= (=borg-insert-update-message=) writes that
+   message from the staged gitlinks.
+5. Start Emacs once and confirm that it still loads without errors.
+
+A drone must never carry a local commit: it has to stay at an upstream
+commit, so anything that has to live locally belongs in this configuration,
+in one of the =zkazure= forks, or in a patch (Borg manual, «Patching
+drones»).  If a drone's upstream branch was rewritten, do not pull -- check
+out the commit you want instead (=git -C lib/<drone> reset --hard
+origin/master=) and commit the resulting gitlink.
+
+Startup neither downloads nor upgrades packages, and native JIT compilation
+stays disabled.  Loading uncompiled sources costs roughly two seconds of
+startup time compared with a byte-compiled tree (~6.3s vs ~4.3s on the
+reference machine); that is the accepted trade-off for keeping the submodules
+free of build artifacts.
 
 The bootstrap follows the [[https://github.com/emacscollective/borg/blob/main/docs/borg.org][Borg manual's seed pattern]]:
 =Makefile= includes the drone's =borg.mk= when available and otherwise offers
