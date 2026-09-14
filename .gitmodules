@@ -263,6 +263,9 @@
 	path = lib/js2-mode
 	url = https://github.com/mooz/js2-mode
 	ignore = untracked
+[submodule "kirigami"]
+	path = lib/kirigami
+	url = https://github.com/jamescherti/kirigami.el
 [submodule "leetcode"]
 	path = lib/leetcode
 	url = https://github.com/zkazure/leetcode.el.git

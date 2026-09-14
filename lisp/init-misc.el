@@ -112,4 +112,13 @@
 ;; (setf (alist-get 'js-mode apheleia-mode-alist) '(prettier))
 ;; (setf (alist-get 'rust-mode apheleia-mode-alist) '(rustfmt))
 
+
+(require 'kirigami)
+(global-set-key (kbd "C-c k o") 'kirigami-open-fold)     ; Open fold at point
+(global-set-key (kbd "C-c k O") 'kirigami-open-fold-rec) ; Open fold recursively
+(global-set-key (kbd "C-c k r") 'kirigami-open-folds)    ; Open all folds
+(global-set-key (kbd "C-c k c") 'kirigami-close-fold)    ; Close fold at point
+(global-set-key (kbd "C-c k m") 'kirigami-close-folds)   ; Close all folds
+(global-set-key (kbd "C-c k a") 'kirigami-toggle-fold)   ; Toggle fold at point
+
 (provide 'init-misc)
