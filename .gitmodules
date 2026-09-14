@@ -156,10 +156,12 @@
 [submodule "hydra"]
 	path = lib/hydra
 	url = https://github.com/zkazure/hydra.git
+	branch = zkazure/lexical-binding-cookie
 	ignore = untracked
 [submodule "imenu-list"]
 	path = lib/imenu-list
 	url = https://github.com/zkazure/imenu-list.git
+	branch = zkazure/lexical-binding-cookie
 	ignore = untracked
 [submodule "jinx"]
 	path = lib/jinx
@@ -332,6 +334,7 @@
 [submodule "visual-regexp"]
 	path = lib/visual-regexp
 	url = https://github.com/zkazure/visual-regexp.el.git
+	branch = zkazure/lexical-binding-cookie
 	ignore = untracked
 [submodule "visual-regexp-rx"]
 	path = lib/visual-regexp-rx
@@ -436,6 +439,7 @@
 [submodule "log4e"]
 	path = lib/log4e
 	url = https://github.com/zkazure/log4e.git
+	branch = zkazure/lexical-binding-cookie
 	ignore = untracked
 [submodule "pdd"]
 	path = lib/pdd
