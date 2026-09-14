@@ -74,6 +74,16 @@ drones»).  If a drone's upstream branch was rewritten, do not pull -- check
 out the commit you want instead (=git -C lib/<drone> reset --hard
 origin/master=) and commit the resulting gitlink.
 
+Four drones are pinned to a patch branch instead of to upstream master:
+=hydra=, =log4e=, =imenu-list= and =visual-regexp= follow
+=zkazure/lexical-binding-cookie= in their forks, which adds an explicit
+=-*- lexical-binding: nil; -*-= cookie to files whose upstream still omits
+it (Emacs warns about the missing cookie otherwise).  =.gitmodules= records
+that branch, so both the Magit workflow and =git submodule update --remote=
+follow it; when upstream master moves, rebase the patch branch onto it.  The
+remaining =zkazure= forks (=atcoder-tools=, =leetcode=, =org-count-words=
+and =visual-regexp-rx=) carry no patch and track their own master.
+
 Startup neither downloads nor upgrades packages, and native JIT compilation
 stays disabled.  Loading uncompiled sources costs roughly two seconds of
 startup time compared with a byte-compiled tree (~6.3s vs ~4.3s on the
