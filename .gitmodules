@@ -5,9 +5,25 @@
 	path = lib/ace-window
 	url = https://github.com/abo-abo/ace-window
 	ignore = untracked
+[submodule "aio"]
+	path = lib/aio
+	url = https://github.com/skeeto/emacs-aio
+	ignore = untracked
+[submodule "alert"]
+	path = lib/alert
+	url = https://github.com/jwiegley/alert
+	ignore = untracked
+[submodule "ansi"]
+	path = lib/ansi
+	url = http://github.com/rejeep/ansi
+	ignore = untracked
 [submodule "apheleia"]
 	path = lib/apheleia
 	url = https://github.com/radian-software/apheleia
+	ignore = untracked
+[submodule "async"]
+	path = lib/async
+	url = https://github.com/jwiegley/emacs-async
 	ignore = untracked
 [submodule "atcoder-tools"]
 	path = lib/atcoder-tools
@@ -25,9 +41,17 @@
 	path = lib/avy
 	url = https://github.com/abo-abo/avy
 	ignore = untracked
+[submodule "borg"]
+	path = lib/borg
+	url = https://github.com/emacscollective/borg.git
+	ignore = untracked
 [submodule "breadcrumb"]
 	path = lib/breadcrumb
 	url = https://git.savannah.gnu.org/git/emacs/elpa.git
+	ignore = untracked
+[submodule "bui"]
+	path = lib/bui
+	url = https://github.com/alezost/bui.el
 	ignore = untracked
 [submodule "cape"]
 	path = lib/cape
@@ -45,6 +69,14 @@
 	path = lib/citar-org-roam
 	url = https://github.com/emacs-citar/citar-org-roam
 	ignore = untracked
+[submodule "citeproc"]
+	path = lib/citeproc
+	url = https://github.com/andras-simonyi/citeproc-el
+	ignore = untracked
+[submodule "closql"]
+	path = lib/closql
+	url = https://github.com/magit/closql.git
+	ignore = untracked
 [submodule "cmake-mode"]
 	path = lib/cmake-mode
 	url = https://github.com/emacsmirror/cmake-mode
@@ -52,6 +84,14 @@
 [submodule "colorful-mode"]
 	path = lib/colorful-mode
 	url = https://github.com/DevelopmentCool2449/colorful-mode
+	ignore = untracked
+[submodule "company"]
+	path = lib/company
+	url = https://github.com/company-mode/company-mode
+	ignore = untracked
+[submodule "cond-let"]
+	path = lib/cond-let
+	url = https://github.com/tarsius/cond-let.git
 	ignore = untracked
 [submodule "consult"]
 	path = lib/consult
@@ -77,6 +117,14 @@
 	path = lib/dash
 	url = https://github.com/magnars/dash.el
 	ignore = untracked
+[submodule "deferred"]
+	path = lib/deferred
+	url = https://github.com/kiwanami/emacs-deferred
+	ignore = untracked
+[submodule "deflate"]
+	path = lib/deflate
+	url = https://github.com/skuro/deflate
+	ignore = untracked
 [submodule "diff-hl"]
 	path = lib/diff-hl
 	url = https://github.com/dgutov/diff-hl
@@ -93,9 +141,21 @@
 	path = lib/ebib
 	url = https://github.com/joostkremers/ebib
 	ignore = untracked
+[submodule "edit-indirect"]
+	path = lib/edit-indirect
+	url = https://github.com/Fanael/edit-indirect
+	ignore = untracked
 [submodule "eglot-booster"]
 	path = lib/eglot-booster
 	url = https://github.com/jdtsmith/eglot-booster.git
+	ignore = untracked
+[submodule "elisp-refs"]
+	path = lib/elisp-refs
+	url = https://github.com/Wilfred/elisp-refs
+	ignore = untracked
+[submodule "emacsql"]
+	path = lib/emacsql
+	url = https://github.com/magit/emacsql.git
 	ignore = untracked
 [submodule "embark"]
 	path = lib/embark
@@ -109,9 +169,21 @@
 	path = lib/epkg
 	url = https://github.com/emacscollective/epkg
 	ignore = untracked
+[submodule "epl"]
+	path = lib/epl
+	url = http://github.com/cask/epl
+	ignore = untracked
 [submodule "expand-region"]
 	path = lib/expand-region
 	url = https://github.com/magnars/expand-region.el
+	ignore = untracked
+[submodule "f"]
+	path = lib/f
+	url = https://github.com/rejeep/f.el
+	ignore = untracked
+[submodule "forge"]
+	path = lib/forge
+	url = https://github.com/magit/forge
 	ignore = untracked
 [submodule "gcmh"]
 	path = lib/gcmh
@@ -124,6 +196,18 @@
 [submodule "ghostel"]
 	path = lib/ghostel
 	url = https://github.com/dakra/ghostel.git
+	ignore = untracked
+[submodule "ghub"]
+	path = lib/ghub
+	url = https://github.com/magit/ghub
+	ignore = untracked
+[submodule "git-modes"]
+	path = lib/git-modes
+	url = https://github.com/magit/git-modes.git
+	ignore = untracked
+[submodule "gntp"]
+	path = lib/gntp
+	url = https://github.com/tekai/gntp.el
 	ignore = untracked
 [submodule "go-mode"]
 	path = lib/go-mode
@@ -149,6 +233,14 @@
 	path = lib/highlight-parentheses
 	url = https://sr.ht/~tsdh/highlight-parentheses.el/
 	ignore = untracked
+[submodule "ht"]
+	path = lib/ht
+	url = https://github.com/Wilfred/ht.el
+	ignore = untracked
+[submodule "htmlize"]
+	path = lib/htmlize
+	url = https://github.com/hniksic/emacs-htmlize
+	ignore = untracked
 [submodule "hydra"]
 	path = lib/hydra
 	url = https://github.com/zkazure/hydra.git
@@ -159,9 +251,17 @@
 	url = https://github.com/zkazure/imenu-list.git
 	branch = zkazure/lexical-binding-cookie
 	ignore = untracked
+[submodule "inheritenv"]
+	path = lib/inheritenv
+	url = https://github.com/purcell/inheritenv
+	ignore = untracked
 [submodule "jinx"]
 	path = lib/jinx
 	url = https://github.com/minad/jinx
+	ignore = untracked
+[submodule "js2-mode"]
+	path = lib/js2-mode
+	url = https://github.com/mooz/js2-mode
 	ignore = untracked
 [submodule "leetcode"]
 	path = lib/leetcode
@@ -170,6 +270,15 @@
 [submodule "link-hint"]
 	path = lib/link-hint
 	url = https://github.com/noctuid/link-hint.el
+	ignore = untracked
+[submodule "llama"]
+	path = lib/llama
+	url = https://github.com/tarsius/llama.git
+	ignore = untracked
+[submodule "log4e"]
+	path = lib/log4e
+	url = https://github.com/zkazure/log4e.git
+	branch = zkazure/lexical-binding-cookie
 	ignore = untracked
 [submodule "magit"]
 	path = lib/magit
@@ -186,6 +295,10 @@
 [submodule "matlab-mode"]
 	path = lib/matlab-mode
 	url = https://github.com/mathworks/Emacs-MATLAB-Mode
+	ignore = untracked
+[submodule "mcp"]
+	path = lib/mcp
+	url = https://github.com/lizqwerscott/mcp.el
 	ignore = untracked
 [submodule "mermaid-mode"]
 	path = lib/mermaid-mode
@@ -275,6 +388,38 @@
 	path = lib/ox-pandoc
 	url = https://github.com/emacsorphanage/ox-pandoc
 	ignore = untracked
+[submodule "parsebib"]
+	path = lib/parsebib
+	url = https://github.com/joostkremers/parsebib
+	ignore = untracked
+[submodule "parseclj"]
+	path = lib/parseclj
+	url = https://github.com/clojure-emacs/parseclj
+	ignore = untracked
+[submodule "parseedn"]
+	path = lib/parseedn
+	url = https://github.com/clojure-emacs/parseedn
+	ignore = untracked
+[submodule "pdd"]
+	path = lib/pdd
+	url = https://github.com/lorniu/pdd.el
+	ignore = untracked
+[submodule "pfuture"]
+	path = lib/pfuture
+	url = https://github.com/Alexander-Miller/pfuture
+	ignore = untracked
+[submodule "popper"]
+	path = lib/popper
+	url = https://github.com/karthink/popper
+	ignore = untracked
+[submodule "popup"]
+	path = lib/popup
+	url = https://github.com/auto-complete/popup-el
+	ignore = untracked
+[submodule "posframe"]
+	path = lib/posframe
+	url = https://github.com/tumashu/posframe
+	ignore = untracked
 [submodule "projectile"]
 	path = lib/projectile
 	url = https://github.com/bbatsov/projectile
@@ -283,9 +428,17 @@
 	path = lib/pyim
 	url = https://github.com/tumashu/pyim
 	ignore = untracked
+[submodule "queue"]
+	path = lib/queue
+	url = https://github.com/emacsmirror/queue.git
+	ignore = untracked
 [submodule "rainbow-delimiters"]
 	path = lib/rainbow-delimiters
 	url = https://github.com/Fanael/rainbow-delimiters
+	ignore = untracked
+[submodule "request"]
+	path = lib/request
+	url = https://github.com/tkf/emacs-request
 	ignore = untracked
 [submodule "rime"]
 	path = lib/rime
@@ -294,6 +447,38 @@
 [submodule "rust-mode"]
 	path = lib/rust-mode
 	url = https://github.com/rust-lang/rust-mode
+	ignore = untracked
+[submodule "s"]
+	path = lib/s
+	url = https://github.com/magnars/s.el
+	ignore = untracked
+[submodule "sesman"]
+	path = lib/sesman
+	url = https://github.com/vspinu/sesman
+	ignore = untracked
+[submodule "shrink-path"]
+	path = lib/shrink-path
+	url = https://gitlab.com/bennya/shrink-path.el
+	ignore = untracked
+[submodule "shut-up"]
+	path = lib/shut-up
+	url = http://github.com/rejeep/shut-up.el
+	ignore = untracked
+[submodule "simple-httpd"]
+	path = lib/simple-httpd
+	url = https://github.com/skeeto/emacs-web-server
+	ignore = untracked
+[submodule "skewer-mode"]
+	path = lib/skewer-mode
+	url = https://github.com/skeeto/skewer-mode
+	ignore = untracked
+[submodule "spinner"]
+	path = lib/spinner
+	url = https://github.com/Malabarba/spinner.el
+	ignore = untracked
+[submodule "string-inflection"]
+	path = lib/string-inflection
+	url = https://github.com/akicho8/string-inflection
 	ignore = untracked
 [submodule "sudo-edit"]
 	path = lib/sudo-edit
@@ -306,6 +491,22 @@
 [submodule "symbol-overlay"]
 	path = lib/symbol-overlay
 	url = https://github.com/wolray/symbol-overlay/
+	ignore = untracked
+[submodule "tomelr"]
+	path = lib/tomelr
+	url = https://github.com/kaushalmodi/tomelr
+	ignore = untracked
+[submodule "treepy"]
+	path = lib/treepy
+	url = https://github.com/volrath/treepy.el.git
+	ignore = untracked
+[submodule "ts"]
+	path = lib/ts
+	url = https://github.com/alphapapa/ts.el
+	ignore = untracked
+[submodule "typescript-mode"]
+	path = lib/typescript-mode
+	url = https://github.com/emacs-typescript/typescript.el
 	ignore = untracked
 [submodule "unfill"]
 	path = lib/unfill
@@ -340,6 +541,10 @@
 	path = lib/vundo
 	url = https://github.com/casouri/vundo
 	ignore = untracked
+[submodule "web-server"]
+	path = lib/web-server
+	url = https://github.com/eschulte/emacs-web-server
+	ignore = untracked
 [submodule "websocket"]
 	path = lib/websocket
 	url = https://github.com/ahyatt/emacs-websocket
@@ -352,13 +557,29 @@
 	path = lib/which-key-posframe
 	url = https://github.com/emacsorphanage/which-key-posframe
 	ignore = untracked
+[submodule "whitespace-cleanup-mode"]
+	path = lib/whitespace-cleanup-mode
+	url = https://github.com/purcell/whitespace-cleanup-mode
+	ignore = untracked
 [submodule "whole-line-or-region"]
 	path = lib/whole-line-or-region
 	url = https://github.com/purcell/whole-line-or-region
 	ignore = untracked
+[submodule "with-editor"]
+	path = lib/with-editor
+	url = https://github.com/magit/with-editor.git
+	ignore = untracked
 [submodule "x86-lookup"]
 	path = lib/x86-lookup
 	url = https://github.com/skeeto/x86-lookup
+	ignore = untracked
+[submodule "xr"]
+	path = lib/xr
+	url = https://github.com/mattiase/xr
+	ignore = untracked
+[submodule "yaml"]
+	path = lib/yaml
+	url = https://github.com/zkry/yaml.el
 	ignore = untracked
 [submodule "yaml-mode"]
 	path = lib/yaml-mode
@@ -367,225 +588,4 @@
 [submodule "yasnippet"]
 	path = lib/yasnippet
 	url = https://github.com/joaotavora/yasnippet
-	ignore = untracked
-[submodule "borg"]
-	path = lib/borg
-	url = https://github.com/emacscollective/borg.git
-	ignore = untracked
-[submodule "aio"]
-	path = lib/aio
-	url = https://github.com/skeeto/emacs-aio
-	ignore = untracked
-[submodule "s"]
-	path = lib/s
-	url = https://github.com/magnars/s.el
-	ignore = untracked
-[submodule "xr"]
-	path = lib/xr
-	url = https://github.com/mattiase/xr
-	ignore = untracked
-[submodule "ht"]
-	path = lib/ht
-	url = https://github.com/Wilfred/ht.el
-	ignore = untracked
-[submodule "f"]
-	path = lib/f
-	url = https://github.com/rejeep/f.el
-	ignore = untracked
-[submodule "ts"]
-	path = lib/ts
-	url = https://github.com/alphapapa/ts.el
-	ignore = untracked
-[submodule "queue"]
-	path = lib/queue
-	url = https://github.com/emacsmirror/queue.git
-	ignore = untracked
-[submodule "spinner"]
-	path = lib/spinner
-	url = https://github.com/Malabarba/spinner.el
-	ignore = untracked
-[submodule "string-inflection"]
-	path = lib/string-inflection
-	url = https://github.com/akicho8/string-inflection
-	ignore = untracked
-[submodule "ansi"]
-	path = lib/ansi
-	url = http://github.com/rejeep/ansi
-	ignore = untracked
-[submodule "epl"]
-	path = lib/epl
-	url = http://github.com/cask/epl
-	ignore = untracked
-[submodule "popup"]
-	path = lib/popup
-	url = https://github.com/auto-complete/popup-el
-	ignore = untracked
-[submodule "shrink-path"]
-	path = lib/shrink-path
-	url = https://gitlab.com/bennya/shrink-path.el
-	ignore = untracked
-[submodule "shut-up"]
-	path = lib/shut-up
-	url = http://github.com/rejeep/shut-up.el
-	ignore = untracked
-[submodule "gntp"]
-	path = lib/gntp
-	url = https://github.com/tekai/gntp.el
-	ignore = untracked
-[submodule "log4e"]
-	path = lib/log4e
-	url = https://github.com/zkazure/log4e.git
-	branch = zkazure/lexical-binding-cookie
-	ignore = untracked
-[submodule "pdd"]
-	path = lib/pdd
-	url = https://github.com/lorniu/pdd.el
-	ignore = untracked
-[submodule "elisp-refs"]
-	path = lib/elisp-refs
-	url = https://github.com/Wilfred/elisp-refs
-	ignore = untracked
-[submodule "edit-indirect"]
-	path = lib/edit-indirect
-	url = https://github.com/Fanael/edit-indirect
-	ignore = untracked
-[submodule "citeproc"]
-	path = lib/citeproc
-	url = https://github.com/andras-simonyi/citeproc-el
-	ignore = untracked
-[submodule "parsebib"]
-	path = lib/parsebib
-	url = https://github.com/joostkremers/parsebib
-	ignore = untracked
-[submodule "parseclj"]
-	path = lib/parseclj
-	url = https://github.com/clojure-emacs/parseclj
-	ignore = untracked
-[submodule "parseedn"]
-	path = lib/parseedn
-	url = https://github.com/clojure-emacs/parseedn
-	ignore = untracked
-[submodule "tomelr"]
-	path = lib/tomelr
-	url = https://github.com/kaushalmodi/tomelr
-	ignore = untracked
-[submodule "htmlize"]
-	path = lib/htmlize
-	url = https://github.com/hniksic/emacs-htmlize
-	ignore = untracked
-[submodule "cond-let"]
-	path = lib/cond-let
-	url = https://github.com/tarsius/cond-let.git
-	ignore = untracked
-[submodule "llama"]
-	path = lib/llama
-	url = https://github.com/tarsius/llama.git
-	ignore = untracked
-[submodule "with-editor"]
-	path = lib/with-editor
-	url = https://github.com/magit/with-editor.git
-	ignore = untracked
-[submodule "emacsql"]
-	path = lib/emacsql
-	url = https://github.com/magit/emacsql.git
-	ignore = untracked
-[submodule "closql"]
-	path = lib/closql
-	url = https://github.com/magit/closql.git
-	ignore = untracked
-[submodule "forge"]
-	path = lib/forge
-	url = https://github.com/magit/forge
-	ignore = untracked
-[submodule "ghub"]
-	path = lib/ghub
-	url = https://github.com/magit/ghub
-	ignore = untracked
-[submodule "treepy"]
-	path = lib/treepy
-	url = https://github.com/volrath/treepy.el.git
-	ignore = untracked
-[submodule "git-modes"]
-	path = lib/git-modes
-	url = https://github.com/magit/git-modes.git
-	ignore = untracked
-[submodule "company"]
-	path = lib/company
-	url = https://github.com/company-mode/company-mode
-	ignore = untracked
-[submodule "posframe"]
-	path = lib/posframe
-	url = https://github.com/tumashu/posframe
-	ignore = untracked
-[submodule "bui"]
-	path = lib/bui
-	url = https://github.com/alezost/bui.el
-	ignore = untracked
-[submodule "whitespace-cleanup-mode"]
-	path = lib/whitespace-cleanup-mode
-	url = https://github.com/purcell/whitespace-cleanup-mode
-	ignore = untracked
-[submodule "js2-mode"]
-	path = lib/js2-mode
-	url = https://github.com/mooz/js2-mode
-	ignore = untracked
-[submodule "simple-httpd"]
-	path = lib/simple-httpd
-	url = https://github.com/skeeto/emacs-web-server
-	ignore = untracked
-[submodule "skewer-mode"]
-	path = lib/skewer-mode
-	url = https://github.com/skeeto/skewer-mode
-	ignore = untracked
-[submodule "web-server"]
-	path = lib/web-server
-	url = https://github.com/eschulte/emacs-web-server
-	ignore = untracked
-[submodule "request"]
-	path = lib/request
-	url = https://github.com/tkf/emacs-request
-	ignore = untracked
-[submodule "deferred"]
-	path = lib/deferred
-	url = https://github.com/kiwanami/emacs-deferred
-	ignore = untracked
-[submodule "deflate"]
-	path = lib/deflate
-	url = https://github.com/skuro/deflate
-	ignore = untracked
-[submodule "mcp"]
-	path = lib/mcp
-	url = https://github.com/lizqwerscott/mcp.el
-	ignore = untracked
-[submodule "typescript-mode"]
-	path = lib/typescript-mode
-	url = https://github.com/emacs-typescript/typescript.el
-	ignore = untracked
-[submodule "yaml"]
-	path = lib/yaml
-	url = https://github.com/zkry/yaml.el
-	ignore = untracked
-[submodule "popper"]
-	path = lib/popper
-	url = https://github.com/karthink/popper
-	ignore = untracked
-[submodule "sesman"]
-	path = lib/sesman
-	url = https://github.com/vspinu/sesman
-	ignore = untracked
-[submodule "pfuture"]
-	path = lib/pfuture
-	url = https://github.com/Alexander-Miller/pfuture
-	ignore = untracked
-[submodule "inheritenv"]
-	path = lib/inheritenv
-	url = https://github.com/purcell/inheritenv
-	ignore = untracked
-[submodule "alert"]
-	path = lib/alert
-	url = https://github.com/jwiegley/alert
-	ignore = untracked
-[submodule "async"]
-	path = lib/async
-	url = https://github.com/jwiegley/emacs-async
 	ignore = untracked
