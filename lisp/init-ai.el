@@ -75,17 +75,5 @@
 ;; (add-hook 'gptel-post-stream-hook 'gptel-auto-scroll)
 (add-hook 'gptel-post-response-functions 'gptel-end-of-response)
 
-(require 'claude-code-ide)
-(claude-code-ide-emacs-tools-setup)
-(setq claude-code-ide-terminal-backend 'ghostel
-      claude-code-ide-use-side-window nil
-      claude-code-ide-no-flicker t
-      claude-code-ide-window-width 80
-      claude-code-ide-focus-claude-after-ediff t
-      claude-code-ide-switch-tab-on-ediff nil
-      claude-code-ide-show-claude-window-in-ediff t
-      claude-code-ide-window-side 'left)
-
-(global-set-key (kbd "C-c o c") 'claude-code-ide-menu)
 
 (provide 'init-ai)

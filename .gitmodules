@@ -45,10 +45,6 @@
 	path = lib/citar-org-roam
 	url = https://github.com/emacs-citar/citar-org-roam
 	ignore = untracked
-[submodule "claude-code-ide"]
-	path = lib/claude-code-ide
-	url = https://github.com/parsnips/claude-code-ide.el.git
-	ignore = untracked
 [submodule "cmake-mode"]
 	path = lib/cmake-mode
 	url = https://github.com/emacsmirror/cmake-mode
