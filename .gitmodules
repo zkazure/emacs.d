@@ -183,7 +183,7 @@
 	ignore = untracked
 [submodule "markdown-mode"]
 	path = lib/markdown-mode
-	url = https://jblevins.org/projects/markdown-mode/
+	url = https://github.com/jrblevin/markdown-mode.git
 	ignore = untracked
 [submodule "matlab-mode"]
 	path = lib/matlab-mode
@@ -271,7 +271,7 @@
 	ignore = untracked
 [submodule "ox-hugo"]
 	path = lib/ox-hugo
-	url = https://ox-hugo.scripter.co
+	url = https://github.com/kaushalmodi/ox-hugo.git
 	ignore = untracked
 [submodule "ox-pandoc"]
 	path = lib/ox-pandoc
@@ -347,7 +347,7 @@
 	ignore = untracked
 [submodule "wgrep"]
 	path = lib/wgrep
-	url = https://github.com/mhayashi1120/Emacs-wgrep/raw/master/wgrep.el
+	url = https://github.com/mhayashi1120/Emacs-wgrep.git
 	ignore = untracked
 [submodule "which-key-posframe"]
 	path = lib/which-key-posframe
