@@ -32,10 +32,7 @@
 ;;           (lambda () (display-line-numbers-mode -1)))
 ;; (add-hook 'leetcode--problem-detail-mode-hook
 ;;           (lambda () (display-line-numbers-mode -1)))
-(setq leetcode-cookie-source-sources
-      '((:firefox-dir "~/.config/zen")
-        (:firefox-dir "~/.mozilla/firefox")
-        (:command "my_cookies")))
+(setq leetcode-cookie-firefox-profile-dir "~/.config/zen")
 
 (require 'link-hint)
 (global-set-key (kbd "C-c o l") 'link-hint-open-link)
