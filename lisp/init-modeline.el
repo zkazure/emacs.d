@@ -6,6 +6,4 @@
           apheleia-mode
           view-mode))
 
-(add-hook 'ghostel-mode-hook #'mode-line-invisible-mode)
-
 (provide 'init-modeline)
