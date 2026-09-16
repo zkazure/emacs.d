@@ -98,8 +98,7 @@
 
 (when (fboundp 'repeat-mode)
     (progn
-      (add-hook 'after-init-hook 'repeat-mode)
-      (define-key undo-repeat-map (kbd "U") 'undo-redo)))
+      (add-hook 'after-init-hook 'repeat-mode)))
 ;; be able to C-SPC to keep jump back to last position
 ;; instead of C-u C-SPC every time
 (setq set-mark-command-repeat-pop t)
