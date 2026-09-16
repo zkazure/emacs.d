@@ -652,10 +652,8 @@
 (define-key org-cdlatex-mode-map (kbd "C-M-{") 'my/insert-inline-braces)
 
 ;; preview with C-c C-x C-l
-
-(setq my/latex-preview-scale 1.2) ;; 正文为 12pt，初始 scale 为 1.2
 (setq org-format-latex-options
-      `(:foreground default :background default :scale ,my/latex-preview-scale :html-foreground "Black" :html-background "Transparent" :html-scale ,my/latex-preview-scale :matchers ("begin" "$1" "$" "$$" "\\(" "\\["))) ;; 设置公式预览的图片大小
+      (plist-put org-format-latex-options :scale 0.85))
 
 (require 'org-fragtog)
 (add-hook 'org-mode-hook 'org-fragtog-mode)
