@@ -25,14 +25,15 @@
 (require 'leetcode)
 (setq leetcode-prefer-language "cpp"
       leetcode-save-solutions t
-      leetcode-directory "~/Documents/cs_learning/OI/leetcode")
+      leetcode-directory "~/Documents/cs_learning/OI/leetcode"
+      leetcode-code-window-side 'right
+      leetcode-cookie-firefox-profile-dir "~/.config/zen")
 ;; (setq leetcode-prefer-tag-display nil)
 ;; (global-set-key (kbd "C-c o c") 'leetcode)
 ;; (add-hook 'leetcode--problems-mode-hook
 ;;           (lambda () (display-line-numbers-mode -1)))
 ;; (add-hook 'leetcode--problem-detail-mode-hook
 ;;           (lambda () (display-line-numbers-mode -1)))
-(setq leetcode-cookie-firefox-profile-dir "~/.config/zen")
 
 (require 'link-hint)
 (global-set-key (kbd "C-c o l") 'link-hint-open-link)
