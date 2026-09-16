@@ -12,7 +12,7 @@
 (require 'vertico-grid)
 (require 'vertico-indexed)
 ;; (require 'vertico-mouse)
-;; (require 'vertico-multiform)
+(require 'vertico-multiform)
 ;; (require 'vertico-quick)
 ;; (require 'vertico-repeat)
 ;; (require 'vertico-reverse)
@@ -34,7 +34,13 @@
 (require 'vertico-buffer-frame)
 (setq vertico-buffer-frame-auto-width t
       vertico-buffer-frame-consult-preview nil)
-(vertico-buffer-frame-mode 1)
+(setq vertico-multiform-commands
+      `((,(rx string-start
+              (or "consult-" "xref-"))
+         buffer)
+        (t buffer-frame-local)))
+(vertico-multiform-mode 1)
+
 
 ;; icons
 
