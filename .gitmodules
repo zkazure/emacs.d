@@ -391,6 +391,9 @@
 	path = lib/ox-pandoc
 	url = https://github.com/emacsorphanage/ox-pandoc
 	ignore = untracked
+[submodule "package-lint"]
+	path = lib/package-lint
+	url = https://github.com/purcell/package-lint
 [submodule "parsebib"]
 	path = lib/parsebib
 	url = https://github.com/joostkremers/parsebib

@@ -160,4 +160,6 @@
 (setq hs-set-up-overlay #'+hs-set-up-overlay)
 
 
+(require 'package-lint)
+
 (provide 'init-misc)
