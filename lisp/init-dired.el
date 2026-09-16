@@ -12,7 +12,8 @@
    (concat "\\." (regexp-quote extension) "\\'")))
 (define-key dired-mode-map (kbd "* e") #'dired-mark-files-by-extension)
 
-(setq-default dired-dwim-target t)
+(setq-default dired-dwim-target t
+              dired-mouse-drag-files t)
 
 (setq dired-kill-when-opening-new-dired-buffer t
       delete-by-moving-to-trash t)
