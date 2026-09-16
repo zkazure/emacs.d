@@ -118,4 +118,46 @@
 (global-set-key (kbd "C-c k m") 'kirigami-close-folds)   ; Close all folds
 (global-set-key (kbd "C-c k a") 'kirigami-toggle-fold)   ; Toggle fold at point
 
+(defun +hs-adjust-block-end (hidden-beg)
+  "Preserve the newline before the closing delimiter."
+  (max hidden-beg
+       (1- (line-beginning-position))))
+(defun +hs-preserve-closing-line ()
+  "Configure Hideshow to preserve the closing delimiter line."
+  (setq-local hs-adjust-block-end-function
+              #'+hs-adjust-block-end))
+(add-hook 'prog-mode-hook #'+hs-preserve-closing-line)
+
+
+(defun +hs-set-up-overlay (ov)
+  (when (eq 'code (overlay-get ov 'hs))
+    (let ((lines (max 0
+                      (1- (count-lines (overlay-start ov)
+                                       (overlay-end ov))))))
+      (overlay-put
+       ov 'display
+       (propertize
+        (format " … <%d lines> …" lines)
+        'face 'font-lock-comment-face)))))
+;; (defun +hs-set-up-overlay (ov)
+;;   (when (eq 'code (overlay-get ov 'hs))
+;;     (let* ((beg (overlay-start ov))
+;;            (end (overlay-end ov))
+;;            (preview
+;;             (save-excursion
+;;               (goto-char beg)
+;;               (skip-chars-forward " \t\n")
+;;               (buffer-substring-no-properties
+;;                (point)
+;;                (min (line-end-position) end)))))
+;;       (overlay-put
+;;        ov 'display
+;;        (propertize
+;;         (format " %s ……"
+;;                 (truncate-string-to-width preview 30))
+;;         'face 'shadow)))))
+
+(setq hs-set-up-overlay #'+hs-set-up-overlay)
+
+
 (provide 'init-misc)
