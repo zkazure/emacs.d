@@ -590,13 +590,33 @@
   (when (derived-mode-p 'org-mode)
     (save-excursion
       (goto-char (point-min))
-      (when (re-search-forward "^#\\+TITLE: \\(.+\\)$" nil t)
-        (let ((title (match-string 1)))
-          (when (string-match-p "\\.\\(pdf\\|epub\\)$" title)
-            (replace-match
-             (concat "#+TITLE: "
-                     (file-name-base
-                      (file-name-nondirectory title))))))))))
+      (when (re-search-forward
+             (rx line-start
+                 (group "#+TITLE: ")
+                 (group (+ any))
+                 line-end)
+             nil t)
+        (let* ((prefix (match-string 1))
+               (title (match-string 2))
+               (new-title (save-match-data
+                            (let* ((files (split-string title ";" t))
+                                   (main-file (seq-find
+                                               (lambda (file) (string-match-p
+                                                          (rx "."
+                                                              (or "pdf" "epub")
+                                                              string-end)
+                                                          file))
+                                               files)))
+                              (when main-file
+                                (file-name-base
+                                 (file-name-nondirectory main-file))
+                                )))))
+          (when new-title
+            (replace-match new-title t t nil 2))
+          ))
+      )))
+
+
 (advice-add 'citar-create-note
             :after
             #'kazure/citar-clean-title)
