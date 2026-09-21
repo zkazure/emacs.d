@@ -8,11 +8,14 @@
 (define-key global-map (kbd "C-c o F") 'my-open-current-dir-in-thunar)
 
 (defun my/open-current-dir-in-default-terminal ()
-  "Open the current directory in the system default terminal."
+  "Open the current directory in the system's *default terminal*."
   (interactive)
-  ;; 直接调用 x-terminal-emulator，它会自动继承 Emacs 当前的 default-directory
-  (start-process "default-terminal-process" nil "x-terminal-emulator")
+  (if (executable-find "ghostty")
+      (start-process "default-terminal-process" nil "ghostty" "+new-window")
+    (start-process "default-terminal-process" nil "x-terminal-emulator")
+    )
   (message "Opened default terminal in: %s" default-directory))
+
 (global-set-key (kbd "C-c o T") 'my/open-current-dir-in-default-terminal)
 
 ;; Borg keeps package sources and their pins in this repository.
