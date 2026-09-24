@@ -673,7 +673,13 @@
 
 ;; preview with C-c C-x C-l
 (setq org-format-latex-options
-      (plist-put org-format-latex-options :scale 0.85))
+      (plist-put org-format-latex-options :scale 0.55))
+;; Org 公式预览使用 XeLaTeX，以支持中文
+(setq org-preview-latex-default-process 'xelatex
+      org-format-latex-header
+      (concat org-format-latex-header
+              "\n\\usepackage{xeCJK}"
+              "\n\\setCJKmainfont{Noto Serif CJK SC}"))
 
 (require 'org-fragtog)
 (add-hook 'org-mode-hook 'org-fragtog-mode)
