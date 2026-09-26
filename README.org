@@ -1,165 +1,17 @@
 #+title: Emacs Configuration
 
-From now on my Emacs configuration will be stable and reliable.
+My personal Emacs configuration.
 
-However, there is still a long way to go.
-
-* Package management
-
-The configuration follows [[https://github.com/purcell/emacs.d][Purcell's]] modular style: =init.el= loads
-=lisp/init-*.el=.  Borg is the sole third-party package manager.  Borg itself
-and 149 package drones are Git submodules under =lib/= (150 drones in total),
-each pinned to an exact commit; =early-init.el= calls =borg-initialize= before
-=init.el= loads.  =package.el= is never initialized, and the only thing left in
-=elpa/= is =elpa/gnupg/=, package.el's GPG home.
-
-This configuration uses Borg for *source pinning* only: the drones are loaded
-from their =.el= sources and byte-compilation is deliberately not used, so the
-submodule working trees stay exactly at their pinned commits.  Autoloaded
-entry points (=M-x magit-status= and friends) come from a single file,
-=var/autoloads/autoloads.el=, which =make autoloads= generates by scraping
-every drone's autoload cookies; =etc/borg/autoloads.el= also overrides
-=borg-update-autoloads= so that Borg's own build commands write there instead
-of dropping a =<drone>-autoloads.el= into each submodule.  The file lives
-alone in its own directory because that directory is prepended to
-=load-path= -- a state file sitting next to it would shadow a library of the
-same name.  It is a machine-local artifact (=var/= is ignored); regenerating
-it is part of the clone procedure below.
-
-For a fresh clone:
+* Get Started
 
 #+begin_src sh
-git clone <configuration-url> ~/.emacs.d
-cd ~/.emacs.d
-make bootstrap-borg            # make the pinned Borg source available
-git submodule update --init    # check out every drone at its recorded commit
-make autoloads                 # generate var/autoloads/autoloads.el, no byte-compilation
+git clone --recurse-submodules https://github.com/zkazure/emacs.d.git ~/.emacs.d
+cd .emacs.d/
+git submodule update --init --recursive
+make autoloads
 #+end_src
 
-=make bootstrap= does the same but ends with =make build=, which byte-compiles
-every drone; run it only when you deliberately want =.elc= files inside the
-submodules.  =make autoloads= is the command to re-run after
-=M-x borg-assimilate=, after changing a drone's commit, or when an autoloaded
-entry point seems to be missing.
+* Others
 
-Package updates are manual, and Borg deliberately provides no update
-command; the weekly routine follows the
-[[https://github.com/emacscollective/borg/blob/main/docs/borg.org][Borg manual's «Updating drones»]] workflow:
-
-1. In =~/.emacs.d=, run =M-x magit-status= and press =f m=
-   (=magit-fetch-modules=, which runs =git fetch --recurse-submodules=).
-   Every drone with new upstream commits shows up in a section named
-   "Modules unpulled from @{upstream}".
-2. Press =RET= on such a drone to visit its status buffer and inspect the
-   incoming commits, then pull them with =F= (opens the pull transient),
-   =-f= (turns on "Fast-forward only") and =u= (pull from upstream).  The
-   transient remembers =-f= for the rest of the session.  A plain pull also
-   fast-forwards, but =-f= is what makes a drone whose upstream history was
-   rewritten fail loudly instead of silently recording a merge commit.
-3. Run =make autoloads= to scrape the new autoload cookies into
-   =var/autoloads/autoloads.el=.  The Borg manual's =M-x borg-build= (and
-   =make build/<drone>=) byte-compiles as well, which this configuration
-   deliberately avoids because the =.elc= files would sit inside the
-   submodules; run those only when you want the artifacts.
-4. Commit the new gitlinks -- one commit per drone, or a single =Update N
-   drones= commit listing every drone, as the Borg manual prescribes.  In
-   the commit buffer, =C-c C-b= (=borg-insert-update-message=) writes that
-   message from the staged gitlinks.
-5. Start Emacs once and confirm that it still loads without errors.
-
-A drone must never carry a local commit: it has to stay at an upstream
-commit, so anything that has to live locally belongs in this configuration,
-in one of the =zkazure= forks, or in a patch (Borg manual, «Patching
-drones»).  If a drone's upstream branch was rewritten, do not pull -- check
-out the commit you want instead (=git -C lib/<drone> reset --hard
-origin/master=) and commit the resulting gitlink.
-
-Four drones are pinned to a patch branch instead of to upstream master:
-=hydra=, =log4e=, =imenu-list= and =visual-regexp= follow
-=zkazure/lexical-binding-cookie= in their forks, which adds an explicit
-=-*- lexical-binding: nil; -*-= cookie to files whose upstream still omits
-it (Emacs warns about the missing cookie otherwise).  =.gitmodules= records
-that branch, so both the Magit workflow and =git submodule update --remote=
-follow it; when upstream master moves, rebase the patch branch onto it.  The
-remaining =zkazure= forks (=atcoder-tools=, =leetcode=, =org-count-words=
-and =visual-regexp-rx=) carry no patch and track their own master.
-
-Startup neither downloads nor upgrades packages, and native JIT compilation
-stays disabled.  Loading uncompiled sources costs roughly two seconds of
-startup time compared with a byte-compiled tree (~6.3s vs ~4.3s on the
-reference machine); that is the accepted trade-off for keeping the submodules
-free of build artifacts.
-
-The bootstrap follows the [[https://github.com/emacscollective/borg/blob/main/docs/borg.org][Borg manual's seed pattern]]:
-=Makefile= includes the drone's =borg.mk= when available and otherwise offers
-=make bootstrap-borg=.  The historical configuration at commit =3cca64c=
-informs the Borg command bindings; like the manual, this configuration puts
-the drones in =lib/=, the manual's default drone directory.
-
-Emacs 32 supplies =org=, =eglot= and =use-package= as built-ins.  =cmake-mode=
-is a pinned drone.  System tools, Tree-sitter grammars, fonts, native-module
-build dependencies and personal data remain outside Borg's scope.
-
-Packages deliberately *not* assimilated:
-
-- =eglot=, =flymake= and =jsonrpc= are provided by Emacs 32 itself, so their
-  version now follows the Emacs release instead of a pin.
-- =cask= is unused by this configuration and its package metadata records no
-  commit, so it cannot be pinned offline; it was dropped with the other
-  =elpa/= leftovers.
-- =elpa/gnupg/= is *not* a package: it is package.el's
-  =package-gnupghome-dir= and holds GPG key material.  Never delete it.
-- Drones that bundle optional integration files whose dependencies are absent
-  (for example =evil=, =pdf-tools= or =org-pdftools= for =ghostel= and
-  =org-noter=) are left as-is; those files are not loaded by this
-  configuration.
-
-* LilyPond
-
-LilyPond support uses a user installation at
-=~/.local/opt/lilypond-2.26.0=.  Install the official 2.26 archive there; its
-=bin/lilypond= is preferred only by Emacs and its child processes.  When the
-installation is absent, Emacs starts normally and reports that LilyPond is
-unavailable.  Files ending in =.ly= and =.ily= load the bundled
-=lilypond-mode= on demand.
-
-Org Babel uses the same compiler; its PDF viewer and MIDI player commands are
-configured as =xdg-open=.  Use =C-c '= to edit a source block in
-=lilypond-mode= and =C-c C-c= to run it.  For example:
-
-#+begin_example
-#+begin_src lilypond :file scale.png
-\version "2.26.0"
-\relative c' { c d e f g a b c }
-#+end_src
-#+end_example
-
-Change =:file scale.png= to =:file scale.pdf= for PDF output.
-
-* Road Map
-
-1. Write the document and reorganize my configuration.
-2. Continuing tweaking my configuration.
-   - [[https://github.com/seagle0128/.emacs.d][Centaur Emacs]]
-   - [[https://github.com/jwiegley/dot-emacs/tree/master][jwiegley]]: the author of *use-package*
-   - [[https://github.com/karthink/.emacs.d][karthink]]: the author of *gptel*
-
-* Todo List
-
-- [X] auto tangle.
-- [X] colorful-mode
-- [X] symbol overlay
-- [X] ace-window
-- [X] link-hint
-- [X] magit forge
-- [ ] present in Emacs
-
-* Acknowledgments
-
-Special thanks to
-- [[https://github.com/manateelazycat][ManateeLazyCat]]: author of *lsp-bridge*
-- [[https://emacs-china.org/][Emacs China]]
-- [[https://codeberg.org/daviwil][David Wilson]]
-- [[https://github.com/tarsius][Jonas Bernoulli]]: author of *borg*
-- ... to be continue
-for their valuable inspiration and contribution to the Emacs community.
+- [[file:init-mini.el]]: minimal configuration for Emacs debug.
+- [[file:init-docker.el]]: quick configuration in server.
