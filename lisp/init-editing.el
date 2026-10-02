@@ -142,6 +142,8 @@
       super-save-remote-files nil
       super-save-delete-trailing-whitespace 'except-current-line)
 (add-to-list 'super-save-triggers 'ace-window)
+(add-to-list 'super-save-triggers 'mouse-drag-region)
+(add-to-list 'super-save-triggers 'switch-to-buffer)
 (add-to-list 'super-save-hook-triggers 'find-file-hook)
 (super-save-mode +1)
 
