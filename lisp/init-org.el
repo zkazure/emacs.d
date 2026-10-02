@@ -206,7 +206,7 @@
 
 (with-eval-after-load 'org
   (add-to-list 'org-src-lang-modes '("javascript" . js-ts) )
-  (add-to-list 'org-src-lang-modes '("cpp" . c++-ts) )
+  (add-to-list 'org-src-lang-modes '("cpp" . c++) )
   (add-to-list 'org-src-lang-modes '("C" . c-ts) )
   (add-to-list 'org-src-lang-modes '("sh" . bash-ts) )
   (add-to-list 'org-src-lang-modes '("python" . python-ts) )
