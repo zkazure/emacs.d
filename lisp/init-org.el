@@ -205,15 +205,17 @@
       ))))
 
 (with-eval-after-load 'org
-  (add-to-list 'org-src-lang-modes '("javascript" . js-ts) )
-  (add-to-list 'org-src-lang-modes '("cpp" . c++) )
-  (add-to-list 'org-src-lang-modes '("C" . c-ts) )
-  (add-to-list 'org-src-lang-modes '("sh" . bash-ts) )
-  (add-to-list 'org-src-lang-modes '("python" . python-ts) )
+  (add-to-list 'org-src-lang-modes '("javascript" . js-ts))
+  (add-to-list 'org-src-lang-modes '("cpp" . c++))
+  (add-to-list 'org-src-lang-modes '("C" . c-ts))
+  (add-to-list 'org-src-lang-modes '("sh" . bash-ts))
+  (add-to-list 'org-src-lang-modes '("python" . python-ts))
   (add-to-list 'org-src-lang-modes '("css" . css-ts))
   (add-to-list 'org-src-lang-modes '("yaml" . yaml-ts))
   (add-to-list 'org-src-lang-modes '("java" . java-ts))
   (add-to-list 'org-src-lang-modes '("json" . json-ts)))
+
+
 
 ;; (with-eval-after-load 'org
 ;;   (add-to-list 'org-babel-default-header-args:python

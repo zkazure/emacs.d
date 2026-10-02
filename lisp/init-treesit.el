@@ -7,8 +7,9 @@
 
 
 (with-eval-after-load 'treesit
-  (setq major-mode-remap-alist
-        (assq-delete-all 'c++-mode major-mode-remap-alist)))
+  (dolist (mode '(c++-mode clojure-mode))
+    (setq major-mode-remap-alist
+          (assq-delete-all mode major-mode-remap-alist))))
 
 
 (provide 'init-treesit)

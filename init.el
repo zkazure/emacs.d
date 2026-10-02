@@ -73,6 +73,7 @@
 (require 'init-csv)
 (require 'init-yaml)
 (require 'init-mermaid)
+(require 'init-clojure)
 
 (require 'init-misc)
 
