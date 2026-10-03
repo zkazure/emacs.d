@@ -219,6 +219,9 @@
 	path = lib/go-mode
 	url = https://github.com/dominikh/go-mode.el
 	ignore = untracked
+[submodule "google-c-style"]
+	path = lib/google-c-style
+	url = https://github.com/google/styleguide
 [submodule "gptel"]
 	path = lib/gptel
 	url = https://github.com/karthink/gptel
