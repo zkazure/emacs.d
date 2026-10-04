@@ -33,7 +33,6 @@
       org-footnote-auto-adjust t ; support auto renumber and sort footnote in
                                         ; org file
       org-use-fast-todo-selection nil
-      org-edit-src-content-indentation 0
       )
 
 (custom-set-faces
