@@ -74,6 +74,7 @@
 (require 'init-yaml)
 (require 'init-mermaid)
 (require 'init-clojure)
+(require 'init-sql)
 
 (require 'init-misc)
 

@@ -491,6 +491,9 @@
 	path = lib/spinner
 	url = https://github.com/Malabarba/spinner.el
 	ignore = untracked
+[submodule "sql-indent"]
+	path = lib/sql-indent
+	url = https://github.com/alex-hhh/emacs-sql-indent
 [submodule "string-inflection"]
 	path = lib/string-inflection
 	url = https://github.com/akicho8/string-inflection
