@@ -202,17 +202,10 @@
       (mermaid . t)
       (lilypond . t)
       ))))
+(with-eval-after-load 'org-src
+  ;; 强制将 typescript 标识符指回传统模式，不经过 remap
+  (setf (alist-get "cpp" org-src-lang-modes nil nil 'equal) 'c++))
 
-(with-eval-after-load 'org
-  (add-to-list 'org-src-lang-modes '("javascript" . js-ts))
-  (add-to-list 'org-src-lang-modes '("cpp" . c++))
-  (add-to-list 'org-src-lang-modes '("C" . c-ts))
-  (add-to-list 'org-src-lang-modes '("sh" . bash-ts))
-  (add-to-list 'org-src-lang-modes '("python" . python-ts))
-  (add-to-list 'org-src-lang-modes '("css" . css-ts))
-  (add-to-list 'org-src-lang-modes '("yaml" . yaml-ts))
-  (add-to-list 'org-src-lang-modes '("java" . java-ts))
-  (add-to-list 'org-src-lang-modes '("json" . json-ts)))
 
 
 
