@@ -667,7 +667,7 @@
 
 ;; preview with C-c C-x C-l
 (setq org-format-latex-options
-      (plist-put org-format-latex-options :scale 0.55))
+      (plist-put org-format-latex-options :scale 0.8))
 ;; Org 公式预览使用 XeLaTeX，以支持中文
 (setq org-preview-latex-default-process 'xelatex
       org-format-latex-header
