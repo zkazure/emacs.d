@@ -189,10 +189,6 @@
 	path = lib/gcmh
 	url = https://gitlab.com/koral/gcmh
 	ignore = untracked
-[submodule "gdscript-mode"]
-	path = lib/gdscript-mode
-	url = https://github.com/godotengine/emacs-gdscript-mode/
-	ignore = untracked
 [submodule "ghostel"]
 	path = lib/ghostel
 	url = https://github.com/dakra/ghostel.git
@@ -243,11 +239,6 @@
 [submodule "htmlize"]
 	path = lib/htmlize
 	url = https://github.com/hniksic/emacs-htmlize
-	ignore = untracked
-[submodule "hydra"]
-	path = lib/hydra
-	url = https://github.com/zkazure/hydra.git
-	branch = zkazure/lexical-binding-cookie
 	ignore = untracked
 [submodule "imenu-list"]
 	path = lib/imenu-list

@@ -70,7 +70,6 @@
 (require 'init-makefile)
 (require 'init-cmake)
 (require 'init-matlab)
-(require 'init-gdscript)
 (require 'init-csv)
 (require 'init-yaml)
 (require 'init-mermaid)
