@@ -40,6 +40,7 @@
 
 (require 'init-consult)
 (require 'init-eglot)
+(require 'init-cape)
 (require 'init-vertico)
 (require 'init-corfu)
 (require 'init-orderless)
