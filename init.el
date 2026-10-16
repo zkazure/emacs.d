@@ -47,7 +47,6 @@
 (require 'init-flymake)
 (require 'init-embark)
 
-(require 'init-lilypond)
 (require 'init-org)
 (require 'init-markdown)
 (require 'init-yasnippet)
