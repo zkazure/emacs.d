@@ -61,9 +61,6 @@
 	path = lib/cdlatex
 	url = https://github.com/cdominik/cdlatex
 	ignore = untracked
-[submodule "cider"]
-	path = lib/cider
-	url = https://github.com/clojure-emacs/cider
 [submodule "citar"]
 	path = lib/citar
 	url = https://github.com/emacs-citar/citar
@@ -76,9 +73,6 @@
 	path = lib/citeproc
 	url = https://github.com/andras-simonyi/citeproc-el
 	ignore = untracked
-[submodule "clojure-mode"]
-	path = lib/clojure-mode
-	url = https://github.com/clojure-emacs/clojure-mode
 [submodule "closql"]
 	path = lib/closql
 	url = https://github.com/magit/closql.git
