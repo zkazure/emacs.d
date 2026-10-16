@@ -62,7 +62,7 @@
         ("J" . "src java")
         ("l" . "src lua")
         ("L" . "src lilypond :prologue \"\\\\version \\\"2.26.0\\\"\\n\\\\paper { page-breaking = #ly:one-page-breaking }\"")
-        ("p" . "src python")
+        ("p" . "src python :results output")
         ("P" . "src python :results file graphics :exports results :file ./img/plot.png")
         ("q" . "src sqlite :colnames yes")
         ("Q" . "quote")
