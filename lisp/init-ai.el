@@ -76,4 +76,10 @@
 (add-hook 'gptel-post-response-functions 'gptel-end-of-response)
 
 
+
+(require 'dsh-emacs)
+(setq dsh-emacs-default-model "deepseek-flash")
+
+
+
 (provide 'init-ai)

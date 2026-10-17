@@ -133,6 +133,9 @@
 	path = lib/diredfl
 	url = https://github.com/purcell/diredfl
 	ignore = untracked
+[submodule "dsh-emacs"]
+	path = lib/dsh-emacs
+	url = https://github.com/vritser/dsh-emacs.git
 [submodule "dumb-jump"]
 	path = lib/dumb-jump
 	url = https://github.com/jacktasia/dumb-jump
