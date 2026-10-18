@@ -85,6 +85,9 @@
 	path = lib/colorful-mode
 	url = https://github.com/DevelopmentCool2449/colorful-mode
 	ignore = untracked
+[submodule "combobulate"]
+	path = lib/combobulate
+	url = https://github.com/mickeynp/combobulate
 [submodule "company"]
 	path = lib/company
 	url = https://github.com/company-mode/company-mode

@@ -62,6 +62,7 @@
 (require 'init-indent)
 (require 'init-treesit)
 (require 'init-cpp)
+(require 'init-python)
 (require 'init-go)
 (require 'init-rust)
 (require 'init-javascript)
