@@ -74,6 +74,11 @@
 (global-set-key (kbd "C-c m p") #'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c m h") #'mc/mark-all-like-this-dwim)
 
+(setq mc/cmds-to-run-for-all
+      '(electric-newline-and-maybe-indent))
+
+
+
 (require 'move-text)
 (move-text-default-bindings)
 
