@@ -3,6 +3,13 @@
 ;; C-c C-p to open a Python REPL
 (define-key python-ts-mode-map (kbd "M-<return>") #'python-shell-send-statement)
 
+(defun my/python-shell-send-statement-and-next-line (&optional arg)
+  "发送当前行的 Python 语句之后向下移动一行"
+  (interactive "P")
+  (python-shell-send-statement)
+  (next-line))
+(define-key python-ts-mode-map (kbd "S-<return>") #'my/python-shell-send-statement-and-next-line)
+
 (defun my/python-shell-send-paragraph-or-above (&optional arg)
   "发送当前上下有空行分隔的代码块（段落）到 Python REPL。
 如果光标当前在空行上，则自动向上寻找第一个代码块并发送。"
@@ -22,10 +29,11 @@
         (message "已发送代码块: 第 %d 行 -> 第 %d 行"
                  (line-number-at-pos beg)
                  (line-number-at-pos (1- end)))))))
-(define-key python-mode-map (kbd "C-<return>") #'my/python-shell-send-paragraph-or-above)
+(define-key python-ts-mode-map (kbd "C-<return>") #'my/python-shell-send-paragraph-or-above)
 
 
 
+(setq combobulate-key-prefix "C-c C-o")
 (require 'combobulate)
 (add-hook 'python-ts-mode-hook #'combobulate-mode)
 
