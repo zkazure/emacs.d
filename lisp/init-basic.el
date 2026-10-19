@@ -2,7 +2,8 @@
 
 (require 'no-littering)
 
-(setq auth-sources '("~/.authinfo.gpg"))
+;; (setq auth-sources '("~/.authinfo.gpg"))
+(setq auth-sources nil)
 
 (setq create-lockfiles nil)
 
