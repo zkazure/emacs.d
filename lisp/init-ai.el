@@ -78,7 +78,10 @@
 
 
 (require 'dsh-emacs)
-(setq dsh-emacs-default-model "deepseek-flash")
+(setq dsh-emacs-default-model "deepseek-flash"
+      dsh-emacs-show-reasoning t
+      dsh-emacs-show-tool-calls nil)
+(global-set-key (kbd "C-c o D") #'dsh-emacs)
 
 
 
