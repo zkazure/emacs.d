@@ -124,6 +124,12 @@
 
 
 
+(require 'keyfreq)
+(keyfreq-mode 1)
+(keyfreq-autosave-mode 1)
+(setq keyfreq-folder "~/.emacs.d/lib/keyfreq/")
+
+
 (require 'package-lint)
 
 (provide 'init-misc)
