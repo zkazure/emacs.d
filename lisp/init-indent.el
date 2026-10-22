@@ -88,4 +88,8 @@
 
 (add-hook 'sh-mode-hook #'my/sh-indent)
 
+(defun my/markdown-indent ()
+  (my/set-indent 8))
+(add-hook 'markdown-mode-hook #'my/markdown-indent)
+
 (provide 'init-indent)
