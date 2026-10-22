@@ -63,6 +63,15 @@
   (global-completion-preview-mode 1))
 
 ;; Persist useful navigation history without loading external packages.
+;; This file never loads `no-littering' (it is built-in-only by design), so the
+;; two files that package would normally redirect keep their defaults and end up
+;; as "history" and "places.eld" in ~/.emacs.d -- untracked litter, since only
+;; "var/" is gitignored.  Give the mini config its own files under var/mini/ so a
+;; debugging session neither litters the root nor overwrites the main config's
+;; var/savehist.el and var/save-place.el.
+(make-directory (expand-file-name "var/mini/" user-emacs-directory) t)
+(setq savehist-file   (expand-file-name "var/savehist" user-emacs-directory)
+      save-place-file (expand-file-name "var/save-place.eld" user-emacs-directory))
 (savehist-mode 1)
 (save-place-mode 1)
 
