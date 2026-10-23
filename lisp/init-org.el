@@ -679,6 +679,15 @@
 (add-hook 'org-mode-hook 'org-fragtog-mode)
 (setq org-fragtog-preview-delay 0.2)
 
+
+
+;;; ox-beamer
+(with-eval-after-load 'ox
+  (require 'ox-beamer))
+(setq org-latex-listings 'minted)
+
+
+
 ;;; ox-hugo
 
 (require 'ox-hugo)
