@@ -32,9 +32,4 @@
 (define-key python-ts-mode-map (kbd "C-<return>") #'my/python-shell-send-paragraph-or-above)
 
 
-
-(setq combobulate-key-prefix "C-c C-o")
-(require 'combobulate)
-(add-hook 'python-ts-mode-hook #'combobulate-mode)
-
 (provide 'init-python)
