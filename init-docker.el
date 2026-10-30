@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;; Load path
 ;; (push (expand-file-name "site-lisp" user-emacs-directory) load-path)
 (push (expand-file-name "lisp" user-emacs-directory) load-path)
@@ -10,6 +11,7 @@
         ("melpa"  . "https://mirrors.ustc.edu.cn/elpa/melpa/")))
 
 ;; Better defaults
+(setq auto-save-default nil)
 (setq inhibit-splash-screen t)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets) ; Show path if names are same
 (setq delete-by-moving-to-trash t)         ; Deleting files go to OS's trash folder
@@ -19,7 +21,7 @@
 ;; Permanently indent with spaces, never with TABs
 (setq-default c-basic-offset   4
               tab-width        4
-              indent-tabs-mode nil)
+              indent-tabs-mode t)
 
 ;; UI
 (load-theme 'leuven-dark t)
@@ -32,6 +34,9 @@
       (add-hook 'prog-mode-hook #'display-line-numbers-mode)))
 
 ;; Basic modes
+(xterm-mouse-mode 1)
+(mouse-wheel-mode 1)
+(global-subword-mode 1)
 (show-paren-mode 1)
 (global-auto-revert-mode 1)
 
@@ -42,6 +47,9 @@
 (global-set-key (kbd "M-n") #'forward-paragraph)
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+
+(global-set-key (kbd "C-c c") #'compile)
+(global-set-key (kbd "<f6>") #'recompile)
 
 ;; Completion
 (when (fboundp 'global-completion-preview-mode)
@@ -60,14 +68,25 @@
 (when (file-exists-p custom-file)
   (load-file custom-file))
 
-;;; terminal
-(use-package eat
-  :ensure t
-  :init
-  (setq explicit-shell-file-name "/bin/bash"))
+;;; dired
+(require 'dired)
+(define-key dired-mode-map (kbd "b") #'dired-up-directory)
 
-(xterm-mouse-mode 1)
-(mouse-wheel-mode 1)
+
+;;; view-mode
+(require 'view)
+(add-hook 'find-file-hook
+		  (lambda () (read-only-mode 1)))
+(setq view-read-only t)
+(global-set-key (kbd "C-c o v") #'view-mode)
+
+
+;;; terminal
+;; curl -L -o ghostel-module.so https://gh-proxy.com/https://github.com/dakra/ghostel/releases/download/v0.59.0/ghostel-module-x86_64-linux.so
+(use-package ghostel
+  :ensure t
+  :config
+  (global-set-key (kbd "C-c o t") #'ghostel))
 
 ;; support copy from terminal.
 (defun my-osc52-copy (text &optional _push)
@@ -79,7 +98,7 @@
      (encode-coding-string text 'utf-8)
      t)
     "\e\\")))
- (setq interprogram-cut-function #'my-osc52-copy)
+(setq interprogram-cut-function #'my-osc52-copy)
 
 ;; dabbrev
 (setq dabbrev-abbrev-char-regexp "[A-Za-z0-9_-]"
@@ -92,6 +111,8 @@
   :custom
   (compilation-scroll-output t))
 
+(use-package csv-mode
+  :ensure t)
 (use-package cuda-mode
   :ensure t
   :mode (("\\.cu\\'"  . cuda-mode)
@@ -112,7 +133,8 @@
   (add-hook 'xref-backend-functions
             #'dumb-jump-xref-activate))
 
-(global-subword-mode 1)
+(use-package no-littering
+  :ensure t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Init-mini.el ends here
