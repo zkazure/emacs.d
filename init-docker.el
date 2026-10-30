@@ -1,6 +1,8 @@
 ;; -*- lexical-binding: t; -*-
 ;; Load path
 ;; (push (expand-file-name "site-lisp" user-emacs-directory) load-path)
+(require 'package)
+(package-initialize)
 (push (expand-file-name "lisp" user-emacs-directory) load-path)
 
 ;; Packages
