@@ -242,6 +242,7 @@
       org-modern-checkbox nil
       org-modern-timestamp nil
       org-modern-keyword nil
+      org-modern-progress nil
 
       org-modern-block-name nil
       org-modern-block-fringe t)
