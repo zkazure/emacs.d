@@ -18,6 +18,9 @@
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets) ; Show path if names are same
 (setq delete-by-moving-to-trash t)         ; Deleting files go to OS's trash folder
 (setq set-mark-command-repeat-pop t)       ; Repeating C-SPC after popping mark pops it again
+(global-set-key (kbd "C-s") #'isearch-forward-regexp)
+(global-set-key (kbd "C-r") #'isearch-backward-regexp)
+
 
 ;; Tab and Space
 ;; Permanently indent with spaces, never with TABs
