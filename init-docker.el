@@ -87,11 +87,12 @@
 
 
 ;;; terminal
-;; curl -L -o ghostel-module.so https://gh-proxy.com/https://github.com/dakra/ghostel/releases/download/v0.59.0/ghostel-module-x86_64-linux.so
 (use-package ghostel
   :ensure t
   :config
-  (global-set-key (kbd "C-c o t") #'ghostel))
+  (global-set-key (kbd "C-c o t") #'ghostel)
+  (setq ghostel-github-release-url "https://gh-proxy.com/https://github.com/dakra/ghostel/releases"))
+
 
 ;; support copy from terminal.
 (defun my-osc52-copy (text &optional _push)
