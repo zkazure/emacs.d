@@ -91,7 +91,8 @@
   :ensure t
   :config
   (global-set-key (kbd "C-c o t") #'ghostel)
-  (setq ghostel-github-release-url "https://gh-proxy.com/https://github.com/dakra/ghostel/releases"))
+  (setq ghostel-github-release-url "https://gh-proxy.com/https://github.com/dakra/ghostel/releases")
+  (setq ghostel-shell "/bin/bash"))
 
 
 ;; support copy from terminal.
