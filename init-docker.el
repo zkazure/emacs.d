@@ -29,7 +29,7 @@
               indent-tabs-mode t)
 
 ;; UI
-(load-theme 'tangle-dark t)
+(load-theme 'tango-dark t)
 (set-face-attribute 'default nil :height 120)
 
 (menu-bar-mode -1)
