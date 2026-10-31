@@ -5,10 +5,18 @@ My personal Emacs configuration.
 * Get Started
 
 #+begin_src sh
-git clone --recurse-submodules https://github.com/zkazure/emacs.d.git ~/.emacs.d
-cd .emacs.d/
-git submodule update --init --recursive
-make autoloads
+  git clone --recurse-submodules https://github.com/zkazure/emacs.d.git ~/.emacs.d
+  cd .emacs.d/
+  git submodule update --init --recursive
+  make autoloads
+#+end_src
+
+** Emacs in docker
+
+#+begin_src sh
+  mv ~/.emacs.d/ ~/.emacs.d.backup
+  git clone https://gh-proxy.com/https://github.com/zkazure/emacs.d.git --depth=1 ~/.emacs.d
+  cd ~/.emacs.d/ && mv init-docker.el init.el && rm early-init.el
 #+end_src
 
 * Others
