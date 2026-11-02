@@ -331,10 +331,6 @@
 	path = lib/nerd-icons-dired
 	url = https://github.com/rainstormstudio/nerd-icons-dired
 	ignore = untracked
-[submodule "nerd-icons-speedbar"]
-	path = lib/nerd-icons-speedbar
-	url = https://github.com/Akane-6730/nerd-icons-speedbar.git
-	ignore = untracked
 [submodule "no-littering"]
 	path = lib/no-littering
 	url = https://github.com/emacscollective/no-littering

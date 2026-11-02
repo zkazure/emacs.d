@@ -81,16 +81,6 @@
 (setq x86-lookup-pdf "~/.emacs.d/x86-lookup/sdm.pdf")
 (global-set-key (kbd "C-h x") #'x86-lookup)
 
-;; Speedbar in the same frame.
-(require 'speedbar)
-(setq speedbar-show-unknown-files t
-      speedbar-prefer-window t
-      speedbar-window-side 'left)
-(global-set-key (kbd "C-c o d") #'speedbar)
-;; add nerd icon support
-
-(require 'nerd-icons-speedbar)
-(add-hook 'speedbar-mode-hook 'nerd-icons-speedbar-mode)
 
 (require 'imenu-list)
 (setq imenu-list-focus-after-activation nil
