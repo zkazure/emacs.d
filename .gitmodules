@@ -507,6 +507,12 @@
 	path = lib/tomelr
 	url = https://github.com/kaushalmodi/tomelr
 	ignore = untracked
+[submodule "treemacs"]
+	path = lib/treemacs
+	url = https://github.com/Alexander-Miller/treemacs
+[submodule "treemacs-nerd-icons"]
+	path = lib/treemacs-nerd-icons
+	url = https://github.com/rainstormstudio/treemacs-nerd-icons
 [submodule "treepy"]
 	path = lib/treepy
 	url = https://github.com/volrath/treepy.el.git

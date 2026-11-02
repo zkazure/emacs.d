@@ -82,6 +82,18 @@
 (global-set-key (kbd "C-h x") #'x86-lookup)
 
 
+;;; sidebar
+(add-to-list 'load-path (expand-file-name "lib/treemacs/src/elisp" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "lib/treemacs/src/extra" user-emacs-directory))
+(require 'treemacs)
+(require 'treemacs-projectile)
+(require 'treemacs-magit)
+(require 'treemacs-nerd-icons)
+(treemacs-nerd-icons-config)
+(treemacs-follow-mode t)
+(global-set-key (kbd "C-c o d") #'treemacs-select-window)
+
+
 (require 'imenu-list)
 (setq imenu-list-focus-after-activation nil
       imenu-list-auto-resize t
