@@ -362,12 +362,6 @@
 [submodule "org-mode"]
 	path = lib/org-mode
 	url = https://git.sr.ht/~bzg/org-mode
-[submodule "org-modern"]
-	path = lib/org-modern
-	url = https://github.com/minad/org-modern
-[submodule "org-modern-indent"]
-	path = lib/org-modern-indent
-	url = https://github.com/jdtsmith/org-modern-indent.git
 [submodule "org-roam"]
 	path = lib/org-roam
 	url = https://github.com/org-roam/org-roam

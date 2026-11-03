@@ -230,30 +230,6 @@
 (add-hook 'org-mode-hook #'valign-mode)
 
 
-
-;;; Mordern
-(require 'org-modern)
-(require 'org-modern-indent)
-(setq org-modern-star nil
-      org-modern-hide-stars nil
-      org-modern-todo nil
-      org-modern-tag nil
-      org-modern-priority nil
-      org-modern-table nil
-      org-modern-list nil
-      org-modern-checkbox nil
-      org-modern-timestamp nil
-      org-modern-keyword nil
-      org-modern-progress nil
-
-      org-modern-block-name nil
-      org-modern-block-fringe t)
-(with-eval-after-load 'org
-  (global-org-modern-mode))
-(add-hook 'org-modern-mode-hook #'org-modern-indent-mode)
-
-
-
 ;;; Roam
 (setq org-roam-directory org-directory)
 (setq org-roam-main-directory org-main-directory)
