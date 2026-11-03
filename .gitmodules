@@ -359,6 +359,9 @@
 	path = lib/org-fragtog
 	url = https://github.com/io12/org-fragtog
 	ignore = untracked
+[submodule "org-mode"]
+	path = lib/org-mode
+	url = https://git.sr.ht/~bzg/org-mode
 [submodule "org-modern"]
 	path = lib/org-modern
 	url = https://github.com/minad/org-modern

@@ -1,7 +1,9 @@
 ;; -*- lexical-binding: t; -*-
 
 ;;; Org is provided by this Emacs release.
+(add-to-list 'load-path (expand-file-name "lib/org-mode/lisp" user-emacs-directory))
 (require 'org)
+
 (with-eval-after-load 'ox
   (require 'ox-pandoc)
   (require 'ox-gfm))
@@ -691,20 +693,21 @@
 (define-key org-cdlatex-mode-map (kbd "C-M-[") 'my/insert-square-bra-OCDL)
 (define-key org-cdlatex-mode-map (kbd "C-M-{") 'my/insert-inline-braces)
 
-;; preview with C-c C-x C-l
-(setq org-format-latex-options
-      (plist-put org-format-latex-options :scale 0.8))
+;; ;; preview with C-c C-x C-l
+;; (setq org-format-latex-options
+;;       (plist-put org-format-latex-options :scale 0.8))
 ;; Org 公式预览使用 XeLaTeX，以支持中文
+(setq org-latex-compiler "xelatex")
 (setq org-preview-latex-default-process 'xelatex
       org-format-latex-header
       (concat org-format-latex-header
               "\n\\usepackage{xeCJK}"
               "\n\\setCJKmainfont{Noto Serif CJK SC}"))
-
-(require 'org-fragtog)
-(add-hook 'org-mode-hook 'org-fragtog-mode)
-(setq org-fragtog-preview-delay 0.2)
-
+(setq org-latex-preview-process-precompile nil)
+(setq org-latex-preview-process-default 'dvisvgm)
+(add-hook 'org-mode-hook #'org-latex-preview-mode)
+(setq org-latex-preview-mode-display-live t
+      org-startup-with-latex-preview t)
 
 
 ;;; ox-beamer
