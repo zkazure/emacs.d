@@ -35,6 +35,7 @@
       org-footnote-auto-adjust t ; support auto renumber and sort footnote in
                                         ; org file
       org-use-fast-todo-selection nil
+      org-fontify-quote-and-verse-blocks t
       )
 
 (custom-set-faces
