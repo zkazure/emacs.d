@@ -11,12 +11,10 @@ My personal Emacs configuration.
   make autoloads
 #+end_src
 
-** Emacs in docker
+** Minimal Configuration
 
 #+begin_src sh
-  mv ~/.emacs.d/ ~/.emacs.d.backup
   git clone https://gh-proxy.com/https://github.com/zkazure/emacs.d.git --depth=1 ~/.emacs.d
-  cd ~/.emacs.d/ && mv init-docker.el init.el && rm early-init.el
 #+end_src
 
 * Others
