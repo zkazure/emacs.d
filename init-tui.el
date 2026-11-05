@@ -19,7 +19,9 @@
 (setq delete-by-moving-to-trash t)         ; Deleting files go to OS's trash folder
 (setq set-mark-command-repeat-pop t)       ; Repeating C-SPC after popping mark pops it again
 (global-set-key (kbd "M-o") #'other-window)
-(global-set-key (kbd "M-O") #'other-window-backward)
+(global-set-key (kbd "M-O") (lambda ()
+							  (interactive)
+							  (other-window -1)))
 (global-set-key (kbd "C-s") #'isearch-forward-regexp)
 (global-set-key (kbd "C-r") #'isearch-backward-regexp)
 
