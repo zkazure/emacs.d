@@ -184,10 +184,6 @@
 	path = lib/f
 	url = https://github.com/rejeep/f.el
 	ignore = untracked
-[submodule "forge"]
-	path = lib/forge
-	url = https://github.com/magit/forge
-	ignore = untracked
 [submodule "gcmh"]
 	path = lib/gcmh
 	url = https://gitlab.com/koral/gcmh
