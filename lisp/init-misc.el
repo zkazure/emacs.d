@@ -91,6 +91,7 @@
 (require 'treemacs-nerd-icons)
 (treemacs-nerd-icons-config)
 (treemacs-follow-mode t)
+(setq treemacs-width 30)
 (global-set-key (kbd "C-c o d") #'treemacs-select-window)
 
 
