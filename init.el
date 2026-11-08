@@ -6,6 +6,8 @@
 							  (interactive)
 							  (other-window -1)))
 
+(global-set-key (kbd "M-%") #'query-replace-regexp)
+(global-set-key (kbd "C-M-%") #'query-replace)
 
 (let ((gui-file (expand-file-name "lisp/init-gui.el" user-emacs-directory))
       (tui-file (expand-file-name "lisp/init-tui.el" user-emacs-directory)))
